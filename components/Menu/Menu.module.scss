@@ -1,6 +1,45 @@
+$width: 32px;
+
+.menu {
+  list-style-type: none;
+  padding: 0;
+}
 
 .item {
-  display: block;
-  width: 24px;
-  margin: 12px 0px;
+  position: relative;
+  width: $width * 1.5;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  padding: $width/4;
+  margin: $width/4 0;
+  color: #fff;
+
+  &:hover {
+    width: $width * 10;
+    transition: width 1s;
+    background: #000;
+
+    .title {
+      color: #fff;
+      transition: color 1s 0.5s;
+    }
+  }
+}
+
+.active {
+  background: #000;
+}
+
+.icon {
+  flex-grow: 0;
+  flex-shrink: 0;
+  flex-basis: $width;
+}
+
+.title {
+  color: #000;
+  font-size: $width * 1.2;
+  margin-left: $width/4;
+  white-space: nowrap;
 }
