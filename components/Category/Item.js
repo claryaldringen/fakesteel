@@ -1,0 +1,24 @@
+import { useMemo } from 'react'
+import Link from 'next/link'
+import styles from './Category.module.scss'
+import Image from 'next/image'
+
+export const Item = ({ images, title, description }) => {
+  const image = useMemo(() => images[0], [images])
+
+  return (
+    <Link
+      href={`/${title.toLowerCase().replace(' ', '-')}`}
+      key={`item_${image}`}
+    >
+      <div className={styles.category}>
+        <Image
+          src={`/images/weapons/${image.src}.jpg`}
+          width={image.width}
+          height={image.height}
+        />
+        <div className={styles.description}>{description}</div>
+      </div>
+    </Link>
+  )
+}

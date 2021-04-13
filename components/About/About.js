@@ -47,10 +47,6 @@ export const About = ({ active, setActive }) => {
         penatibus et magnis dis parturient montes, nascetur ridiculus mus.
         Aenean id metus id velit ullamcorper pulvinar.
       </p>
-      <div>
-        <h1>Order</h1>
-        <div style={{ height: 600}}>Some form here</div>
-      </div>
     </div>
   )
 }

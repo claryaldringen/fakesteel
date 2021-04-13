@@ -1,11 +1,45 @@
 $width: 32px;
 
+@mixin active-icons {
+  .spears {
+    background: url('/images/menu/spears-w.png') no-repeat;
+  }
+
+  .maces {
+    background: url('/images/menu/maces-w.png') no-repeat;
+  }
+
+  .messers {
+    background: url('/images/menu/messers-w.png') no-repeat;
+  }
+
+  .swords {
+    background: url('/images/menu/swords-w.png') no-repeat;
+  }
+
+  .order {
+    background: url('/images/menu/order-w.png') no-repeat;
+  }
+
+  .about {
+    background: url('/images/menu/helmet-w.png') no-repeat;
+  }
+
+  .coming {
+    background: url('/images/menu/hourglass-w.png') no-repeat;
+  }
+
+  .daggers {
+    background: url('/images/menu/daggers-w.png') no-repeat;
+  }
+}
+
 .menu {
   list-style-type: none;
   padding: 0;
 }
 
-.item {
+@mixin space {
   position: relative;
   width: $width * 1.5;
   overflow: hidden;
@@ -14,6 +48,14 @@ $width: 32px;
   padding: $width/4;
   margin: $width/4 0;
   color: #fff;
+}
+
+.empty {
+  @include space;
+}
+
+.item {
+  @include space;
 
   &:hover {
     width: $width * 10;
@@ -24,17 +66,53 @@ $width: 32px;
       color: #fff;
       transition: color 1s 0.5s;
     }
+
+    @include active-icons;
   }
 }
 
 .active {
-  background: #000;
+  @include active-icons;
 }
 
 .icon {
   flex-grow: 0;
   flex-shrink: 0;
   flex-basis: $width;
+  background-size: $width !important;
+  height: $width * 1.8738;
+}
+
+.spears {
+  background: url('/images/menu/spears-b.png') no-repeat;
+}
+
+.maces {
+  background: url('/images/menu/maces-b.png') no-repeat;
+}
+
+.messers {
+  background: url('/images/menu/messers-b.png') no-repeat;
+}
+
+.swords {
+  background: url('/images/menu/swords-b.png') no-repeat;
+}
+
+.order {
+  background: url('/images/menu/order-b.png') no-repeat;
+}
+
+.about {
+  background: url('/images/menu/helmet-b.png') no-repeat;
+}
+
+.coming {
+  background: url('/images/menu/hourglass-b.png') no-repeat;
+}
+
+.daggers {
+  background: url('/images/menu/daggers-b.png') no-repeat;
 }
 
 .title {
