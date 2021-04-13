@@ -1,4 +1,5 @@
 $width: 32px;
+$height: $width * 1.8738;
 
 @mixin active-icons {
   .spears {
@@ -41,11 +42,11 @@ $width: 32px;
 
 @mixin space {
   position: relative;
-  width: $width * 1.5;
+  width: 0;
   overflow: hidden;
   display: flex;
   align-items: center;
-  padding: $width/4;
+  padding: 0 $width 0 $width/2;
   margin: $width/4 0;
   color: #fff;
 }
@@ -60,11 +61,14 @@ $width: 32px;
   &:hover {
     width: $width * 10;
     transition: width 1s;
-    background: #000;
+    .ribbon {
+      padding-left: $width*4.5;
+      transition: padding-left 1s;
 
-    .title {
-      color: #fff;
-      transition: color 1s 0.5s;
+      .title {
+        color: #fff;
+        transition: color 1s 0.5s;
+      }
     }
 
     @include active-icons;
@@ -81,6 +85,7 @@ $width: 32px;
   flex-basis: $width;
   background-size: $width !important;
   height: $width * 1.8738;
+  z-index: 10;
 }
 
 .spears {
@@ -116,8 +121,39 @@ $width: 32px;
 }
 
 .title {
-  color: #000;
-  font-size: $width * 1.2;
+  color: transparent;
+  font-size: $width/1.5;
+  font-style: italic;
   margin-left: $width/4;
   white-space: nowrap;
+}
+
+.ribbon {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  background: #000000;
+  width: 100%;
+  height: $height;
+  left: -$height * 1.5;
+}
+
+.triangleTop {
+  position: absolute;
+  border-top: solid $height/2 #000000;
+  border-right: solid $height/2 transparent;
+  width: 0;
+  height: 0;
+  top: 0;
+  right: -$height/2;
+}
+
+.triangleBottom {
+  position: absolute;
+  border-bottom: solid $height/2 #000000;
+  border-right: solid $height/2 transparent;
+  width: 0;
+  height: 0;
+  bottom: 0;
+  right: -$height/2;
 }

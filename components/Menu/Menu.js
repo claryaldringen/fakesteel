@@ -1,4 +1,3 @@
-import Image from 'next/image'
 import styles from './Menu.module.scss'
 import { categories } from '../../data/data'
 
@@ -23,13 +22,17 @@ export const Menu = ({ active, setActive }) => {
                 href={`/#${id}`}
                 onClick={() => setActive(id)}
               >
+                <div className={styles.ribbon}>
+                  <span className={styles.title}>{label}</span>
+                  <div className={styles.triangleTop} />
+                  <div className={styles.triangleBottom} />
+                </div>
                 <div className={`${styles[id]} ${styles.icon}`} />
-                <span className={styles.title}>{label}</span>
               </a>
             ) : (
-                <div className={styles.empty}>
-                    <div className={styles.icon} />
-                </div>
+              <div className={styles.empty}>
+                <div className={styles.icon} />
+              </div>
             )}
           </li>
         ))}
