@@ -7,7 +7,7 @@ import { Category } from '../components/Category/Category'
 import { About } from '../components/About/About'
 import { categories } from '../data/data'
 import { Footer } from '../components/Footer/Footer'
-import { OrderForm } from '../components/OrderForm/OrderForm'
+import { Order } from '../components/Order/Order'
 
 export default () => {
   const [active, setActive] = useState()
@@ -31,7 +31,7 @@ export default () => {
             active={active}
           />
         ))}
-        <OrderForm active={active} setActive={setActive} />
+        <Order active={active} setActive={setActive} />
         <About active={active} setActive={setActive} />
       </main>
 

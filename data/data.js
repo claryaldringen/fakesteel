@@ -2,34 +2,125 @@ export const categories = [
   {
     id: 'spears',
     label: 'Spears',
-    items: [],
+    items: [
+      {
+        id: 'spear',
+        title: 'Spear',
+        description:
+          'Just spear. Wooden end towards you, sharp end towards enemy.',
+        longDescription:
+          'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Integer lacinia. Nulla est. Curabitur sagittis hendrerit ante. Fusce suscipit libero eget elit. Etiam posuere lacus quis dolor. Sed convallis magna eu sem. Duis ante orci, molestie vitae vehicula venenatis, tincidunt ac pede. Nunc tincidunt ante vitae massa. Proin mattis lacinia justo. Maecenas lorem. Morbi leo mi, nonummy eget tristique non, rhoncus non leo.',
+        price: 1000,
+        images: [
+          { src: 'kopi_detail', width: 5375, height: 3583 },
+          { src: 'kopi_detail_2', width: 5627, height: 3751 },
+          { src: 'kopi_kombo_2', width: 5166, height: 3443 },
+          { src: 'kopi_kombo3', width: 5504, height: 3672 },
+        ],
+      },
+    ],
   },
   {
     id: 'maces',
     label: 'Maces',
-    items: [],
+    items: [
+      {
+        id: 'mace_a',
+        title: 'Bulava',
+        description: 'Mace A',
+        longDescription:
+          'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Integer lacinia. Nulla est. Curabitur sagittis hendrerit ante. Fusce suscipit libero eget elit. Etiam posuere lacus quis dolor. Sed convallis magna eu sem. Duis ante orci, molestie vitae vehicula venenatis, tincidunt ac pede. Nunc tincidunt ante vitae massa. Proin mattis lacinia justo. Maecenas lorem. Morbi leo mi, nonummy eget tristique non, rhoncus non leo.',
+        price: 1000,
+        images: [
+          { src: 'palcat_A', width: 4649, height: 3099 },
+          { src: 'palcat_A_detail', width: 5171, height: 3447 },
+          { src: 'palcat_A_kombo', width: 5504, height: 3672 },
+        ],
+      },
+      {
+        id: 'mace_b',
+        title: 'Mace',
+        description: 'Mace B',
+        longDescription:
+          'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Integer lacinia. Nulla est. Curabitur sagittis hendrerit ante. Fusce suscipit libero eget elit. Etiam posuere lacus quis dolor. Sed convallis magna eu sem. Duis ante orci, molestie vitae vehicula venenatis, tincidunt ac pede. Nunc tincidunt ante vitae massa. Proin mattis lacinia justo. Maecenas lorem. Morbi leo mi, nonummy eget tristique non, rhoncus non leo.',
+        price: 1000,
+        images: [
+          { src: 'palcat_B', width: 4649, height: 3099 },
+          { src: 'palcat_B_detail', width: 5171, height: 3447 },
+          { src: 'palcat_B_kombo', width: 5504, height: 3672 },
+        ],
+      },
+      {
+        id: 'mace_c',
+        title: 'Spiked club',
+        description: 'Mace C',
+        longDescription:
+          'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Integer lacinia. Nulla est. Curabitur sagittis hendrerit ante. Fusce suscipit libero eget elit. Etiam posuere lacus quis dolor. Sed convallis magna eu sem. Duis ante orci, molestie vitae vehicula venenatis, tincidunt ac pede. Nunc tincidunt ante vitae massa. Proin mattis lacinia justo. Maecenas lorem. Morbi leo mi, nonummy eget tristique non, rhoncus non leo.',
+        price: 1000,
+        images: [
+          { src: 'palcat_C', width: 4649, height: 3099 },
+          { src: 'palcat_C_detail', width: 5171, height: 3447 },
+          { src: 'palcat_C_kombo', width: 5504, height: 3672 },
+        ],
+      },
+      {
+        id: 'hammer',
+        title: 'Hammer',
+        description: 'Hammer',
+        longDescription:
+            'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Integer lacinia. Nulla est. Curabitur sagittis hendrerit ante. Fusce suscipit libero eget elit. Etiam posuere lacus quis dolor. Sed convallis magna eu sem. Duis ante orci, molestie vitae vehicula venenatis, tincidunt ac pede. Nunc tincidunt ante vitae massa. Proin mattis lacinia justo. Maecenas lorem. Morbi leo mi, nonummy eget tristique non, rhoncus non leo.',
+        price: 1000,
+        images: [
+          { src: 'kladivo_2', width: 5130, height: 3420 },
+          { src: 'kladivo_detail', width: 5316, height: 3544 },
+          { src: 'kladivo_kombo', width: 5504, height: 3672 },
+        ],
+      },
+    ],
   },
   {
     id: 'messers',
     label: 'Messsers',
     items: [
       {
+        id: 'falchion',
         title: 'Falchion',
         description: 'Falchion, 70 cm, 1.2 kg, 1200 - 1500 Kč',
+        longDescription:
+          'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Integer lacinia. Nulla est. Curabitur sagittis hendrerit ante. Fusce suscipit libero eget elit. Etiam posuere lacus quis dolor. Sed convallis magna eu sem. Duis ante orci, molestie vitae vehicula venenatis, tincidunt ac pede. Nunc tincidunt ante vitae massa. Proin mattis lacinia justo. Maecenas lorem. Morbi leo mi, nonummy eget tristique non, rhoncus non leo.',
         price: 1200,
-        images: [{ src: 'Falchion_1', width: 5505, height: 3670 }],
+        images: [
+          { src: 'Falchion_1', width: 5505, height: 3670 },
+          { src: 'Falchion_detail', width: 5858, height: 3905 },
+          { src: 'Falchion_kombo', width: 5504, height: 3672 },
+        ],
       },
       {
+        id: 'messer',
         title: 'Messer',
         description: 'Tesák, 70 cm, 1.2 kg, 1200 - 1500 Kč',
+        longDescription:
+          'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Integer lacinia. Nulla est. Curabitur sagittis hendrerit ante. Fusce suscipit libero eget elit. Etiam posuere lacus quis dolor. Sed convallis magna eu sem. Duis ante orci, molestie vitae vehicula venenatis, tincidunt ac pede. Nunc tincidunt ante vitae massa. Proin mattis lacinia justo. Maecenas lorem. Morbi leo mi, nonummy eget tristique non, rhoncus non leo.',
         price: 1200,
-        images: [{ src: 'messer_1', width: 5606, height: 3737 }],
+        images: [
+          { src: 'messer_1', width: 5606, height: 3737 },
+          { src: 'messer_detail', width: 5762, height: 3841 },
+          { src: 'messer_kombo', width: 5606, height: 3737 },
+          { src: 'messer_3', width: 5378, height: 3585 },
+        ],
       },
       {
+        id: 'saber',
         title: 'Saber',
         description: 'Šavle, 70 cm, 1.2 kg, 1200 - 1500 Kč',
+        longDescription:
+          'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Integer lacinia. Nulla est. Curabitur sagittis hendrerit ante. Fusce suscipit libero eget elit. Etiam posuere lacus quis dolor. Sed convallis magna eu sem. Duis ante orci, molestie vitae vehicula venenatis, tincidunt ac pede. Nunc tincidunt ante vitae massa. Proin mattis lacinia justo. Maecenas lorem. Morbi leo mi, nonummy eget tristique non, rhoncus non leo.',
         price: 1200,
-        images: [{ src: 'savle_1', width: 5440, height: 3627 }],
+        images: [
+          { src: 'savle_1', width: 5440, height: 3627 },
+          { src: 'savle_detail', width: 5015, height: 3343 },
+          { src: 'savle_kombo', width: 5156, height: 3437 },
+        ],
       },
     ],
   },
@@ -38,6 +129,7 @@ export const categories = [
     label: 'Swords',
     items: [
       {
+        id: 'vikingsword',
         title: 'Viking sword',
         description: 'Viking, 70 cm, 1.2 kg, 1200 - 1500 Kč',
         longDescription:
@@ -50,6 +142,7 @@ export const categories = [
         ],
       },
       {
+        id: 'sword',
         title: 'Sword',
         description: 'Jednoručka úzká, 70 cm, 1.2 kg, 1200 - 1500 Kč',
         longDescription:
@@ -62,6 +155,7 @@ export const categories = [
         ],
       },
       {
+        id: 'widesword',
         title: 'Wide sword',
         description: 'Jednoručka široká, 70 cm, 1.2 kg, 1200 - 1500 Kč',
         longDescription:
@@ -78,6 +172,199 @@ export const categories = [
   {
     id: 'daggers',
     label: 'Daggers',
-    items: [],
+    items: [
+      {
+        id: 'basilard',
+        title: 'Basilard',
+        description: 'Basilard',
+        longDescription:
+          'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Integer lacinia. Nulla est. Curabitur sagittis hendrerit ante. Fusce suscipit libero eget elit. Etiam posuere lacus quis dolor. Sed convallis magna eu sem. Duis ante orci, molestie vitae vehicula venenatis, tincidunt ac pede. Nunc tincidunt ante vitae massa. Proin mattis lacinia justo. Maecenas lorem. Morbi leo mi, nonummy eget tristique non, rhoncus non leo.',
+        price: 1150,
+        images: [
+          { src: 'balisard_detail_1', width: 5799, height: 3866 },
+          { src: 'balisard_detail_kombo', width: 5156, height: 3437 },
+          { src: 'balisard_pochva_kombo', width: 5156, height: 3437 },
+          { src: 'balisard_kombo', width: 5156, height: 3437 },
+          { src: 'balisard_rukojet_2', width: 5205, height: 3470 },
+        ],
+      },
+      {
+        id: 'dagger',
+        title: 'Dagger',
+        description: 'Dagger with balls',
+        longDescription:
+          'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Integer lacinia. Nulla est. Curabitur sagittis hendrerit ante. Fusce suscipit libero eget elit. Etiam posuere lacus quis dolor. Sed convallis magna eu sem. Duis ante orci, molestie vitae vehicula venenatis, tincidunt ac pede. Nunc tincidunt ante vitae massa. Proin mattis lacinia justo. Maecenas lorem. Morbi leo mi, nonummy eget tristique non, rhoncus non leo.',
+        price: 1150,
+        images: [
+          { src: 'koularka_detail', width: 5681, height: 3787 },
+          { src: 'koularka_kombo', width: 5156, height: 3437 },
+          { src: 'koularka_pochva_kombo', width: 5156, height: 3437 },
+        ],
+      },
+    ],
+  },
+]
+
+export const orderOptions = [
+  {
+    id: 'spear',
+    title: 'Spear',
+    price: 1000,
+    components: [
+      {
+        type: 'select',
+        label: 'Length',
+        options: [
+          {
+            title: 'complete spear 2 metres',
+            value: 'complete spear 2 metres',
+            price: 700,
+          },
+          {
+            title: 'only spearhead',
+            value: 'only spearhead',
+            price: 0,
+          },
+        ],
+      },
+      {
+        type: 'select',
+        label: 'Version',
+        options: [
+          {
+            title: 'soft',
+            value: 'soft',
+            price: 0,
+          },
+          {
+            title: 'hard',
+            value: 'hard',
+            price: 0,
+          },
+        ],
+      },
+      {
+        type: 'select',
+        label: 'Color',
+        options: [
+          {
+            title: 'steel',
+            value: 'steel',
+            price: 0,
+          },
+          {
+            title: 'graphite',
+            value: 'graphite',
+            price: 0,
+          },
+          {
+            title: 'brass',
+            value: 'brass',
+            price: 0,
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: 'sword',
+    title: 'Sword',
+    price: 2300,
+    components: [
+      {
+        type: 'select',
+        label: 'Pommel',
+        options: [
+          { title: 'coin', value: 'coin', price: 0 },
+          { title: 'pear', value: 'pear', price: 0 },
+          { title: 'octagon', value: 'octagon', price: 0 },
+          { title: 'fishtale', value: 'fishtale', price: 0 },
+          { title: 'venice', value: 'venice', price: 0 },
+        ],
+      },
+      {
+        type: 'select',
+        label: 'Pommel color',
+        options: [
+          {
+            title: 'steel',
+            value: 'steel',
+            price: 0,
+          },
+          {
+            title: 'graphite',
+            value: 'graphite',
+            price: 0,
+          },
+          {
+            title: 'brass',
+            value: 'brass',
+            price: 0,
+          },
+        ],
+      },
+      {
+        type: 'select',
+        label: 'Blade',
+        options: [
+          { title: 'arming sword blade', value: 'arming sword', price: 0 },
+          { title: 'viking sword blade', value: 'viking sword', price: 0 },
+          { title: 'langmesser blade', value: 'langmesser', price: 0 },
+          { title: 'falchion blade', value: 'falchion', price: 0 },
+          { title: 'venice sword blade', value: 'venice sword', price: 0 },
+        ],
+      },
+      {
+        type: 'select',
+        label: 'Core',
+        options: [
+          { title: 'round 10 mm', value: 'round 10 mm', price: 0 },
+          { title: 'rectangular 6x15', value: 'rectangular 6x15', price: 0 },
+          { title: 'rectangular 8x16', value: 'rectangular 8x16', price: 100 },
+        ],
+      },
+      {
+        type: 'select',
+        label: 'Blade color',
+        options: [
+          {
+            title: 'steel',
+            value: 'steel',
+            price: 0,
+          },
+          {
+            title: 'graphite',
+            value: 'graphite',
+            price: 0,
+          },
+          {
+            title: 'brass',
+            value: 'brass',
+            price: 0,
+          },
+        ],
+      },
+      {
+        type: 'select',
+        label: 'Grip color',
+        options: [
+          {
+            title: 'black',
+            value: 'black',
+            price: 0,
+          },
+          {
+            title: 'brown',
+            value: 'brown',
+            price: 0,
+          },
+          {
+            title: 'red',
+            value: 'red',
+            price: 0,
+          },
+        ],
+      },
+    ],
   },
 ]
