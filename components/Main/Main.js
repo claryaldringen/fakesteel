@@ -1,6 +1,6 @@
 import styles from './Main.module.scss'
 
-import { Fade } from 'react-slideshow-image'
+import { Zoom } from 'react-slideshow-image'
 import 'react-slideshow-image/dist/styles.css'
 import { useScrollListener } from '../../hooks/useScrollListener'
 
@@ -9,7 +9,7 @@ const images = [
   'viking_detail',
   'balisard_detail_kombo',
   'savle_detail',
-  'bastard_detail',
+  'kladivo_detail',
 ]
 
 export const Main = ({ active, setActive }) => {
@@ -17,13 +17,13 @@ export const Main = ({ active, setActive }) => {
 
   return (
     <div id="main" className={styles.main}>
-      <Fade arrows={false}>
+      <Zoom scale={0.4} arrows={false}>
         {images.map((image, i) => (
           <div key={`image_${i}`}>
             <img src={`/images/main/${image}.jpg`} className={styles.image} />
           </div>
         ))}
-      </Fade>
+      </Zoom>
     </div>
   )
 }
