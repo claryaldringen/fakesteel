@@ -59,7 +59,7 @@ $height: $width * 1.8738;
   @include space;
 
   &:hover {
-    width: $width * 10;
+    width: $width * 12;
     transition: width 1s;
     .ribbon {
       padding-left: $width*4.5;

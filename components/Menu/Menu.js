@@ -5,7 +5,7 @@ const menuItems = [
   ...categories,
   { id: '', label: '' },
   { id: 'order', label: 'Order' },
-  { id: 'about', label: 'About us' },
+  { id: 'about', label: 'FAQ' },
 ]
 
 export const Menu = ({ active, setActive }) => {

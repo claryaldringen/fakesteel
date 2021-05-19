@@ -1,7 +1,7 @@
 export const categories = [
   {
     id: 'swords',
-    label: 'Swords',
+    label: 'Double-edged swords',
     items: [
       {
         id: 'vikingsword',
@@ -47,7 +47,7 @@ export const categories = [
 
   {
     id: 'messers',
-    label: 'Messsers',
+    label: 'Single-edged swords',
     items: [
       {
         id: 'falchion',
@@ -93,7 +93,7 @@ export const categories = [
   },
   {
     id: 'maces',
-    label: 'Maces',
+    label: 'Maces & War hammers',
     items: [
       {
         id: 'mace_a',
@@ -151,7 +151,7 @@ export const categories = [
   },
   {
     id: 'spears',
-    label: 'Spears',
+    label: 'Polearms',
     items: [
       {
         id: 'spear',
@@ -187,7 +187,7 @@ export const categories = [
   },
   {
     id: 'daggers',
-    label: 'Daggers',
+    label: 'Medieval daggers',
     items: [
       {
         id: 'basilard',
