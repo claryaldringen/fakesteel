@@ -11,7 +11,7 @@ export const categories = [
           'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Integer lacinia. Nulla est. Curabitur sagittis hendrerit ante. Fusce suscipit libero eget elit. Etiam posuere lacus quis dolor. Sed convallis magna eu sem. Duis ante orci, molestie vitae vehicula venenatis, tincidunt ac pede. Nunc tincidunt ante vitae massa. Proin mattis lacinia justo. Maecenas lorem. Morbi leo mi, nonummy eget tristique non, rhoncus non leo.',
         price: 1200,
         images: [
-          { src: 'viking', width: 5383, height: 3589 },
+          { src: 'viking_test_6', width: 5383, height: 3589 },
           { src: 'viking_detail', width: 5383, height: 3589 },
           { src: 'viking_kombo', width: 5383, height: 3589 },
         ],
@@ -172,9 +172,9 @@ export const categories = [
         id: 'pike',
         title: 'Pike',
         description:
-            'Just pike. Wooden end towards you, sharp end towards enemy.',
+          'Just pike. Wooden end towards you, sharp end towards enemy.',
         longDescription:
-            'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Integer lacinia. Nulla est. Curabitur sagittis hendrerit ante. Fusce suscipit libero eget elit. Etiam posuere lacus quis dolor. Sed convallis magna eu sem. Duis ante orci, molestie vitae vehicula venenatis, tincidunt ac pede. Nunc tincidunt ante vitae massa. Proin mattis lacinia justo. Maecenas lorem. Morbi leo mi, nonummy eget tristique non, rhoncus non leo.',
+          'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Integer lacinia. Nulla est. Curabitur sagittis hendrerit ante. Fusce suscipit libero eget elit. Etiam posuere lacus quis dolor. Sed convallis magna eu sem. Duis ante orci, molestie vitae vehicula venenatis, tincidunt ac pede. Nunc tincidunt ante vitae massa. Proin mattis lacinia justo. Maecenas lorem. Morbi leo mi, nonummy eget tristique non, rhoncus non leo.',
         price: 1000,
         images: [
           { src: 'pika_4', width: 5540, height: 3693 },
@@ -227,6 +227,22 @@ export const orderOptions = [
     title: 'Spear',
     price: 1000,
     components: [
+      {
+        type: 'select',
+        label: 'Head',
+        options: [
+          {
+            title: 'pike',
+            value: 'pike',
+            price: 0,
+          },
+          {
+            title: 'spear',
+            value: 'spear',
+            price: 0,
+          },
+        ],
+      },
       {
         type: 'select',
         label: 'Length',
@@ -357,6 +373,245 @@ export const orderOptions = [
             title: 'brass',
             value: 'brass',
             price: 0,
+          },
+        ],
+      },
+      {
+        type: 'select',
+        label: 'Grip color',
+        options: [
+          {
+            title: 'black',
+            value: 'black',
+            price: 0,
+          },
+          {
+            title: 'brown',
+            value: 'brown',
+            price: 0,
+          },
+          {
+            title: 'red',
+            value: 'red',
+            price: 0,
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: 'mace',
+    title: 'Mace',
+    price: 1000,
+    components: [
+      {
+        type: 'select',
+        label: 'Head',
+        options: [
+          {
+            title: 'bulava',
+            value: 'bulava',
+            price: 0,
+          },
+          {
+            title: 'mace',
+            value: 'mace',
+            price: 0,
+          },
+          {
+            title: 'spiked club',
+            value: 'spiked club',
+            price: 0,
+          },
+          {
+            title: 'hammer',
+            value: 'hammer',
+            price: 0,
+          },
+        ],
+      },
+      {
+        type: 'select',
+        label: 'Length',
+        options: [
+          {
+            title: 'complete weapon',
+            value: 'complete weapon',
+            price: 0,
+          },
+          {
+            title: 'only head',
+            value: 'only head',
+            price: 0,
+          },
+        ],
+      },
+      {
+        type: 'select',
+        label: 'Version',
+        options: [
+          {
+            title: 'soft',
+            value: 'soft',
+            price: 0,
+          },
+          {
+            title: 'hard',
+            value: 'hard',
+            price: 0,
+          },
+        ],
+      },
+      {
+        type: 'select',
+        label: 'Color',
+        options: [
+          {
+            title: 'steel',
+            value: 'steel',
+            price: 0,
+          },
+          {
+            title: 'graphite',
+            value: 'graphite',
+            price: 0,
+          },
+          {
+            title: 'brass',
+            value: 'brass',
+            price: 0,
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: 'bollock_dagger',
+    title: 'Bollock dagger',
+    price: 1000,
+    components: [
+      {
+        type: 'select',
+        label: 'Blade length',
+        options: [
+          {
+            title: '24 cm',
+            value: '24 cm',
+            price: 0,
+          },
+          {
+            title: '29 cm',
+            value: '29 cm',
+            price: 0,
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: 'dagger',
+    title: 'Dagger',
+    price: 1000,
+    components: [
+      {
+        type: 'select',
+        label: 'Blade length',
+        options: [
+          {
+            title: '24 cm',
+            value: '24 cm',
+            price: 0,
+          },
+          {
+            title: '29 cm',
+            value: '29 cm',
+            price: 0,
+          },
+        ],
+      },
+      {
+        type: 'select',
+        label: 'Pommel color',
+        options: [
+          {
+            title: 'steel',
+            value: 'steel',
+            price: 0,
+          },
+          {
+            title: 'graphite',
+            value: 'graphite',
+            price: 0,
+          },
+          {
+            title: 'brass',
+            value: 'brass',
+            price: 0,
+          },
+        ],
+      },
+      {
+        type: 'select',
+        label: 'Grip color',
+        options: [
+          {
+            title: 'black',
+            value: 'black',
+            price: 0,
+          },
+          {
+            title: 'brown',
+            value: 'brown',
+            price: 0,
+          },
+          {
+            title: 'red',
+            value: 'red',
+            price: 0,
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: 'baselard',
+    title: 'Baselard',
+    price: 800,
+    components: [
+      {
+        type: 'select',
+        label: 'Blade length',
+        options: [
+          {
+            title: '24 cm',
+            value: '24 cm',
+            price: 0,
+          },
+          {
+            title: '29 cm',
+            value: '29 cm',
+            price: 0,
+          },
+        ],
+      },
+      {
+        type: 'select',
+        label: 'Sheathing',
+        options: [
+          {
+            title: 'no sheathing',
+            value: 'no sheathing',
+            price: 0,
+          },
+          {
+            title: 'steel',
+            value: 'steel',
+            price: 300,
+          },
+          {
+            title: 'brass',
+            value: 'brass',
+            price: 300,
           },
         ],
       },

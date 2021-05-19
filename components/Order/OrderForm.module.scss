@@ -1,27 +1,30 @@
-.form {
-  display: flex;
-  flex-wrap: wrap;
+.order {
   background: rgb(211, 211, 211);
-  padding: 6%;
-  justify-content: space-around;
+  padding: 6% 16%;
+}
 
+.form {
+  float: left;
+  width: 270px;
   input,
   select,
+  button,
   textarea {
     padding: 5px;
     border-radius: 0;
     border: solid 1px #000000;
+    width: 150px;
   }
-}
 
-.col {
-  flex-grow: 1;
-  flex-basis: 55%;
-}
-
-.row {
-  display: flex;
-  justify-content: space-between;
+  button {
+    width: 100%;
+    font-weight: bold;
+    padding: 12px;
+    cursor: pointer;
+    color: #ffffff;
+    background: #000000;
+    font-size: 16px;
+  }
 }
 
 .count {
@@ -36,5 +39,38 @@
 }
 
 .item {
-  width: 40%;
+  display: block;
+  background: #333;
+  color: #ccc;
+  width: 220px;
+  height: 174px;
+  padding: 16px;
+  margin: 8px;
+  float: left;
+}
+
+.basket {
+  float: left;
+
+  max-width: calc(100% - 270px);
+
+  @media (max-width: 640px) {
+    max-width: 100%;
+  }
+
+  th {
+    text-align: left;
+
+    h4 {
+      margin: 0;
+    }
+  }
+
+  .small {
+    font-size: 12px;
+  }
+}
+
+.clear {
+  clear: both;
 }

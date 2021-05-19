@@ -1,14 +1,8 @@
 import { useState, useMemo, useCallback } from 'react'
-import styles from './OrderForm.module.scss'
 
 import { orderOptions } from '../../data/data'
-
-const labelToId = (label) => label.toLowerCase().replace(' ', '_')
-
-const idToLabel = (id) => {
-  const string = id.replace('_', ' ')
-  return string.charAt(0).toUpperCase() + string.slice(1)
-}
+import { idToLabel, labelToId } from '../../utils'
+import styles from './OrderForm.module.scss'
 
 const getPrice = (params, weaponId, count = 1) => {
   const weapon = orderOptions.find(({ id }) => id == weaponId)
@@ -43,11 +37,9 @@ const renderFormElement = (
 
   switch (type) {
     case 'select':
+      const id = labelToId(label)
       return (
-        <select
-          onChange={onSelectChange}
-          value={weaponParams[labelToId(label)]}
-        >
+        <select id={id} onChange={onSelectChange} value={weaponParams[id]}>
           {params.options.map(({ title, value }) => (
             <option key={`${label}–${value}`} value={value}>
               {title}
@@ -58,12 +50,11 @@ const renderFormElement = (
   }
 }
 
-export const OrderForm = ({ active, setActive }) => {
+export const OrderForm = ({ basket, setBasket }) => {
   const defaultWeaponId = orderOptions[0].id
   const [weapon, setWeapon] = useState(defaultWeaponId)
   const [weaponParams, setWeaponParams] = useState(prepareInitialState(weapon))
   const [count, setCount] = useState(1)
-  const [basket, setBasket] = useState([])
 
   const price = useMemo(() => getPrice(weaponParams, weapon, count), [
     weaponParams,
@@ -92,7 +83,10 @@ export const OrderForm = ({ active, setActive }) => {
     setBasket([{ count, weapon, price, ...weaponParams }, ...basket])
     setWeapon(defaultWeaponId)
     setWeaponParams(prepareInitialState(defaultWeaponId))
+    setCount(1)
   }, [
+    count,
+    setCount,
     defaultWeaponId,
     weaponParams,
     basket,
@@ -113,30 +107,61 @@ export const OrderForm = ({ active, setActive }) => {
   )
 
   return (
-    <div>
+    <div className={styles.form}>
       <h2>Weapon selection</h2>
-      <select onChange={onWeaponChange}>
-        {orderOptions.map(({ id, title }) => (
-          <option key={id} value={id}>
-            {title}
-          </option>
-        ))}
-      </select>
-      {components.map((component) => (
-        <>
-          <label>{component.label}</label>
-          {renderFormElement(component, weaponParams, onChange)}
-        </>
-      ))}
-      <input
-        type="number"
-        step={1}
-        min={1}
-        onChange={onCountChange}
-        value={count}
-      />
-      Item price: {price}
-      <button onClick={addToOrder}>Add to order</button>
+      <table>
+        <tbody>
+          <tr>
+            <td>
+              <label id="wt">Weapon type:</label>
+            </td>
+            <td>
+              <select id="wt" onChange={onWeaponChange} value={weapon}>
+                {orderOptions.map(({ id, title }) => (
+                  <option key={id} value={id}>
+                    {title}
+                  </option>
+                ))}
+              </select>
+            </td>
+          </tr>
+          {components.map((component) => (
+            <tr>
+              <td>
+                <label for={labelToId(component.label)}>
+                  {component.label}:&nbsp;
+                </label>
+              </td>
+              <td>{renderFormElement(component, weaponParams, onChange)}</td>
+            </tr>
+          ))}
+          <tr>
+            <td>
+              <label for="count">Count:</label>
+            </td>
+            <td>
+              {' '}
+              <input
+                id="count"
+                type="number"
+                step={1}
+                min={1}
+                onChange={onCountChange}
+                value={count}
+              />
+            </td>
+          </tr>
+          <tr>
+            <td>Price:</td>
+            <td>{price} Kč</td>
+          </tr>
+          <tr>
+            <td colSpan={2}>
+              <button onClick={addToOrder}>Add to order</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   )
 }

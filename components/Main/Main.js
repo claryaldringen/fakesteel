@@ -17,7 +17,7 @@ export const Main = ({ active, setActive }) => {
 
   return (
     <div id="main" className={styles.main}>
-      <Zoom scale={0.4} arrows={false}>
+      <Zoom scale={1.4} arrows={false} transitionDuration={5000}>
         {images.map((image, i) => (
           <div key={`image_${i}`}>
             <img src={`/images/main/${image}.jpg`} className={styles.image} />
