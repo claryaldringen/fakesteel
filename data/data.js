@@ -24,7 +24,7 @@ export const categories = [
           Blade width: 5.5 cm<br>
           Weight: 640 g<br>
           Point of Balance: 11 cm<br>
-          </b><br>${LABEL1}<br>${LABEL2}
+          </b><br>${LABEL2}<br>${LABEL1}
           `,
         price: 2300,
         images: [
@@ -38,14 +38,14 @@ export const categories = [
         title: 'One-handed sword - Viking type E',
         description: 'One-handed sword - Viking type E, 2300 CZK',
         longDescription: `During manufacture of this sword from the 10th century, we tried our best to stick to the preserved finding. It is a weapon found in 1874 in Gnezdov, Russia. The sword belongs to Petersen's type E, which was very popular in the Viking world and today we find it in Sweden, Norway, Finland, Russia, Estonia and Ireland. Great sword for a noble nordic warrior.
-          <br><br>${LABEL1}<br><br>
+          <br><br><b>
           Specifications<br>
           Total lenght: 87 cm<br>
           Blade lenght: 70 cm<br>
           Blade width: 5.5 cm<br>
           Weight: 690 g<br>
           Point of Balance: 9.5 cm<br>
-          <br>${LABEL2}
+          </b><br>${LABEL2}<br>${LABEL1}
           `,
         price: 2300,
         images: [
@@ -59,14 +59,14 @@ export const categories = [
         title: 'One-handed sword - Octagon',
         description: 'One-handed sword - Octagon, 2400 CZK',
         longDescription: `We present you our new one-handed sword, type-fitting into the 14th and 15th centuries. Oakeshott refers to this octagonal head as type I1. The handle on this model is also octagonal. The hilt is shaped with an emphasis on detail. It is one of our more magnificent swords suitable for a noble warrior or knight.
-          <br><br>${LABEL1}<br><br>
+          <br><br><b>
           Specifications<br>
           Total lenght: 88 cm<br>
           Blade lenght: 70 cm<br>
           Blade width: 5.5 cm<br>
           Weight: 660 g<br>
           Point of Balance: 9 cm<br>
-          <br>${LABEL2}
+          </b><br>${LABEL2}<br>${LABEL1}
           `,
         price: 2400,
         images: [
