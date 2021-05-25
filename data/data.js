@@ -1,5 +1,5 @@
-const LABEL1 = `For more information on blade and hilts materials, balancing and more, see our <a href="/#about">FAQ</a>.<b>`
-const LABEL2 = `</b>What can you choose or modify when ordering this weapon?
+const LABEL1 = `For more information on blade and hilts materials, balancing and more, see our <a href="/#about">FAQ</a>.`
+const LABEL2 = `What can you choose or modify when ordering this weapon?
   <ol>
   <li>Blade type and length. The standard and maximum length of the blades is 70 cm. They can be shortened by request.</li>
   <li>The colour of the metallic shade of the hilt and blade. The hilt can be steel, graphite or brass. The blade can be steel or graphite. The pommel may have a different colour than the crossguard.</li>
@@ -17,14 +17,14 @@ export const categories = [
         title: 'One-handed sword - Viking type H',
         description: 'One-handed sword - Viking type H, 2300 CZK',
         longDescription: `This sword belongs to Petersen's type H. Due to the number of found historical pieces, it is the most numerous of all types of swords from the time of the Vikings. Of the more than 200 weapons found, less than a quarter had a single-edged blade. That's why we decided to offer this version also. Good, simple sword for every nordic warrior.
-          <br><br>${LABEL1}<br><br>
+          <br><br><b>
           Specifications<br>
           Total lenght: 86 cm<br>
           Blade lenght: 70 cm<br>
           Blade width: 5.5 cm<br>
           Weight: 640 g<br>
           Point of Balance: 11 cm<br>
-          <br>${LABEL2}
+          </b><br>${LABEL1}<br>${LABEL2}
           `,
         price: 2300,
         images: [
