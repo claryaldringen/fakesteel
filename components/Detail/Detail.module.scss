@@ -2,6 +2,7 @@
 .detail {
   text-align: center;
   color: #323648;
+  padding-bottom: 16%;
 
   h1 {
     font-size: 2.5rem;
@@ -14,6 +15,14 @@
 
   ol {
     padding-left: 1em;
+  }
+
+  p {
+    font-weight: bold;
+
+    span {
+      font-weight: normal;
+    }
   }
 }
 

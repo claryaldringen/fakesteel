@@ -1,12 +1,11 @@
-
-const LABEL1 = `<i>For more information on blade and hilts materials, balancing and more, see our <a href="/#about">FAQ</a>.</i>`
-const LABEL2 = `<i>What can you choose or modify when ordering this weapon?
+const LABEL1 = `<span>For more information on blade and hilts materials, balancing and more, see our <a href="/#about">FAQ</a>.</span>`
+const LABEL2 = `<span>What can you choose or modify when ordering this weapon?
   <ol>
   <li>Blade type and length. The standard and maximum length of the blades is 70 cm. They can be shortened by request.</li>
   <li>The colour of the metallic shade of the hilt and blade. The hilt can be steel, graphite or brass. The blade can be steel or graphite. The pommel may have a different colour than the crossguard.</li>
   <li>Leather grip type and colour. Either classic leather grip or deluxe version. The colour can be either brown, black or red.</li>
   <li>Fiberglass core. The sword can have either a round 10mm or rectangular 15x6mm core. We also offer a heavier and stronger 16x8mm core. Suitable for Czech hard „kekel“ battles.</li>
-</ol></i>`
+</ol></span>`
 
 export const categories = [
   {
@@ -14,21 +13,62 @@ export const categories = [
     label: 'Double-edged swords',
     items: [
       {
-        id: 'vikingsword',
+        id: 'vikingsword-h',
         title: 'One-handed sword - Viking type H',
-        description: 'One-handed sword - Viking type H, 2300 - 2400 CZK',
-        longDescription:
-          `This sword belongs to Petersen's type H. Due to the number of found historical pieces, it is the most numerous of all types of swords from the time of the Vikings. Of the more than 200 weapons found, less than a quarter had a single-edged blade. That's why we decided to offer this version also. Good, simple sword for every nordic warrior.
+        description: 'One-handed sword - Viking type H, 2300 CZK',
+        longDescription: `This sword belongs to Petersen's type H. Due to the number of found historical pieces, it is the most numerous of all types of swords from the time of the Vikings. Of the more than 200 weapons found, less than a quarter had a single-edged blade. That's why we decided to offer this version also. Good, simple sword for every nordic warrior.
           <br><br>${LABEL1}<br><br>
           Specifications<br>
           Total lenght: 86 cm<br>
           Blade lenght: 70 cm<br>
-          Blade width: 5,5 cm<br>
+          Blade width: 5.5 cm<br>
           Weight: 640 g<br>
           Point of Balance: 11 cm<br>
           <br>${LABEL2}
           `,
         price: 2300,
+        images: [
+          { src: 'viking_test_6', width: 5383, height: 3589 },
+          { src: 'viking_detail', width: 5383, height: 3589 },
+          { src: 'viking_kombo', width: 5383, height: 3589 },
+        ],
+      },
+      {
+        id: 'vikingsword-e',
+        title: 'One-handed sword - Viking type E',
+        description: 'One-handed sword - Viking type E, 2300 CZK',
+        longDescription: `During manufacture of this sword from the 10th century, we tried our best to stick to the preserved finding. It is a weapon found in 1874 in Gnezdov, Russia. The sword belongs to Petersen's type E, which was very popular in the Viking world and today we find it in Sweden, Norway, Finland, Russia, Estonia and Ireland. Great sword for a noble nordic warrior.
+          <br><br>${LABEL1}<br><br>
+          Specifications<br>
+          Total lenght: 87 cm<br>
+          Blade lenght: 70 cm<br>
+          Blade width: 5.5 cm<br>
+          Weight: 690 g<br>
+          Point of Balance: 9.5 cm<br>
+          <br>${LABEL2}
+          `,
+        price: 2300,
+        images: [
+          { src: 'viking_test_6', width: 5383, height: 3589 },
+          { src: 'viking_detail', width: 5383, height: 3589 },
+          { src: 'viking_kombo', width: 5383, height: 3589 },
+        ],
+      },
+      {
+        id: 'one-handed-sword-octagon',
+        title: 'One-handed sword - Octagon',
+        description: 'One-handed sword - Octagon, 2400 CZK',
+        longDescription: `We present you our new one-handed sword, type-fitting into the 14th and 15th centuries. Oakeshott refers to this octagonal head as type I1. The handle on this model is also octagonal. The hilt is shaped with an emphasis on detail. It is one of our more magnificent swords suitable for a noble warrior or knight.
+          <br><br>${LABEL1}<br><br>
+          Specifications<br>
+          Total lenght: 88 cm<br>
+          Blade lenght: 70 cm<br>
+          Blade width: 5.5 cm<br>
+          Weight: 660 g<br>
+          Point of Balance: 9 cm<br>
+          <br>${LABEL2}
+          `,
+        price: 2400,
         images: [
           { src: 'viking_test_6', width: 5383, height: 3589 },
           { src: 'viking_detail', width: 5383, height: 3589 },
@@ -373,7 +413,11 @@ export const orderOptions = [
         options: [
           { title: 'round 10 mm', value: 'round 10 mm', price: 0 },
           { title: 'rectangular 6x15', value: 'rectangular 6x15', price: 0 },
-          { title: 'rectangular 8x16 (+100 CZK)', value: 'rectangular 8x16', price: 100 },
+          {
+            title: 'rectangular 8x16 (+100 CZK)',
+            value: 'rectangular 8x16',
+            price: 100,
+          },
         ],
       },
       {
