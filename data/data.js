@@ -1,11 +1,11 @@
-const LABEL1 = `<span>For more information on blade and hilts materials, balancing and more, see our <a href="/#about">FAQ</a>.</span>`
-const LABEL2 = `<span>What can you choose or modify when ordering this weapon?
+const LABEL1 = `For more information on blade and hilts materials, balancing and more, see our <a href="/#about">FAQ</a>.<b>`
+const LABEL2 = `</b>What can you choose or modify when ordering this weapon?
   <ol>
   <li>Blade type and length. The standard and maximum length of the blades is 70 cm. They can be shortened by request.</li>
   <li>The colour of the metallic shade of the hilt and blade. The hilt can be steel, graphite or brass. The blade can be steel or graphite. The pommel may have a different colour than the crossguard.</li>
   <li>Leather grip type and colour. Either classic leather grip or deluxe version. The colour can be either brown, black or red.</li>
   <li>Fiberglass core. The sword can have either a round 10mm or rectangular 15x6mm core. We also offer a heavier and stronger 16x8mm core. Suitable for Czech hard „kekel“ battles.</li>
-</ol></span>`
+</ol>`
 
 export const categories = [
   {
