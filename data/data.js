@@ -1,3 +1,13 @@
+
+const LABEL1 = `For more information on blade and hilts materials, balancing and more, see our <a href="/#about">FAQ</a>.`
+const LABEL2 = `What can you choose or modify when ordering this weapon?
+  <ol>
+  <li>Blade type and length. The standard and maximum length of the blades is 70 cm. They can be shortened by request.</li>
+  <li>The colour of the metallic shade of the hilt and blade. The hilt can be steel, graphite or brass. The blade can be steel or graphite. The pommel may have a different colour than the crossguard.</li>
+  <li>Leather grip type and colour. Either classic leather grip or deluxe version. The colour can be either brown, black or red.</li>
+  <li>Fiberglass core. The sword can have either a round 10mm or rectangular 15x6mm core. We also offer a heavier and stronger 16x8mm core. Suitable for Czech hard „kekel“ battles.</li>
+</ol>`
+
 export const categories = [
   {
     id: 'swords',
@@ -5,11 +15,20 @@ export const categories = [
     items: [
       {
         id: 'vikingsword',
-        title: 'Viking sword',
-        description: 'Viking, 70 cm, 1.2 kg, 1200 - 1500 Kč',
+        title: 'Viking sword type H',
+        description: 'Viking type H, 2300 - 2400 CZK',
         longDescription:
-          'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Integer lacinia. Nulla est. Curabitur sagittis hendrerit ante. Fusce suscipit libero eget elit. Etiam posuere lacus quis dolor. Sed convallis magna eu sem. Duis ante orci, molestie vitae vehicula venenatis, tincidunt ac pede. Nunc tincidunt ante vitae massa. Proin mattis lacinia justo. Maecenas lorem. Morbi leo mi, nonummy eget tristique non, rhoncus non leo.',
-        price: 1200,
+          `This sword belongs to Petersen's type H. Due to the number of found historical pieces, it is the most numerous of all types of swords from the time of the Vikings. Of the more than 200 weapons found, less than a quarter had a single-edged blade. That's why we decided to offer this version also. Good, simple sword for every nordic warrior.
+          <br><br>${LABEL1}<br><br>
+          Specifications<br>
+          Total lenght: 86 cm<br>
+          Blade lenght: 70 cm<br>
+          Blade width: 5,5 cm<br>
+          Weight: 640 g<br>
+          Point of Balance: 11 cm<br>
+          <br>${LABEL2}
+          `,
+        price: '2300 - 2400',
         images: [
           { src: 'viking_test_6', width: 5383, height: 3589 },
           { src: 'viking_detail', width: 5383, height: 3589 },

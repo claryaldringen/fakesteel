@@ -8,7 +8,7 @@ export const Item = ({ images, title, description }) => {
 
   return (
     <Link
-      href={`/${title.toLowerCase().replace(' ', '-')}`}
+      href={`/${title.toLowerCase().replace(/ /g, '-')}`}
       key={`item_${image}`}
     >
       <div className={styles.category}>

@@ -16,8 +16,17 @@ export const Detail = ({ images, title, longDescription, price }) => {
       ))}
       <div className={styles.text}>
         <h1>{title}</h1>
-        <p>{longDescription}</p>
-        <span className={styles.price}>{price} Kč</span>
+        <p>
+          <div dangerouslySetInnerHTML={{ __html: longDescription }} />
+        </p>
+        <span className={styles.price}>Price: {price} CZK</span>
+        <div>
+          For orders and other questions, do not hesitate to contact us on our{' '}
+          <a href="https://www.facebook.com/fakesteel" target="_blank">
+            Facebook
+          </a>{' '}
+          or use our <a href="/#order">order form</a>!
+        </div>
       </div>
     </div>
   )

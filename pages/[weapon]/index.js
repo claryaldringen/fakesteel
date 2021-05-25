@@ -25,7 +25,7 @@ export const getServerSideProps = async ({ params }) => {
   for (let i = 0; i < categories.length; i++) {
     const category = categories[i]
     const item = category.items.find(
-      ({ title }) => title.toLowerCase().replace(' ', '-') == params.weapon
+      ({ title }) => title.toLowerCase().replace(/ /g, '-') == params.weapon
     )
     if (item) {
       return {

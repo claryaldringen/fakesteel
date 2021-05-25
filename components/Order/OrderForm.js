@@ -113,7 +113,7 @@ export const OrderForm = ({ basket, setBasket }) => {
         <tbody>
           <tr>
             <td>
-              <label id="wt">Weapon type:</label>
+              <label htmlFor="wt">Weapon type:</label>
             </td>
             <td>
               <select id="wt" onChange={onWeaponChange} value={weapon}>
@@ -128,7 +128,7 @@ export const OrderForm = ({ basket, setBasket }) => {
           {components.map((component) => (
             <tr>
               <td>
-                <label for={labelToId(component.label)}>
+                <label htmlFor={labelToId(component.label)}>
                   {component.label}:&nbsp;
                 </label>
               </td>
@@ -137,7 +137,7 @@ export const OrderForm = ({ basket, setBasket }) => {
           ))}
           <tr>
             <td>
-              <label for="count">Count:</label>
+              <label htmlFor="count">Count:</label>
             </td>
             <td>
               {' '}
