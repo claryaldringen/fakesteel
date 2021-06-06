@@ -28,9 +28,8 @@ export const categories = [
           `,
         price: 2300,
         images: [
-          { src: 'viking_test_6', width: 5383, height: 3589 },
-          { src: 'viking_detail', width: 5383, height: 3589 },
-          { src: 'viking_kombo', width: 5383, height: 3589 },
+          { src: 'viking_1', width: 5800, height: 3867 },
+          { src: 'viking_2', width: 5800, height: 3867 },
         ],
       },
       {
@@ -49,9 +48,9 @@ export const categories = [
           `,
         price: 2300,
         images: [
-          { src: 'viking_test_6', width: 5383, height: 3589 },
-          { src: 'viking_detail', width: 5383, height: 3589 },
-          { src: 'viking_kombo', width: 5383, height: 3589 },
+          { src: 'viking', width: 5800, height: 3867 },
+          { src: 'viking_combo', width: 5800, height: 3867 },
+          { src: 'viking_detail', width: 5360, height: 3573 },
         ],
       },
       {
@@ -70,28 +69,58 @@ export const categories = [
           `,
         price: 2400,
         images: [
-          { src: 'viking_test_6', width: 5383, height: 3589 },
-          { src: 'viking_detail', width: 5383, height: 3589 },
-          { src: 'viking_kombo', width: 5383, height: 3589 },
+          { src: 'oktagon', width: 5800, height: 3867 },
+          { src: 'oktagon_2', width: 5800, height: 3867 },
+          { src: 'oktagon_3', width: 5800, height: 3867 },
+          { src: 'oktagon_4', width: 5800, height: 3867 },
         ],
       },
       {
-        id: 'sword',
-        title: 'Sword',
-        description: 'Jednoručka úzká, 70 cm, 1.2 kg, 1200 - 1500 Kč',
+        id: 'one-handed-sword-pear',
+        title: 'One-handed sword - Pear',
+        description: 'One-handed sword - Pear, 2400 CZK',
         longDescription:
           'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Integer lacinia. Nulla est. Curabitur sagittis hendrerit ante. Fusce suscipit libero eget elit. Etiam posuere lacus quis dolor. Sed convallis magna eu sem. Duis ante orci, molestie vitae vehicula venenatis, tincidunt ac pede. Nunc tincidunt ante vitae massa. Proin mattis lacinia justo. Maecenas lorem. Morbi leo mi, nonummy eget tristique non, rhoncus non leo.',
         price: 1100,
         images: [
-          { src: 'mince_uzka', width: 5504, height: 3672 },
-          { src: 'mince_detail', width: 5504, height: 3672 },
-          { src: 'mince_kombo', width: 5504, height: 3672 },
+          { src: 'hruska_siroka', width: 5800, height: 3867 },
+          { src: 'hruska_uzka', width: 5800, height: 3867 },
+          { src: 'hruska_combo', width: 5800, height: 3867 },
+          { src: 'hruska_detail', width: 5695, height: 3797 },
         ],
       },
       {
-        id: 'widesword',
-        title: 'Wide sword',
-        description: 'Jednoručka široká, 70 cm, 1.2 kg, 1200 - 1500 Kč',
+        id: 'one-handed-sword-coin',
+        title: 'One-handed sword - Coin',
+        description: 'One-handed sword - Coin, 2400 Kč',
+        longDescription:
+          'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Integer lacinia. Nulla est. Curabitur sagittis hendrerit ante. Fusce suscipit libero eget elit. Etiam posuere lacus quis dolor. Sed convallis magna eu sem. Duis ante orci, molestie vitae vehicula venenatis, tincidunt ac pede. Nunc tincidunt ante vitae massa. Proin mattis lacinia justo. Maecenas lorem. Morbi leo mi, nonummy eget tristique non, rhoncus non leo.',
+        price: 1150,
+        images: [
+          { src: 'mince_siroka', width: 5800, height: 3867 },
+          { src: 'mince_uzka', width: 5800, height: 3867 },
+          { src: 'mince_combo', width: 5800, height: 3867 },
+          { src: 'mince_detail', width: 5491, height: 3661 },
+        ],
+      },
+      {
+        id: 'one-handed-sword-fishtail',
+        title: 'One-handed sword - Fishtail',
+        description: 'One-handed sword - Fishtail, 2400 Kč',
+        longDescription:
+          'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Integer lacinia. Nulla est. Curabitur sagittis hendrerit ante. Fusce suscipit libero eget elit. Etiam posuere lacus quis dolor. Sed convallis magna eu sem. Duis ante orci, molestie vitae vehicula venenatis, tincidunt ac pede. Nunc tincidunt ante vitae massa. Proin mattis lacinia justo. Maecenas lorem. Morbi leo mi, nonummy eget tristique non, rhoncus non leo.',
+        price: 1150,
+        images: [
+          { src: 'ryba', width: 5800, height: 3867 },
+          { src: 'ryba_2', width: 5800, height: 3867 },
+          { src: 'ryba_3', width: 5800, height: 3867 },
+          { src: 'ryba_4', width: 5800, height: 3867 },
+        ],
+      },
+      {
+        id: 'one-handed-sword-venice',
+        title: 'One-handed sword - Venice',
+        description: 'One-handed sword - Venice, 2400 Kč',
         longDescription:
           'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Integer lacinia. Nulla est. Curabitur sagittis hendrerit ante. Fusce suscipit libero eget elit. Etiam posuere lacus quis dolor. Sed convallis magna eu sem. Duis ante orci, molestie vitae vehicula venenatis, tincidunt ac pede. Nunc tincidunt ante vitae massa. Proin mattis lacinia justo. Maecenas lorem. Morbi leo mi, nonummy eget tristique non, rhoncus non leo.',
         price: 1150,
@@ -103,7 +132,6 @@ export const categories = [
       },
     ],
   },
-
   {
     id: 'messers',
     label: 'Single-edged swords',
@@ -275,6 +303,69 @@ export const categories = [
           { src: 'koularka_kombo', width: 5156, height: 3437 },
           { src: 'koularka_pochva_kombo', width: 5156, height: 3437 },
         ],
+      },
+    ],
+  },
+  {
+    id: 'scabbards',
+    label: 'Scabbards',
+    items: [
+      {
+        id: 'scabbard-i',
+        title: 'Scabbard Type I',
+        description: 'Scabbard Type I, 1600 CZK',
+        longDescription:
+          'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Integer lacinia. Nulla est. Curabitur sagittis hendrerit ante. Fusce suscipit libero eget elit. Etiam posuere lacus quis dolor. Sed convallis magna eu sem. Duis ante orci, molestie vitae vehicula venenatis, tincidunt ac pede. Nunc tincidunt ante vitae massa. Proin mattis lacinia justo. Maecenas lorem. Morbi leo mi, nonummy eget tristique non, rhoncus non leo.',
+        price: 1600,
+        images: [{ src: 'pochva6', width: 5800, height: 3867 }],
+      },
+      {
+        id: 'scabbard-ii',
+        title: 'Scabbard Type II',
+        description: 'Scabbard Type II, 1600 CZK',
+        longDescription:
+          'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Integer lacinia. Nulla est. Curabitur sagittis hendrerit ante. Fusce suscipit libero eget elit. Etiam posuere lacus quis dolor. Sed convallis magna eu sem. Duis ante orci, molestie vitae vehicula venenatis, tincidunt ac pede. Nunc tincidunt ante vitae massa. Proin mattis lacinia justo. Maecenas lorem. Morbi leo mi, nonummy eget tristique non, rhoncus non leo.',
+        price: 1600,
+        images: [{ src: 'pochva1', width: 5800, height: 3867 }],
+      },
+      {
+        id: 'scabbard-i',
+        title: 'Scabbard Type III',
+        description: 'Scabbard Type III, 1800 CZK',
+        longDescription:
+          'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Integer lacinia. Nulla est. Curabitur sagittis hendrerit ante. Fusce suscipit libero eget elit. Etiam posuere lacus quis dolor. Sed convallis magna eu sem. Duis ante orci, molestie vitae vehicula venenatis, tincidunt ac pede. Nunc tincidunt ante vitae massa. Proin mattis lacinia justo. Maecenas lorem. Morbi leo mi, nonummy eget tristique non, rhoncus non leo.',
+        price: 1800,
+        images: [
+          { src: 'pochva5', width: 5800, height: 3867 },
+          { src: 'pochva8', width: 5800, height: 3867 },
+        ],
+      },
+      {
+        id: 'scabbard-iv',
+        title: 'Scabbard Type IV',
+        description: 'Scabbard Type IV, 1800 CZK',
+        longDescription:
+          'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Integer lacinia. Nulla est. Curabitur sagittis hendrerit ante. Fusce suscipit libero eget elit. Etiam posuere lacus quis dolor. Sed convallis magna eu sem. Duis ante orci, molestie vitae vehicula venenatis, tincidunt ac pede. Nunc tincidunt ante vitae massa. Proin mattis lacinia justo. Maecenas lorem. Morbi leo mi, nonummy eget tristique non, rhoncus non leo.',
+        price: 1800,
+        images: [{ src: 'pochva7', width: 5800, height: 3867 }],
+      },
+      {
+        id: 'scabbard-v',
+        title: 'Scabbard Type V',
+        description: 'Scabbard Type V, 2000 CZK',
+        longDescription:
+          'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Integer lacinia. Nulla est. Curabitur sagittis hendrerit ante. Fusce suscipit libero eget elit. Etiam posuere lacus quis dolor. Sed convallis magna eu sem. Duis ante orci, molestie vitae vehicula venenatis, tincidunt ac pede. Nunc tincidunt ante vitae massa. Proin mattis lacinia justo. Maecenas lorem. Morbi leo mi, nonummy eget tristique non, rhoncus non leo.',
+        price: 2000,
+        images: [{ src: 'pochva2', width: 5800, height: 3867 }],
+      },
+      {
+        id: 'scabbard-vi',
+        title: 'Scabbard Type VI',
+        description: 'Scabbard Type VI, 2000 CZK',
+        longDescription:
+          'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Integer lacinia. Nulla est. Curabitur sagittis hendrerit ante. Fusce suscipit libero eget elit. Etiam posuere lacus quis dolor. Sed convallis magna eu sem. Duis ante orci, molestie vitae vehicula venenatis, tincidunt ac pede. Nunc tincidunt ante vitae massa. Proin mattis lacinia justo. Maecenas lorem. Morbi leo mi, nonummy eget tristique non, rhoncus non leo.',
+        price: 2000,
+        images: [{ src: 'pochva3', width: 5800, height: 3867 }],
       },
     ],
   },
@@ -459,6 +550,47 @@ export const orderOptions = [
             title: 'red',
             value: 'red',
             price: 0,
+          },
+        ],
+      },
+      {
+        type: 'select',
+        label: 'Scabbard',
+        options: [
+          {
+            title: 'no scabbard',
+            value: 'no scabbard',
+            price: 0,
+          },
+          {
+            title: 'type I',
+            value: 'type I',
+            price: 1600,
+          },
+          {
+            title: 'type II',
+            value: 'type II',
+            price: 1600,
+          },
+          {
+            title: 'type III',
+            value: 'type III',
+            price: 1800,
+          },
+          {
+            title: 'type IV',
+            value: 'type IV',
+            price: 1800,
+          },
+          {
+            title: 'type V',
+            value: 'type V',
+            price: 2000,
+          },
+          {
+            title: 'type VI',
+            value: 'type VI',
+            price: 2000,
           },
         ],
       },
