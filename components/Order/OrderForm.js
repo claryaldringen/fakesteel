@@ -9,23 +9,40 @@ const getPrice = (params, weaponId, count = 1) => {
   let total = weapon.price * 1
   const components = weapon.components
   Object.keys(params).forEach((id) => {
-    const component = components.find(({ label }) => label == idToLabel(id))
+    const component = components.find(
+      ({ label }) => label == idToLabel(id)
+    )
     const { price } = component.options.find(({ value }) => value == params[id])
     total += price
   })
   return total * count
 }
 
-const prepareInitialState = (weaponId) =>
+const isConditionTrue = (component, weaponParams) => {
+  if (component && !component.condition) return true
+
+  const condId = labelToId(component.condition.label)
+
+  return (
+    weaponParams[condId] &&
+    component.condition.values.includes(weaponParams[condId])
+  )
+}
+
+const prepareInitialState = (weaponId, state = {}) =>
   orderOptions
     .find(({ id }) => id == weaponId)
-    .components.reduce(
-      (acc, { label, options }) => ({
-        [labelToId(label)]: options[0].value,
-        ...acc,
-      }),
-      {}
-    )
+    .components.reduce((acc, { label, options, condition }) => {
+      if (isConditionTrue({ condition }, state)) {
+        const componentId = labelToId(label)
+        if (acc[componentId]) return acc
+        return {
+          [componentId]: options[0].value,
+          ...acc,
+        }
+      }
+      return acc
+    }, state)
 
 const renderFormElement = (
   { type, label, ...params },
@@ -35,15 +52,18 @@ const renderFormElement = (
   const onSelectChange = (event) =>
     onChange(labelToId(label), event.target.value)
 
+  const id = labelToId(label)
+
   switch (type) {
     case 'select':
-      const id = labelToId(label)
       return (
         <select id={id} onChange={onSelectChange} value={weaponParams[id]}>
           {params.options.map(({ title, value }) => (
-            <option key={`${label}–${value}`} value={value}>
-              {title}
-            </option>
+            <>
+              <option key={`${label}–${value}`} value={value}>
+                {title}
+              </option>
+            </>
           ))}
         </select>
       )
@@ -74,7 +94,7 @@ export const OrderForm = ({ basket, setBasket }) => {
     (item, value) => {
       const newState = { ...weaponParams }
       newState[item] = value
-      setWeaponParams(newState)
+      setWeaponParams(prepareInitialState(weapon, newState))
     },
     [setWeaponParams, weaponParams]
   )
@@ -107,8 +127,9 @@ export const OrderForm = ({ basket, setBasket }) => {
   )
 
   return (
-    <div className={styles.form}>
+    <div className={styles.orderForm}>
       <h2>Weapon selection</h2>
+      <form className={styles.form}>
       <table>
         <tbody>
           <tr>
@@ -126,14 +147,20 @@ export const OrderForm = ({ basket, setBasket }) => {
             </td>
           </tr>
           {components.map((component) => (
-            <tr>
-              <td>
-                <label htmlFor={labelToId(component.label)}>
-                  {component.label}:&nbsp;
-                </label>
-              </td>
-              <td>{renderFormElement(component, weaponParams, onChange)}</td>
-            </tr>
+            <>
+              {isConditionTrue(component, weaponParams) && (
+                <tr key={labelToId(component.label)}>
+                  <td>
+                    <label htmlFor={labelToId(component.label)}>
+                      {component.label}:&nbsp;
+                    </label>
+                  </td>
+                  <td>
+                    {renderFormElement(component, weaponParams, onChange)}
+                  </td>
+                </tr>
+              )}
+            </>
           ))}
           <tr>
             <td>
@@ -162,6 +189,7 @@ export const OrderForm = ({ basket, setBasket }) => {
           </tr>
         </tbody>
       </table>
+      </form>
     </div>
   )
 }

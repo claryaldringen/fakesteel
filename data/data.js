@@ -83,8 +83,8 @@ export const categories = [
           'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Integer lacinia. Nulla est. Curabitur sagittis hendrerit ante. Fusce suscipit libero eget elit. Etiam posuere lacus quis dolor. Sed convallis magna eu sem. Duis ante orci, molestie vitae vehicula venenatis, tincidunt ac pede. Nunc tincidunt ante vitae massa. Proin mattis lacinia justo. Maecenas lorem. Morbi leo mi, nonummy eget tristique non, rhoncus non leo.',
         price: 1100,
         images: [
-          { src: 'hruska_siroka', width: 5800, height: 3867 },
           { src: 'hruska_uzka', width: 5800, height: 3867 },
+          { src: 'hruska_siroka', width: 5800, height: 3867 },
           { src: 'hruska_combo', width: 5800, height: 3867 },
           { src: 'hruska_detail', width: 5695, height: 3797 },
         ],
@@ -97,8 +97,8 @@ export const categories = [
           'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Integer lacinia. Nulla est. Curabitur sagittis hendrerit ante. Fusce suscipit libero eget elit. Etiam posuere lacus quis dolor. Sed convallis magna eu sem. Duis ante orci, molestie vitae vehicula venenatis, tincidunt ac pede. Nunc tincidunt ante vitae massa. Proin mattis lacinia justo. Maecenas lorem. Morbi leo mi, nonummy eget tristique non, rhoncus non leo.',
         price: 1150,
         images: [
-          { src: 'mince_siroka', width: 5800, height: 3867 },
           { src: 'mince_uzka', width: 5800, height: 3867 },
+          { src: 'mince_siroka', width: 5800, height: 3867 },
           { src: 'mince_combo', width: 5800, height: 3867 },
           { src: 'mince_detail', width: 5491, height: 3661 },
         ],
@@ -144,7 +144,7 @@ export const categories = [
           'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Integer lacinia. Nulla est. Curabitur sagittis hendrerit ante. Fusce suscipit libero eget elit. Etiam posuere lacus quis dolor. Sed convallis magna eu sem. Duis ante orci, molestie vitae vehicula venenatis, tincidunt ac pede. Nunc tincidunt ante vitae massa. Proin mattis lacinia justo. Maecenas lorem. Morbi leo mi, nonummy eget tristique non, rhoncus non leo.',
         price: 1200,
         images: [
-          { src: 'Falchion_1', width: 5505, height: 3670 },
+          { src: 'falchion_1', width: 5800, height: 3867 },
           { src: 'Falchion_detail', width: 5858, height: 3905 },
           { src: 'Falchion_kombo', width: 5504, height: 3672 },
         ],
@@ -593,6 +593,219 @@ export const orderOptions = [
             price: 2000,
           },
         ],
+      },
+      {
+        type: 'select',
+        condition: {
+          label: 'Scabbard',
+          values: [
+            'type I',
+            'type II',
+            'type III',
+            'type IV',
+            'type V',
+            'type VI',
+          ],
+        },
+        label: 'Scabbard color',
+        options: [
+          {
+            title: 'black',
+            value: 'black',
+            price: 0,
+          },
+          {
+            title: 'brown',
+            value: 'brown',
+            price: 0,
+          },
+          {
+            title: 'red',
+            value: 'red',
+            price: 0,
+          },
+          {
+            title: 'green',
+            value: 'green',
+            price: 0,
+          },
+          {
+            title: 'yellow',
+            value: 'yellow',
+            price: 0,
+          },
+        ],
+      },
+      {
+        type: 'select',
+        condition: {
+          label: 'Scabbard',
+          values: ['type I', 'type II', 'type III', 'type IV', 'type V'],
+        },
+        label: 'Belt',
+        options: [
+          {
+            title: 'type A',
+            value: 'type A',
+            price: 0,
+          },
+          {
+            title: 'type B',
+            value: 'type B',
+            price: 0,
+          },
+          {
+            title: 'type C',
+            value: 'type C',
+            price: 0,
+          },
+          {
+            title: 'type C',
+            value: 'type C',
+            price: 0,
+          },
+        ],
+      },
+      {
+        type: 'select',
+        condition: {
+          label: 'Scabbard',
+          values: ['type VI'],
+        },
+        label: 'Belt',
+        options: [
+          {
+            title: 'type A',
+            value: 'type A',
+            price: 0,
+          },
+          {
+            title: 'type B',
+            value: 'type B',
+            price: 0,
+          },
+        ],
+      },
+      {
+        type: 'select',
+        condition: {
+          label: 'Scabbard',
+          values: [
+            'type I',
+            'type II',
+            'type III',
+            'type IV',
+            'type V',
+            'type VI',
+          ],
+        },
+        label: 'Belt color',
+        options: [
+          {
+            title: 'natural',
+            value: 'natural',
+            price: 0,
+          },
+          {
+            title: 'black',
+            value: 'black',
+            price: 0,
+          },
+          {
+            title: 'brown',
+            value: 'brown',
+            price: 0,
+          },
+          {
+            title: 'burgundy',
+            value: 'burgundy',
+            price: 0,
+          },
+        ],
+      },
+      {
+        type: 'select',
+        condition: {
+          label: 'Scabbard',
+          values: [
+            'type I',
+            'type II',
+            'type III',
+            'type IV',
+            'type V',
+            'type VI',
+          ],
+        },
+        label: 'Buckle',
+        options: [
+          {
+            title: 'type 1',
+            value: 'type 1',
+            price: 0,
+          },
+          {
+            title: 'type 2',
+            value: 'type 2',
+            price: 0,
+          },
+          {
+            title: 'type 3',
+            value: 'type 3',
+            price: 0,
+          },
+          {
+            title: 'type 4',
+            value: 'type 4',
+            price: 0,
+          },
+        ],
+      },
+      {
+        type: 'select',
+        condition: {
+          label: 'Scabbard',
+          values: [
+            'type I',
+            'type II',
+            'type III',
+            'type IV',
+            'type V',
+            'type VI',
+          ],
+        },
+        label: 'Chape',
+        options: [
+          {
+            title: 'steel',
+            value: 'steel',
+            price: 0,
+          },
+          {
+            title: 'brass',
+            value: 'brass',
+            price: 0,
+          },
+        ],
+      },
+      {
+        type: 'select',
+        condition: {
+          label: 'Scabbard',
+          values: [
+            'type I',
+            'type II',
+            'type III',
+            'type IV',
+            'type V',
+            'type VI',
+          ],
+        },
+        label: 'Waist circumference',
+        options: [...Array(210)].map((_, i) => ({
+          title: `${i+33} cm`,
+          value: `${i+33} cm`,
+          price: 0,
+        })),
       },
     ],
   },

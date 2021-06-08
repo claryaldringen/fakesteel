@@ -20,7 +20,7 @@ export const Basket = ({ basket }) => {
           </thead>
           <tbody>
             {Object.keys(props).map((key, j) => (
-              <tr key={`row_${i}`} className={styles.small}>
+              <tr key={`row_${i}_${j}`} className={styles.small}>
                 <td>
                   <b>{idToLabel(key)}:</b>
                 </td>

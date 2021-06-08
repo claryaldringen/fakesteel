@@ -3,9 +3,12 @@
   padding: 6% 16%;
 }
 
-.form {
+.orderForm {
   float: left;
   width: 270px;
+}
+
+.form {
   input,
   select,
   button,
@@ -43,8 +46,8 @@
   background: #333;
   color: #ccc;
   width: 220px;
-  height: 174px;
-  padding: 16px;
+  // height: 174px;
+  padding: 16px 0 16px 16px;
   margin: 8px;
   float: left;
 }
@@ -70,6 +73,30 @@
     font-size: 12px;
   }
 }
+
+.leftTable {
+  float: left;
+  max-width: 50%;
+
+  @media (max-width: 640px) {
+    max-width: 100%;
+  }
+}
+
+.rightTable {
+  float: left;
+  max-width: 50%;
+
+  textarea{
+    width: 100%;
+    height: 80px;
+  }
+
+  @media (max-width: 640px) {
+    max-width: 100%;
+  }
+}
+
 
 .clear {
   clear: both;
