@@ -373,8 +373,8 @@ export const categories = [
 
 export const orderOptions = [
   {
-    id: 'spear',
-    title: 'Spear',
+    id: 'polearms',
+    title: 'Polearms',
     price: 1000,
     components: [
       {
@@ -455,20 +455,60 @@ export const orderOptions = [
     components: [
       {
         type: 'select',
-        label: 'Pommel',
+        label: 'Hilt',
         options: [
           { title: 'viking E', value: 'viking E', price: 0 },
           { title: 'viking H', value: 'viking H', price: 0 },
           { title: 'coin', value: 'coin', price: 0 },
           { title: 'pear', value: 'pear', price: 0 },
           { title: 'octagon', value: 'octagon', price: 100 },
-          { title: 'fishtale', value: 'fishtale', price: 100 },
+          { title: 'fishtail', value: 'fishtail', price: 100 },
           { title: 'venice', value: 'venice', price: 0 },
+          { title: 'langmesser', value: 'langmesser', price: 0 },
+          { title: 'sabre', value: 'sabre', price: 0 },
+        ],
+      },
+      {
+        type: 'select',
+        label: 'Core',
+        options: [
+          { title: 'round 10 mm', value: 'round 10 mm', price: 0 },
+          { title: 'rectangular 6x15', value: 'rectangular 6x15', price: 0 },
+          {
+            title: 'rectangular 8x16 (+100 CZK)',
+            value: 'rectangular 8x16',
+            price: 100,
+          },
         ],
       },
       {
         type: 'select',
         label: 'Pommel color',
+        options: [
+          {
+            title: 'steel',
+            value: 'steel',
+            price: 0,
+          },
+          {
+            title: 'graphite',
+            value: 'graphite',
+            price: 0,
+          },
+          {
+            title: 'brass',
+            value: 'brass',
+            price: 0,
+          },
+        ],
+      },
+      {
+        type: 'select',
+        condition: {
+          label: 'Hilt',
+          values: ['coin', 'pear', 'octagon', 'fishtail', 'venice'],
+        },
+        label: 'Crossguard color',
         options: [
           {
             title: 'steel',
@@ -500,19 +540,6 @@ export const orderOptions = [
       },
       {
         type: 'select',
-        label: 'Core',
-        options: [
-          { title: 'round 10 mm', value: 'round 10 mm', price: 0 },
-          { title: 'rectangular 6x15', value: 'rectangular 6x15', price: 0 },
-          {
-            title: 'rectangular 8x16 (+100 CZK)',
-            value: 'rectangular 8x16',
-            price: 100,
-          },
-        ],
-      },
-      {
-        type: 'select',
         label: 'Blade color',
         options: [
           {
@@ -523,11 +550,6 @@ export const orderOptions = [
           {
             title: 'graphite',
             value: 'graphite',
-            price: 0,
-          },
-          {
-            title: 'brass',
-            value: 'brass',
             price: 0,
           },
         ],
@@ -802,8 +824,8 @@ export const orderOptions = [
         },
         label: 'Waist circumference',
         options: [...Array(210)].map((_, i) => ({
-          title: `${i+33} cm`,
-          value: `${i+33} cm`,
+          title: `${i + 33} cm`,
+          value: `${i + 33} cm`,
           price: 0,
         })),
       },
@@ -811,7 +833,7 @@ export const orderOptions = [
   },
   {
     id: 'mace',
-    title: 'Mace',
+    title: 'Maces & hammers',
     price: 1000,
     components: [
       {
@@ -824,13 +846,13 @@ export const orderOptions = [
             price: 0,
           },
           {
-            title: 'mace',
-            value: 'mace',
+            title: 'mace "Zizka"',
+            value: 'mace "Zizka"',
             price: 0,
           },
           {
-            title: 'spiked club',
-            value: 'spiked club',
+            title: 'sprinkler',
+            value: 'sprinkler',
             price: 0,
           },
           {
@@ -852,22 +874,6 @@ export const orderOptions = [
           {
             title: 'only head',
             value: 'only head',
-            price: 0,
-          },
-        ],
-      },
-      {
-        type: 'select',
-        label: 'Version',
-        options: [
-          {
-            title: 'soft',
-            value: 'soft',
-            price: 0,
-          },
-          {
-            title: 'hard',
-            value: 'hard',
             price: 0,
           },
         ],
@@ -920,7 +926,7 @@ export const orderOptions = [
   },
   {
     id: 'dagger',
-    title: 'Dagger',
+    title: 'Quillon dagger',
     price: 1000,
     components: [
       {
@@ -942,6 +948,27 @@ export const orderOptions = [
       {
         type: 'select',
         label: 'Pommel color',
+        options: [
+          {
+            title: 'steel',
+            value: 'steel',
+            price: 0,
+          },
+          {
+            title: 'graphite',
+            value: 'graphite',
+            price: 0,
+          },
+          {
+            title: 'brass',
+            value: 'brass',
+            price: 0,
+          },
+        ],
+      },
+      {
+        type: 'select',
+        label: 'Crossguard color',
         options: [
           {
             title: 'steel',
