@@ -10,7 +10,7 @@ export const Basket = ({ basket }) => {
 
   return (
     <div className={styles.basket}>
-        <h2>Your basket {total > 0 && `(total: ${total} Kč)`}</h2>
+        <h2>Your basket {total > 0 && `(total: ${total} CZK)`}</h2>
       {basket.map(({ count, weapon, price, ...props }, i) => (
         <table key={`table_${i}`} className={styles.item}>
           <thead>
@@ -34,7 +34,7 @@ export const Basket = ({ basket }) => {
                 <b>Price:</b>
               </td>
               <td>
-                <b>{price} Kč</b>
+                <b>{price} CZK</b>
               </td>
             </tr>
           </tfoot>

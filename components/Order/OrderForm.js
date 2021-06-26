@@ -180,7 +180,7 @@ export const OrderForm = ({ basket, setBasket }) => {
           </tr>
           <tr>
             <td>Price:</td>
-            <td>{price} Kč</td>
+            <td>{price} CZK</td>
           </tr>
           <tr>
             <td colSpan={2}>

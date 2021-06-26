@@ -178,8 +178,8 @@ export const RecapitulationForm = () => {
               </td>
               <td>
                 <select value={shipping} onChange={onShippingChange}>
-                  <option value="dpd">DPD</option>
-                  <option value="cp">Česká pošta</option>
+                  <option value="dpd">Send it to me, please</option>
+                  <option value="cp">I'll pick it up in Prague</option>
                 </select>
               </td>
             </tr>

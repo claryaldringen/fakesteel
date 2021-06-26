@@ -7,50 +7,48 @@ const LABEL2 = `What can you choose or modify when ordering this weapon?
   <li>Fiberglass core. The sword can have either a round 10mm or rectangular 15x6mm core. We also offer a heavier and stronger 16x8mm core. Suitable for Czech hard „kekel“ battles.</li>
 </ol>`
 
+const maceDescription = (
+  type
+) => `<p>A mace is a blunt weapon, a type of club that uses a heavy head usually made of brass, bronze, iron, or steel on the end of a wooden or metallic handle to deliver powerful strikes. The mace was popular for close combat, especially during the medieval period.</p>
+<p>The force of a blow from a mace is large enough to cause damage without penetrating the armor. Because they were simple and cheap to make, these types of weapons were common among peasant rebels and conscript armies. The maces of foot soldiers were usually quite short, while those of cavalrymen were longer and better suited for blows delivered from horseback.</p>
+<p>The "${type}" Mace is another in a series of crushing all-foam weapons that we produce.<br>
+The shaft has a 18 cm steel tube cast on a round core in handle for better controllability and balance of the weapon.</p>`
+
+const scabbardDescription = (belts, decoration) => `<p>Now you can order scabbards with a belt for our one-handed swords. The scabbard consists of an extremely durable PP plastic core, which is covered in cow leather with a metal chape. The scabbard includes a sword belt with a brass buckle.<br>When ordering, you can choose the type and color of the scabbard and belt with straps, then the metal chape, the shape of the brass buckle and possibly your own decorative motif under the leather.</p>
+<ul>
+    <li>This scabbard can be combined with belts ${belts}.</li>
+    <li>The type of brass buckles, chapes and leather color can be combined completely freely.</li>
+    ${decoration ? `<li>The simple decorative motif under the leather must have a size of 6x6 cm and can be used for this scabbard (+300 CZK).</li>` : ''}
+    <li>Before ordering, it is necessary to measure the waist circumference, due to the holes in the belt. Measure yourself in clothes or armor to which you will wear the scabbard.</li>
+    <li>The end of the belt is normally in the triangle shape, but we can leave it unfinished square if you would like to put your own belt end on it.</li>
+    <li><b>Scabbards can only be ordered with swords. We do not sell them alone!</b></li>
+</ul>
+<p>Do not hesitate to contact us with any questions or ideas.</p>
+`
+
 export const categories = [
   {
     id: 'swords',
     label: 'Double-edged swords',
     items: [
       {
-        id: 'vikingsword-h',
-        title: 'One-handed sword - Viking type H',
-        description: 'One-handed sword - Viking type H, 2300 CZK',
-        longDescription: `This sword belongs to Petersen's type H. Due to the number of found historical pieces, it is the most numerous of all types of swords from the time of the Vikings. Of the more than 200 weapons found, less than a quarter had a single-edged blade. That's why we decided to offer this version also. Good, simple sword for every nordic warrior.
-          <br><br><b>
-          Specifications<br>
-          Total lenght: 86 cm<br>
-          Blade lenght: 70 cm<br>
-          Blade width: 5.5 cm<br>
-          Weight: 640 g<br>
-          Point of Balance: 11 cm<br>
-          </b><br>${LABEL2}<br>${LABEL1}
-          `,
-        price: 2300,
-        images: [
-          { src: 'viking_1', width: 5800, height: 3867 },
-          { src: 'viking_2', width: 5800, height: 3867 },
-        ],
-      },
-      {
-        id: 'vikingsword-e',
-        title: 'One-handed sword - Viking type E',
-        description: 'One-handed sword - Viking type E, 2300 CZK',
-        longDescription: `During manufacture of this sword from the 10th century, we tried our best to stick to the preserved finding. It is a weapon found in 1874 in Gnezdov, Russia. The sword belongs to Petersen's type E, which was very popular in the Viking world and today we find it in Sweden, Norway, Finland, Russia, Estonia and Ireland. Great sword for a noble nordic warrior.
+        id: 'one-handed-sword-coin',
+        title: 'One-handed sword - Coin',
+        description: 'One-handed sword - Coin, 2300 CZK',
+        longDescription: `The simple design of this hilt is based on the popular one-handed swords of the 14th century. The curved ends of the crossguard and the coin-shaped pommel are typical features of this knight's weapon. Oakeshott in his typology refers to this type of pommel with the letter J and we call this hilt simply – Coin.
           <br><br><b>
           Specifications<br>
           Total lenght: 87 cm<br>
           Blade lenght: 70 cm<br>
           Blade width: 5.5 cm<br>
-          Weight: 690 g<br>
-          Point of Balance: 9.5 cm<br>
-          </b><br>${LABEL2}<br>${LABEL1}
-          `,
+          Weight: 680 g<br>
+          Point of Balance: 8.5 cm<br>
+          </b><br>${LABEL2}<br>${LABEL1}`,
         price: 2300,
         images: [
-          { src: 'viking', width: 5800, height: 3867 },
-          { src: 'viking_combo', width: 5800, height: 3867 },
-          { src: 'viking_detail', width: 5360, height: 3573 },
+          { src: 'mince_uzka', width: 5800, height: 3867 },
+          { src: 'mince_combo', width: 5800, height: 3867 },
+          { src: 'mince_detail', width: 5491, height: 3661, fill: true },
         ],
       },
       {
@@ -73,12 +71,13 @@ export const categories = [
           { src: 'oktagon_2', width: 5800, height: 3867 },
           { src: 'oktagon_3', width: 5800, height: 3867 },
           { src: 'oktagon_4', width: 5800, height: 3867 },
+          { src: 'oktagon_1', width: 5753, height: 3835, fill: true },
         ],
       },
       {
         id: 'one-handed-sword-pear',
         title: 'One-handed sword - Pear',
-        description: 'One-handed sword - Pear, 2400 CZK',
+        description: 'One-handed sword - Pear, 2300 CZK',
         longDescription: `This one-handed arming sword is the first weapon we have ever made years ago and we are very satisfied with this simple and durable hilt design. A strong straight crossguard, and a massive pear-shaped hexagonal pommel with longer grip give this sword shorter Point of balance. Very good sword for 18x6 core and fans of harder battles.
           <br><br><b>
           Specifications<br>
@@ -88,33 +87,11 @@ export const categories = [
           Weight: 700 g<br>
           Point of Balance: 7.5 cm<br>
           </b><br>${LABEL2}<br>${LABEL1}`,
-        price: 2400,
-        images: [
-          { src: 'hruska_uzka', width: 5800, height: 3867 },
-          { src: 'hruska_siroka', width: 5800, height: 3867 },
-          { src: 'hruska_combo', width: 5800, height: 3867 },
-          { src: 'hruska_detail', width: 5695, height: 3797 },
-        ],
-      },
-      {
-        id: 'one-handed-sword-coin',
-        title: 'One-handed sword - Coin',
-        description: 'One-handed sword - Coin, 2400 CZK',
-        longDescription: `The simple design of this hilt is based on the popular one-handed swords of the 14th century. The curved ends of the crossguard and the coin-shaped pommel are typical features of this knight's weapon. Oakeshott in his typology refers to this type of pommel with the letter J and we call this hilt simply – Coin.
-          <br><br><b>
-          Specifications<br>
-          Total lenght: 87 cm<br>
-          Blade lenght: 70 cm<br>
-          Blade width: 5.5 cm<br>
-          Weight: 680 g<br>
-          Point of Balance: 8.5 cm<br>
-          </b><br>${LABEL2}<br>${LABEL1}`,
         price: 2300,
         images: [
-          { src: 'mince_uzka', width: 5800, height: 3867 },
-          { src: 'mince_siroka', width: 5800, height: 3867 },
-          { src: 'mince_combo', width: 5800, height: 3867 },
-          { src: 'mince_detail', width: 5491, height: 3661 },
+          { src: 'hruska_uzka', width: 5800, height: 3867 },
+          { src: 'hruska_combo', width: 5800, height: 3867 },
+          { src: 'hruska_detail', width: 5695, height: 3797, fill: true },
         ],
       },
       {
@@ -133,30 +110,73 @@ export const categories = [
         price: 2400,
         images: [
           { src: 'ryba', width: 5800, height: 3867 },
-          { src: 'ryba_2', width: 5800, height: 3867 },
-          { src: 'ryba_3', width: 5800, height: 3867 },
-          { src: 'ryba_4', width: 5800, height: 3867 },
+          { src: 'ryba2', width: 5800, height: 3867 },
+          { src: 'ryba3', width: 5800, height: 3867 },
+          { src: 'ryba4', width: 5800, height: 3867 },
+          { src: 'ryba_1', width: 5687, height: 3791, fill: true },
         ],
       },
       {
         id: 'one-handed-sword-doge',
         title: 'One-handed sword – Doge',
         description: 'One-handed sword – Doge, 2400 CZK',
-        longDescription: `Our Doge sword is based on surviving examples with the Doge museum in Venice. Its curved guard with finger protector is common on swords form this area of Europe, and the distinctive-shaped pommel sets it apart from other medieval and renaissance swords. We've also made a new narrower double-edged blade for this sword to make it easier to use the finger-ring on the guard. 
+        longDescription: `Our Doge sword is based on surviving examples from 15th century with the Doge museum in Venice. Its curved guard with finger protector is common on swords form this area of Europe, and the distinctive-shaped pommel sets it apart from other medieval and renaissance swords. We've also made a new narrower 4,5cm double-edged blade for this sword to make it easier to use the finger-ring on the guard.
           <br><br><b>
           Specifications<br>
-          Total lenght: 85 cm<br>
+          Total lenght: 88 cm<br>
           Blade lenght: 70 cm<br>
           Blade width: 4.5 cm<br>
           Weight: 670 g<br>
           Point of Balance: 8 cm<br>
           </b><br>${LABEL2}<br>${LABEL1}`,
-        price: 1150,
+        price: 2400,
         images: [
           { src: 'doge_ocel_nova_uvodka', width: 5800, height: 2207 },
-          { src: 'doge_detail', width: 5310, height: 3540 },
           { src: 'doge_combo_zlata_tmava', width: 5800, height: 3867 },
           { src: 'doge_pochva', width: 5694, height: 3796 },
+          { src: 'doge_detail', width: 5310, height: 3540, fill: true },
+        ],
+      },
+      {
+        id: 'vikingsword-h',
+        title: 'One-handed sword - Viking type H',
+        description: 'One-handed sword - Viking type H, 2300 CZK',
+        longDescription: `This sword belongs to Petersen's type H. Due to the number of found historical pieces, it is the most numerous of all types of swords from the time of the Vikings. Of the more than 200 weapons found, less than a quarter had a single-edged blade. That's why we decided to offer this version also. Good, simple sword for every nordic warrior.
+          <br><br><b>
+          Specifications<br>
+          Total lenght: 86 cm<br>
+          Blade lenght: 70 cm<br>
+          Blade width: 5.5 cm<br>
+          Weight: 640 g<br>
+          Point of Balance: 11 cm<br>
+          </b><br>${LABEL2}<br>${LABEL1}
+          `,
+        price: 2300,
+        images: [
+          { src: 'viking_1', width: 5800, height: 3867 },
+          { src: 'viking_1', width: 5800, height: 3867 },
+          { src: 'viking_2', width: 5800, height: 3867 },
+        ],
+      },
+      {
+        id: 'vikingsword-e',
+        title: 'One-handed sword - Viking type E',
+        description: 'One-handed sword - Viking type E, 2300 CZK',
+        longDescription: `During manufacture of this sword from the 10th century, we tried our best to stick to the preserved finding. It is a weapon found in 1874 in Gnezdov, Russia. The sword belongs to Petersen's type E, which was very popular in the Viking world and today we find it in Sweden, Norway, Finland, Russia, Estonia and Ireland. Great sword for a noble nordic warrior.
+          <br><br><b>
+          Specifications<br>
+          Total lenght: 87 cm<br>
+          Blade lenght: 70 cm<br>
+          Blade width: 5.5 cm<br>
+          Weight: 690 g<br>
+          Point of Balance: 9.5 cm<br>
+          </b><br>${LABEL2}<br>${LABEL1}
+          `,
+        price: 2300,
+        images: [
+          { src: 'viking', width: 5800, height: 3867 },
+          { src: 'viking_combo', width: 5800, height: 3867 },
+          { src: 'viking_detail', width: 5360, height: 3573, fill: true },
         ],
       },
     ],
@@ -168,7 +188,7 @@ export const categories = [
       {
         id: 'one-handed-sword-falchion',
         title: 'One-handed sword – Falchion',
-        description: 'One-handed sword – Falchion, 1200 - 1500 CZK',
+        description: 'One-handed sword – Falchion, 2300 CZK',
         longDescription: `During the production we were mainly inspired by the so-called "Thorpe falchion", found in England in the bed of the river Yare near the town of Thorpe St. Andrew. The sword is usually dated to the beginning of the 14th century. The ideal secondary weapon with single-edged blade for every archer or spearman.
           <br><br><b>
           Specifications<br>
@@ -178,17 +198,17 @@ export const categories = [
           Weight: 600 g<br>
           Point of Balance: 9 cm<br>
           </b><br>${LABEL2}<br>${LABEL1}`,
-        price: 1200,
+        price: 2300,
         images: [
           { src: 'falchion_1', width: 5800, height: 3867 },
-          { src: 'Falchion_detail', width: 5858, height: 3905 },
-          { src: 'Falchion_kombo', width: 5504, height: 3672 },
+          { src: 'falchion_combo', width: 5800, height: 3867 },
+          { src: 'Falchion_detail', width: 5858, height: 3905, fill: true },
         ],
       },
       {
         id: 'one-handed-sword-langmesser',
         title: 'One-handed sword – Langmesser',
-        description: 'One-handed sword – Langmesser, 1200 - 1500 Kč',
+        description: 'One-handed sword – Langmesser, 2300 CZK',
         longDescription: `This sword is inspired by the classic shape of German Grosse Messers we can see in fencing manuals of 15th and 16th centuries. A typical feature of this hilt is a wooden knife handle as well as a lug on the outside of the crossguard that protects the knuckles of the hand. A great and effective single-edged bladed weapon for all common soldiers.
           <br><br><b>
           Specifications<br>
@@ -198,18 +218,18 @@ export const categories = [
           Weight: 670 g<br>
           Point of Balance: 8.5 cm<br>
           </b><br>${LABEL2}<br>${LABEL1}`,
-        price: 1200,
+        price: 2300,
         images: [
           { src: 'messer_1', width: 5606, height: 3737 },
-          { src: 'messer_detail', width: 5762, height: 3841 },
-          { src: 'messer_kombo', width: 5606, height: 3737 },
+          { src: 'messer_combo', width: 5800, height: 3867 },
           { src: 'messer_3', width: 5378, height: 3585 },
+          { src: 'messer_detail', width: 5762, height: 3841, fill: true },
         ],
       },
       {
         id: 'one-handed-sword-sabre-briquet',
         title: 'One-handed sabre - Briquet',
-        description: 'One-handed sabre - Briquet, 1200 - 1500 Kč',
+        description: 'One-handed sabre - Briquet, 2300 CZK',
         longDescription: `The inspiration for us were the French short infantry sabers "Briquet", which became famous especially during the revolution and the Napoleonic Wars. These small sabers very often had an almost straight single-edged blade, so it was the perfect option for us.
           <br><br><b>
           Specifications<br>
@@ -219,11 +239,11 @@ export const categories = [
           Weight: 620 g<br>
           Point of Balance: 16 cm<br>
           </b><br>${LABEL2}<br>${LABEL1}`,
-        price: 1200,
+        price: 2300,
         images: [
           { src: 'savle_1', width: 5440, height: 3627 },
-          { src: 'savle_detail', width: 5015, height: 3343 },
-          { src: 'savle_kombo', width: 5156, height: 3437 },
+          { src: 'savle_combo', width: 5800, height: 3867 },
+          { src: 'savle_detail', width: 5015, height: 3343, fill: true },
         ],
       },
     ],
@@ -233,55 +253,72 @@ export const categories = [
     label: 'Maces & War hammers',
     items: [
       {
-        id: 'mace_a',
-        title: 'Bulava',
-        description: 'Mace A',
-        longDescription:
-          'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Integer lacinia. Nulla est. Curabitur sagittis hendrerit ante. Fusce suscipit libero eget elit. Etiam posuere lacus quis dolor. Sed convallis magna eu sem. Duis ante orci, molestie vitae vehicula venenatis, tincidunt ac pede. Nunc tincidunt ante vitae massa. Proin mattis lacinia justo. Maecenas lorem. Morbi leo mi, nonummy eget tristique non, rhoncus non leo.',
-        price: 1000,
+        id: 'mace-bulava',
+        title: 'Mace - Bulava',
+        description: 'Mace - Bulava, 1800 CZK',
+        longDescription: `${maceDescription('Bulava')}
+          <br><br><b>
+          Specifications<br>
+          Total lenght: 60-70 cm<br>
+          Head lenght: 6.5 cm<br>
+          Weight: 400 g<br>`,
+        price: 1800,
         images: [
           { src: 'palcat_A', width: 4649, height: 3099 },
-          { src: 'palcat_A_detail', width: 5171, height: 3447 },
-          { src: 'palcat_A_kombo', width: 5504, height: 3672 },
+          { src: 'palcat_A_combo', width: 5800, height: 3867 },
+          { src: 'palcat_A_detail', width: 5171, height: 3447, fill: true },
         ],
       },
       {
-        id: 'mace_b',
-        title: 'Mace',
-        description: 'Mace B',
-        longDescription:
-          'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Integer lacinia. Nulla est. Curabitur sagittis hendrerit ante. Fusce suscipit libero eget elit. Etiam posuere lacus quis dolor. Sed convallis magna eu sem. Duis ante orci, molestie vitae vehicula venenatis, tincidunt ac pede. Nunc tincidunt ante vitae massa. Proin mattis lacinia justo. Maecenas lorem. Morbi leo mi, nonummy eget tristique non, rhoncus non leo.',
-        price: 1000,
+        id: 'mace-zizka',
+        title: 'Mace - Zizka',
+        description: 'Mace - Zizka, 1800 CZK',
+        longDescription: `${maceDescription('Zizka')}
+          <br><br><b>
+          Specifications<br>
+          Total lenght: 60-70 cm<br>
+          Head lenght: 16 cm<br>
+          Weight: 400 g<br>`,
+        price: 1800,
         images: [
           { src: 'palcat_B', width: 4649, height: 3099 },
-          { src: 'palcat_B_detail', width: 5171, height: 3447 },
-          { src: 'palcat_B_kombo', width: 5504, height: 3672 },
+          { src: 'palcat_B_combo', width: 5800, height: 3867 },
+          { src: 'palcat_B_detail', width: 5171, height: 3447, fill: true },
         ],
       },
       {
-        id: 'mace_c',
-        title: 'Spiked club',
-        description: 'Mace C',
-        longDescription:
-          'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Integer lacinia. Nulla est. Curabitur sagittis hendrerit ante. Fusce suscipit libero eget elit. Etiam posuere lacus quis dolor. Sed convallis magna eu sem. Duis ante orci, molestie vitae vehicula venenatis, tincidunt ac pede. Nunc tincidunt ante vitae massa. Proin mattis lacinia justo. Maecenas lorem. Morbi leo mi, nonummy eget tristique non, rhoncus non leo.',
-        price: 1000,
+        id: 'mace-sprinkler',
+        title: 'Mace - Sprinkler',
+        description: 'Mace - Sprinkler, 1800 CZK',
+        longDescription: `${maceDescription('Sprinkler')}
+          <br><br><b>
+          Specifications<br>
+          Total lenght: 60-70 cm<br>
+          Head lenght: 12 cm<br>
+          Weight: 400 g<br>`,
+        price: 1800,
         images: [
           { src: 'palcat_C', width: 4649, height: 3099 },
-          { src: 'palcat_C_detail', width: 5171, height: 3447 },
-          { src: 'palcat_C_kombo', width: 5504, height: 3672 },
+          { src: 'palcat_C_combo', width: 5800, height: 3867 },
+          { src: 'palcat_C_detail', width: 5171, height: 3447, fill: true },
         ],
       },
       {
-        id: 'hammer',
-        title: 'Hammer',
-        description: 'Hammer',
-        longDescription:
-          'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Integer lacinia. Nulla est. Curabitur sagittis hendrerit ante. Fusce suscipit libero eget elit. Etiam posuere lacus quis dolor. Sed convallis magna eu sem. Duis ante orci, molestie vitae vehicula venenatis, tincidunt ac pede. Nunc tincidunt ante vitae massa. Proin mattis lacinia justo. Maecenas lorem. Morbi leo mi, nonummy eget tristique non, rhoncus non leo.',
-        price: 1000,
+        id: 'war-hammer',
+        title: 'War Hammer',
+        description: 'War Hammer, 1800 CZK',
+        longDescription: `<p>The War Hammer was a weapon popularized in the late middle ages and mainly used for close combat. War Hammers were a knight’s nightmare because the flat side’s filed edges could make deadly dents in armor, and the spiked side could pierce it. ​</p>
+          <p>The all-foam shaft has a 25 cm steel tube cast on a round core in handle for better controllability and balance of the weapon. There is also an attached rubber hose in the hammer head, which in combination with the foam significantly increases the resistance of the weapon.</p>
+          <br><br><b>
+          Specifications<br>
+          Total length: 72 cm<br>
+          Head length: 15 cm<br>
+          Weight: 570 g<br>`,
+        price: 1800,
         images: [
           { src: 'kladivo_2', width: 5130, height: 3420 },
-          { src: 'kladivo_detail', width: 5316, height: 3544 },
-          { src: 'kladivo_kombo', width: 5504, height: 3672 },
+          { src: 'kladivo_combo', width: 5800, height: 3867 },
+          { src: 'kladivo_detail', width: 5316, height: 3544, fill: true },
         ],
       },
     ],
@@ -293,12 +330,19 @@ export const categories = [
       {
         id: 'spear',
         title: 'Spear',
-        description:
-          'Just spear. Wooden end towards you, sharp end towards enemy.',
-        longDescription:
-          'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Integer lacinia. Nulla est. Curabitur sagittis hendrerit ante. Fusce suscipit libero eget elit. Etiam posuere lacus quis dolor. Sed convallis magna eu sem. Duis ante orci, molestie vitae vehicula venenatis, tincidunt ac pede. Nunc tincidunt ante vitae massa. Proin mattis lacinia justo. Maecenas lorem. Morbi leo mi, nonummy eget tristique non, rhoncus non leo.',
+        description: 'Spear, 1000 CZK',
+        longDescription: `<p>Introducing our first polearm - the spear!</p>
+          <p>The spearhead can be ordered separately in steel, graphite, and brass color. We also produce the complete weapon in the length of 2 meters with a stained octagonal wooden pole. But only for the Czech customers. We only send spear/pike heads abroad.</p>
+          <p>The head is mounted on a wooden pole with an ideal size of 30-32 mm. Before mounting the head, it is necessary to machine the wood and narrow it so that the rubber hose, which reinforces the tip of the spear, fits well on the wooden mandrel at the end of the pole (see picture).</p>
+          <p>The blunt tip of the spear has a diameter of 3 cm and the head is partially flexible for greater safety. Flexibility can be ordered in two variants SOFT and HARD.</p>
+          <p>For logistical reasons, we do not sell poles longer than 2m. However, we make a deal with <a href="https://www.facebook.com/vyrobadobovehonabytku" target="_blank">@medievalfurniture</a> production that you can order a high-quality composite glued ash poles made on our spear/pike heads. When ordering, just say that you want a pole on a FakeSteel pike or spear and length of the weapon. The price will be 700 CZK for a 3m painted pole with an already modified end for our heads.</p>
+          <br><br><b>
+          Specifications<br>
+          Spearhead length: 37 cm<br>
+          Spearhead weight: 260 g<br>`,
         price: 1000,
         images: [
+          { src: 'kopi', width: 5800, height: 3867 },
           { src: 'kopi_detail', width: 5375, height: 3583 },
           { src: 'kopi_detail_2', width: 5627, height: 3751 },
           { src: 'kopi_kombo_2', width: 5166, height: 3443 },
@@ -308,12 +352,18 @@ export const categories = [
       {
         id: 'pike',
         title: 'Pike',
-        description:
-          'Just pike. Wooden end towards you, sharp end towards enemy.',
-        longDescription:
-          'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Integer lacinia. Nulla est. Curabitur sagittis hendrerit ante. Fusce suscipit libero eget elit. Etiam posuere lacus quis dolor. Sed convallis magna eu sem. Duis ante orci, molestie vitae vehicula venenatis, tincidunt ac pede. Nunc tincidunt ante vitae massa. Proin mattis lacinia justo. Maecenas lorem. Morbi leo mi, nonummy eget tristique non, rhoncus non leo.',
-        price: 1000,
+        description: 'Pike, 900 CZK',
+        longDescription: `         
+          <p>Due to the lower weight (Pikehead 160g vs Spearhead 260g) it is more suitable for long 3m poles. The head is mounted on a wooden pole with an ideal size of 30-32 mm. Before mounting the head, it is necessary to machine the wood and narrow it so that the rubber hose, which reinforces the tip of the spear, fits well on the wooden mandrel at the end of the pole (see picture).</p>
+          <p>The pikehead can be ordered separately in steel, graphite, and brass color. We also produce the complete weapon in the length of 2 meters with a stained octagonal wooden pole. But only for the Czech customers. We only send spear/pike-heads abroad.<br>The blunt tip of the pike has a diameter of 3 cm and the head is partially flexible for greater safety. Flexibility can be ordered in two variants SOFT and HARD.</p>
+          <p>For logistical reasons, we do not sell poles longer than 2m. However, we make a deal with <a href="https://www.facebook.com/vyrobadobovehonabytku" target="_blank">@medievalfurniture</a> production that you can order a high-quality composite glued ash poles made on our spear/pike heads. When ordering, just say that you want a pole on a FakeSteel pike or spear and length of the weapon. The price will be 700 CZK for a 3m painted pole with an already modified end for our heads.</p> 
+          <br><br><b>
+          Specifications<br>
+          Spearhead length: 26 cm<br>
+          Spearhead weight: 160 g<br>`,
+        price: 900,
         images: [
+          { src: 'pika', width: 5800, height: 3867 },
           { src: 'pika_4', width: 5540, height: 3693 },
           { src: 'pika_1', width: 3025, height: 4538 },
           { src: 'pika_2', width: 2279, height: 4169 },
@@ -327,14 +377,19 @@ export const categories = [
     label: 'Medieval daggers',
     items: [
       {
-        id: 'basilard',
-        title: 'Basilard',
-        description: 'Basilard',
-        longDescription:
-          'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Integer lacinia. Nulla est. Curabitur sagittis hendrerit ante. Fusce suscipit libero eget elit. Etiam posuere lacus quis dolor. Sed convallis magna eu sem. Duis ante orci, molestie vitae vehicula venenatis, tincidunt ac pede. Nunc tincidunt ante vitae massa. Proin mattis lacinia justo. Maecenas lorem. Morbi leo mi, nonummy eget tristique non, rhoncus non leo.',
-        price: 1150,
+        id: 'baselard-dagger',
+        title: 'Baselard dagger',
+        description: 'Baselard dagger, 800 CZK',
+        longDescription: `<p>The baselard or "Swiss dagger" is a historical Swiss blade weapon with a crescent-shaped pommel and crossguard. Their curved shapes appeared as early as the 13th century and remained peculiar to Switzerland, and do not appear to have been imitated elsewhere.</p>
+          <p>The basic model of the dagger has only a steel rivet on the bottom of the handle. You can also order a version with steel or brass cladding.<br>The blade can be ordered in a length of 24 or 29 cm. It has a 6 mm round fiberglass core, which ends 6 cm in front of the tip, and for safer stabbing and strengthening of the foam, the end of the core is finished with Kevlar fabric.</p>          
+          <br><br><b>
+          Specifications<br>
+          Total length: 38-43 cm<br>
+          Blade length: 24-29 cm<br>
+          Weight: 130 g<br>`,
+        price: 800,
         images: [
-          { src: 'balisard_detail_1', width: 5799, height: 3866 },
+          { src: 'basilard_detail_1', width: 5799, height: 3866, fill: true },
           { src: 'balisard_detail_kombo', width: 5156, height: 3437 },
           { src: 'balisard_pochva_kombo', width: 5156, height: 3437 },
           { src: 'balisard_kombo', width: 5156, height: 3437 },
@@ -342,16 +397,40 @@ export const categories = [
         ],
       },
       {
-        id: 'dagger',
-        title: 'Dagger',
-        description: 'Dagger with balls',
-        longDescription:
-          'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Integer lacinia. Nulla est. Curabitur sagittis hendrerit ante. Fusce suscipit libero eget elit. Etiam posuere lacus quis dolor. Sed convallis magna eu sem. Duis ante orci, molestie vitae vehicula venenatis, tincidunt ac pede. Nunc tincidunt ante vitae massa. Proin mattis lacinia justo. Maecenas lorem. Morbi leo mi, nonummy eget tristique non, rhoncus non leo.',
-        price: 1150,
+        id: 'bollock-dagger',
+        title: 'Bollock dagger',
+        description: 'Bollock dagger, 1000 CZK',
+        longDescription: `<p>The name ballock dagger is derived from the phallic shape of the hilt and the 14th century warrior's propensity for wearing the dagger directly in front of the girdle. First appearing on continental effigies around 1300-1350, the ballock dagger has one of the longest usage life spans of the five main types of Medieval daggers.</p>
+          <p>We produce the dagger only in this wooden-brass version, which you can see in the photos. The blade can be ordered in a length of 24 or 29 cm. It has a 6 mm round fiberglass core, which ends 6 cm in front of the tip, and for safer stabbing and strengthening of the foam, the end of the core is finished with Kevlar fabric.</p>          
+          <br><br><b>
+          Specifications<br>
+          Total length: 38-43 cm<br>
+          Blade length: 24-29 cm<br>
+          Weight: 150 g<br>`,
+        price: 1000,
         images: [
-          { src: 'koularka_detail', width: 5681, height: 3787 },
+          { src: 'koularka_detail', width: 5681, height: 3787, fill: true },
           { src: 'koularka_kombo', width: 5156, height: 3437 },
           { src: 'koularka_pochva_kombo', width: 5156, height: 3437 },
+        ],
+      },
+      {
+        id: 'quillon_dagger',
+        title: 'Quillon dagger',
+        description: 'Quillon dagger, 0 CZK',
+        longDescription: `<p>The Quillon dagger is probably the longest lived style of dagger, current from the 12th centruy right through to the 17th or even 18th century. Suitable for military men from Late Norman knights to Cromwell’s Roundheads.</p>
+          <p>The color of the hilt can be chosen from our classic colors steel, brass, graphite. Leather grips are available in red, black and brown.</p>
+          <p>The blade can be ordered in a length of 24 or 29 cm. It has a 6 mm round fiberglass core, which ends 6 cm in front of the tip, and for safer stabbing and strengthening of the foam, the end of the core is finished with Kevlar fabric.</p>          
+          <br><br><b>
+          Specifications<br>
+          Total length: 38-43 cm<br>
+          Blade length: 24-29 cm<br>
+          Weight: 100 g<br>`,
+        price: 1150,
+        images: [
+          { src: 'mince_stribr_detail', width: 5800, height: 3867, fill: true },
+          { src: 'mince_zlata_detail', width: 5800, height: 3867 },
+          { src: 'mince_cerv_detail', width: 5800, height: 3867 },
         ],
       },
     ],
@@ -363,11 +442,11 @@ export const categories = [
       {
         id: 'scabbard-i',
         title: 'Scabbard Type I',
-        description: 'Scabbard Type I, 1600 CZK',
-        longDescription:
-          'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Integer lacinia. Nulla est. Curabitur sagittis hendrerit ante. Fusce suscipit libero eget elit. Etiam posuere lacus quis dolor. Sed convallis magna eu sem. Duis ante orci, molestie vitae vehicula venenatis, tincidunt ac pede. Nunc tincidunt ante vitae massa. Proin mattis lacinia justo. Maecenas lorem. Morbi leo mi, nonummy eget tristique non, rhoncus non leo.',
-        price: 1600,
+        description: 'Scabbard Type I, 1700 CZK',
+        longDescription: scabbardDescription('A (900 CZK), B (1200 CZK), C (1200 CZK), D (1200 CZK)', true),
+        price: 1700,
         images: [
+          { src: 'pochva6', width: 5800, height: 3867 },
           { src: 'pochva6', width: 5800, height: 3867 },
           { src: 'belts', width: 1314, height: 1801 },
           { src: 'buckles', width: 1713, height: 1061 },
@@ -376,11 +455,11 @@ export const categories = [
       {
         id: 'scabbard-ii',
         title: 'Scabbard Type II',
-        description: 'Scabbard Type II, 1600 CZK',
-        longDescription:
-          'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Integer lacinia. Nulla est. Curabitur sagittis hendrerit ante. Fusce suscipit libero eget elit. Etiam posuere lacus quis dolor. Sed convallis magna eu sem. Duis ante orci, molestie vitae vehicula venenatis, tincidunt ac pede. Nunc tincidunt ante vitae massa. Proin mattis lacinia justo. Maecenas lorem. Morbi leo mi, nonummy eget tristique non, rhoncus non leo.',
-        price: 1600,
+        description: 'Scabbard Type II, 1700 CZK',
+        longDescription: scabbardDescription('A (900 CZK), B (1200 CZK), C (1200 CZK), D (1200 CZK)', false),
+        price: 1700,
         images: [
+          { src: 'pochva1', width: 5800, height: 3867 },
           { src: 'pochva1', width: 5800, height: 3867 },
           { src: 'belts', width: 1314, height: 1801 },
           { src: 'buckles', width: 1713, height: 1061 },
@@ -390,10 +469,10 @@ export const categories = [
         id: 'scabbard-i',
         title: 'Scabbard Type III',
         description: 'Scabbard Type III, 1800 CZK',
-        longDescription:
-          'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Integer lacinia. Nulla est. Curabitur sagittis hendrerit ante. Fusce suscipit libero eget elit. Etiam posuere lacus quis dolor. Sed convallis magna eu sem. Duis ante orci, molestie vitae vehicula venenatis, tincidunt ac pede. Nunc tincidunt ante vitae massa. Proin mattis lacinia justo. Maecenas lorem. Morbi leo mi, nonummy eget tristique non, rhoncus non leo.',
+        longDescription: scabbardDescription('A (900 CZK), B (1200 CZK), C (1200 CZK), D (1200 CZK)', true),
         price: 1800,
         images: [
+          { src: 'pochva5', width: 5800, height: 3867 },
           { src: 'pochva5', width: 5800, height: 3867 },
           { src: 'pochva8', width: 5800, height: 3867 },
           { src: 'belts', width: 1314, height: 1801 },
@@ -404,10 +483,10 @@ export const categories = [
         id: 'scabbard-iv',
         title: 'Scabbard Type IV',
         description: 'Scabbard Type IV, 1800 CZK',
-        longDescription:
-          'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Integer lacinia. Nulla est. Curabitur sagittis hendrerit ante. Fusce suscipit libero eget elit. Etiam posuere lacus quis dolor. Sed convallis magna eu sem. Duis ante orci, molestie vitae vehicula venenatis, tincidunt ac pede. Nunc tincidunt ante vitae massa. Proin mattis lacinia justo. Maecenas lorem. Morbi leo mi, nonummy eget tristique non, rhoncus non leo.',
+        longDescription: scabbardDescription('A (900 CZK), B (1200 CZK), C (1200 CZK), D (1200 CZK)', true),
         price: 1800,
         images: [
+          { src: 'pochva7', width: 5800, height: 3867 },
           { src: 'pochva7', width: 5800, height: 3867 },
           { src: 'belts', width: 1314, height: 1801 },
           { src: 'buckles', width: 1713, height: 1061 },
@@ -416,11 +495,11 @@ export const categories = [
       {
         id: 'scabbard-v',
         title: 'Scabbard Type V',
-        description: 'Scabbard Type V, 2000 CZK',
-        longDescription:
-          'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Integer lacinia. Nulla est. Curabitur sagittis hendrerit ante. Fusce suscipit libero eget elit. Etiam posuere lacus quis dolor. Sed convallis magna eu sem. Duis ante orci, molestie vitae vehicula venenatis, tincidunt ac pede. Nunc tincidunt ante vitae massa. Proin mattis lacinia justo. Maecenas lorem. Morbi leo mi, nonummy eget tristique non, rhoncus non leo.',
-        price: 2000,
+        description: 'Scabbard Type V, 2100 CZK',
+        longDescription: scabbardDescription('A (900 CZK), B (1200 CZK), C (1200 CZK), D (1200 CZK)', false),
+        price: 2100,
         images: [
+          { src: 'pochva2', width: 5800, height: 3867 },
           { src: 'pochva2', width: 5800, height: 3867 },
           { src: 'belts', width: 1314, height: 1801 },
           { src: 'buckles', width: 1713, height: 1061 },
@@ -429,11 +508,11 @@ export const categories = [
       {
         id: 'scabbard-vi',
         title: 'Scabbard Type VI',
-        description: 'Scabbard Type VI, 2000 CZK',
-        longDescription:
-          'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Integer lacinia. Nulla est. Curabitur sagittis hendrerit ante. Fusce suscipit libero eget elit. Etiam posuere lacus quis dolor. Sed convallis magna eu sem. Duis ante orci, molestie vitae vehicula venenatis, tincidunt ac pede. Nunc tincidunt ante vitae massa. Proin mattis lacinia justo. Maecenas lorem. Morbi leo mi, nonummy eget tristique non, rhoncus non leo.',
-        price: 2000,
+        description: 'Scabbard Type VI, 2100 CZK',
+        longDescription: scabbardDescription('A (900 CZK), B (1200 CZK)', false),
+        price: 2100,
         images: [
+          { src: 'pochva3', width: 5800, height: 3867 },
           { src: 'pochva3', width: 5800, height: 3867 },
           { src: 'belts', width: 1314, height: 1801 },
           { src: 'buckles', width: 1713, height: 1061 },
@@ -447,7 +526,7 @@ export const orderOptions = [
   {
     id: 'polearms',
     title: 'Polearms',
-    price: 1000,
+    price: 900,
     components: [
       {
         type: 'select',
@@ -461,7 +540,7 @@ export const orderOptions = [
           {
             title: 'spear',
             value: 'spear',
-            price: 0,
+            price: 100,
           },
         ],
       },
@@ -475,9 +554,9 @@ export const orderOptions = [
             price: 0,
           },
           {
-            title: 'with 2m shaft (CZ only)',
+            title: 'with 2m shaft (+800 CZK, CZ only)',
             value: 'with 2m shaft',
-            price: 700,
+            price: 800,
           },
         ],
       },
@@ -529,13 +608,13 @@ export const orderOptions = [
         type: 'select',
         label: 'Hilt',
         options: [
-          { title: 'viking E', value: 'viking E', price: 0 },
-          { title: 'viking H', value: 'viking H', price: 0 },
           { title: 'coin', value: 'coin', price: 0 },
           { title: 'pear', value: 'pear', price: 0 },
           { title: 'octagon', value: 'octagon', price: 100 },
           { title: 'fishtail', value: 'fishtail', price: 100 },
-          { title: 'doge', value: 'doge', price: 0 },
+          { title: 'doge', value: 'doge', price: 100 },
+          { title: 'viking E', value: 'viking E', price: 0 },
+          { title: 'viking H', value: 'viking H', price: 0 },
           { title: 'langmesser', value: 'langmesser', price: 0 },
           { title: 'sabre', value: 'sabre', price: 0 },
         ],
@@ -603,11 +682,19 @@ export const orderOptions = [
         type: 'select',
         label: 'Blade',
         options: [
-          { title: 'arming sword blade', value: 'arming sword', price: 0 },
+          {
+            title: 'arming sword blade (scabbard available)',
+            value: 'arming sword',
+            price: 0,
+          },
           { title: 'viking sword blade', value: 'viking sword', price: 0 },
           { title: 'langmesser blade', value: 'langmesser', price: 0 },
           { title: 'falchion blade', value: 'falchion', price: 0 },
-          { title: 'doge sword blade', value: 'doge sword', price: 0 },
+          {
+            title: 'doge sword blade (scabbard available)',
+            value: 'doge sword',
+            price: 0,
+          },
         ],
       },
       {
@@ -628,6 +715,10 @@ export const orderOptions = [
       },
       {
         type: 'select',
+        condition: {
+          label: 'Hilt',
+          values: ['viking E', 'viking H', 'coin', 'pear'],
+        },
         label: 'Grip color',
         options: [
           {
@@ -649,8 +740,48 @@ export const orderOptions = [
       },
       {
         type: 'select',
+        label: 'Grip color',
+        condition: {
+          label: 'Hilt',
+          values: ['octagon', 'fishtail', 'doge'],
+        },
+        options: [
+          {
+            title: 'black',
+            value: 'black',
+            price: 0,
+          },
+          {
+            title: 'brown',
+            value: 'brown',
+            price: 0,
+          },
+          {
+            title: 'red',
+            value: 'red',
+            price: 0,
+          },
+          {
+            title: 'deluxe black (+200 CZK)',
+            value: 'deluxe black',
+            price: 200,
+          },
+          {
+            title: 'deluxe brown (+200 CZK)',
+            value: 'deluxe brown',
+            price: 200,
+          },
+          {
+            title: 'deluxe red (+200 CZK)',
+            value: 'deluxe red',
+            price: 200,
+          },
+        ],
+      },
+      {
+        type: 'select',
         label: 'Scabbard',
-        condition: { label: 'Blade', values: ['arming sword'] },
+        condition: { label: 'Blade', values: ['arming sword', 'doge sword'] },
         options: [
           {
             title: 'no scabbard',
@@ -660,12 +791,12 @@ export const orderOptions = [
           {
             title: 'type I',
             value: 'type I',
-            price: 1600,
+            price: 1700,
           },
           {
             title: 'type II',
             value: 'type II',
-            price: 1600,
+            price: 1700,
           },
           {
             title: 'type III',
@@ -680,12 +811,12 @@ export const orderOptions = [
           {
             title: 'type V',
             value: 'type V',
-            price: 2000,
+            price: 2100,
           },
           {
             title: 'type VI',
             value: 'type VI',
-            price: 2000,
+            price: 2100,
           },
         ],
       },
@@ -742,22 +873,22 @@ export const orderOptions = [
           {
             title: 'type A',
             value: 'type A',
-            price: 0,
+            price: 900,
           },
           {
             title: 'type B',
             value: 'type B',
-            price: 0,
+            price: 1200,
           },
           {
             title: 'type C',
             value: 'type C',
-            price: 0,
+            price: 1200,
           },
           {
-            title: 'type C',
-            value: 'type C',
-            price: 0,
+            title: 'type D',
+            value: 'type D',
+            price: 1200,
           },
         ],
       },
@@ -796,11 +927,6 @@ export const orderOptions = [
         },
         label: 'Belt color',
         options: [
-          {
-            title: 'natural',
-            value: 'natural',
-            price: 0,
-          },
           {
             title: 'black',
             value: 'black',
@@ -868,6 +994,33 @@ export const orderOptions = [
             'type VI',
           ],
         },
+        label: 'Handedness',
+        options: [
+          {
+            title: 'right handed',
+            value: 'right handed',
+            price: 0,
+          },
+          {
+            title: 'left handed',
+            value: 'left handed',
+            price: 0,
+          },
+        ],
+      },
+      {
+        type: 'select',
+        condition: {
+          label: 'Scabbard',
+          values: [
+            'type I',
+            'type II',
+            'type III',
+            'type IV',
+            'type V',
+            'type VI',
+          ],
+        },
         label: 'Chape',
         options: [
           {
@@ -896,9 +1049,9 @@ export const orderOptions = [
           ],
         },
         label: 'Waist circumference',
-        options: [...Array(210)].map((_, i) => ({
-          title: `${i + 33} cm`,
-          value: `${i + 33} cm`,
+        options: [...Array(80)].map((_, i) => ({
+          title: `${i + 70} cm`,
+          value: `${i + 70} cm`,
           price: 0,
         })),
       },
@@ -907,7 +1060,7 @@ export const orderOptions = [
   {
     id: 'mace',
     title: 'Maces & hammers',
-    price: 1000,
+    price: 1800,
     components: [
       {
         type: 'select',
