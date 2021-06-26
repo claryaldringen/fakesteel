@@ -343,10 +343,9 @@ export const categories = [
         price: 1000,
         images: [
           { src: 'kopi', width: 5800, height: 3867 },
-          { src: 'kopi_detail', width: 5375, height: 3583 },
-          { src: 'kopi_detail_2', width: 5627, height: 3751 },
           { src: 'kopi_kombo_2', width: 5166, height: 3443 },
-          { src: 'kopi_kombo3', width: 5504, height: 3672 },
+          { src: 'kopi_kombo_3', width: 5504, height: 3672, fill: true },
+          { src: 'kopi_detail', width: 5375, height: 3583, fill: true },
         ],
       },
       {
@@ -364,10 +363,8 @@ export const categories = [
         price: 900,
         images: [
           { src: 'pika', width: 5800, height: 3867 },
-          { src: 'pika_4', width: 5540, height: 3693 },
-          { src: 'pika_1', width: 3025, height: 4538 },
-          { src: 'pika_2', width: 2279, height: 4169 },
-          { src: 'pika_3', width: 5351, height: 3567 },
+          { src: 'pika_1', width: 4538, height: 3025 },
+          { src: 'pika_3', width: 5351, height: 3567, fill: true },
         ],
       },
     ],
