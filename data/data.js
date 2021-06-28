@@ -23,6 +23,8 @@ const scabbardDescription = (belts, decoration) => `<p>Now you can order scabbar
     <li>The end of the belt is normally in the triangle shape, but we can leave it unfinished square if you would like to put your own belt end on it.</li>
     <li><b>Scabbards can only be ordered with swords. We do not sell them alone!</b></li>
 </ul>
+<p>A typical fb messenger order of a scabbard should therefore look like this:
+<i>"I'd like a red scabbard IV and a brown belt C with a buckle 2 and a brass chape. I have a waist circumference of 98 cm. I'm right-handed"</i></p>
 <p>Do not hesitate to contact us with any questions or ideas.</p>
 `
 
@@ -48,6 +50,7 @@ export const categories = [
         images: [
           { src: 'mince_uzka', width: 5800, height: 3867 },
           { src: 'mince_combo', width: 5800, height: 3867 },
+          { src: 'pochva7', width: 5800, height: 3867 },
           { src: 'mince_detail', width: 5491, height: 3661, fill: true },
         ],
       },
@@ -91,6 +94,7 @@ export const categories = [
         images: [
           { src: 'hruska_uzka', width: 5800, height: 3867 },
           { src: 'hruska_combo', width: 5800, height: 3867 },
+          { src: 'pochva2', width: 5800, height: 3867 },
           { src: 'hruska_detail', width: 5695, height: 3797, fill: true },
         ],
       },
@@ -133,7 +137,7 @@ export const categories = [
         images: [
           { src: 'doge_ocel_nova_uvodka', width: 5800, height: 2207 },
           { src: 'doge_combo_zlata_tmava', width: 5800, height: 3867 },
-          { src: 'doge_pochva', width: 5694, height: 3796 },
+          { src: 'doge_pochva', width: 1920, height: 1280 },
           { src: 'doge_detail', width: 5310, height: 3540, fill: true },
         ],
       },
@@ -156,6 +160,7 @@ export const categories = [
           { src: 'viking_1', width: 5800, height: 3867 },
           { src: 'viking_1', width: 5800, height: 3867 },
           { src: 'viking_2', width: 5800, height: 3867 },
+          { src: 'viking_h_detail', width: 1920, height: 1280, fill: true },
         ],
       },
       {
@@ -343,7 +348,7 @@ export const categories = [
         price: 1000,
         images: [
           { src: 'kopi', width: 5800, height: 3867 },
-          { src: 'kopi_kombo_2', width: 5166, height: 3443 },
+          { src: 'kopi_nakres', width: 1622, height: 1083 },
           { src: 'kopi_kombo_3', width: 5504, height: 3672, fill: true },
           { src: 'kopi_detail', width: 5375, height: 3583, fill: true },
         ],
@@ -363,7 +368,7 @@ export const categories = [
         price: 900,
         images: [
           { src: 'pika', width: 5800, height: 3867 },
-          { src: 'pika_1', width: 4538, height: 3025 },
+          { src: 'pika_nakres', width: 1933, height: 1289 },
           { src: 'pika_3', width: 5351, height: 3567, fill: true },
         ],
       },
@@ -376,7 +381,7 @@ export const categories = [
       {
         id: 'baselard-dagger',
         title: 'Baselard dagger',
-        description: 'Baselard dagger, 800 CZK',
+        description: 'Baselard dagger, 1100 CZK',
         longDescription: `<p>The baselard or "Swiss dagger" is a historical Swiss blade weapon with a crescent-shaped pommel and crossguard. Their curved shapes appeared as early as the 13th century and remained peculiar to Switzerland, and do not appear to have been imitated elsewhere.</p>
           <p>The basic model of the dagger has only a steel rivet on the bottom of the handle. You can also order a version with steel or brass cladding.<br>The blade can be ordered in a length of 24 or 29 cm. It has a 6 mm round fiberglass core, which ends 6 cm in front of the tip, and for safer stabbing and strengthening of the foam, the end of the core is finished with Kevlar fabric.</p>          
           <br><br><b>
@@ -386,11 +391,11 @@ export const categories = [
           Weight: 130 g<br>`,
         price: 800,
         images: [
-          { src: 'basilard_detail_1', width: 5799, height: 3866, fill: true },
-          { src: 'balisard_detail_kombo', width: 5156, height: 3437 },
-          { src: 'balisard_pochva_kombo', width: 5156, height: 3437 },
-          { src: 'balisard_kombo', width: 5156, height: 3437 },
-          { src: 'balisard_rukojet_2', width: 5205, height: 3470 },
+          { src: 'basilard', width: 1802, height: 1201 },
+          { src: 'basilard_stribr_detail', width: 5800, height: 3867, fill: true },
+          { src: 'basilard_zlata_detail', width: 5800, height: 3867, fill: true },
+          { src: 'basilard_combo', width: 4469, height: 2979, fill: true },
+          { src: 'basilard_detail', width: 5800, height: 3867, fill: true },
         ],
       },
       {
@@ -406,15 +411,14 @@ export const categories = [
           Weight: 150 g<br>`,
         price: 1000,
         images: [
-          { src: 'koularka_detail', width: 5681, height: 3787, fill: true },
-          { src: 'koularka_kombo', width: 5156, height: 3437 },
-          { src: 'koularka_pochva_kombo', width: 5156, height: 3437 },
+          { src: 'bollock', width: 1672, height: 1115 },
+          { src: 'koularka_detail_1', width: 5800, height: 3867, fill: true },
         ],
       },
       {
         id: 'quillon_dagger',
         title: 'Quillon dagger',
-        description: 'Quillon dagger, 0 CZK',
+        description: 'Quillon dagger, 1000 CZK',
         longDescription: `<p>The Quillon dagger is probably the longest lived style of dagger, current from the 12th centruy right through to the 17th or even 18th century. Suitable for military men from Late Norman knights to Cromwell’s Roundheads.</p>
           <p>The color of the hilt can be chosen from our classic colors steel, brass, graphite. Leather grips are available in red, black and brown.</p>
           <p>The blade can be ordered in a length of 24 or 29 cm. It has a 6 mm round fiberglass core, which ends 6 cm in front of the tip, and for safer stabbing and strengthening of the foam, the end of the core is finished with Kevlar fabric.</p>          
@@ -425,6 +429,7 @@ export const categories = [
           Weight: 100 g<br>`,
         price: 1150,
         images: [
+          { src: 'quillon_daggers', width: 2261, height: 1508, fill: true },
           { src: 'mince_stribr_detail', width: 5800, height: 3867, fill: true },
           { src: 'mince_zlata_detail', width: 5800, height: 3867 },
           { src: 'mince_cerv_detail', width: 5800, height: 3867 },
@@ -439,7 +444,7 @@ export const categories = [
       {
         id: 'scabbard-i',
         title: 'Scabbard Type I',
-        description: 'Scabbard Type I, 1700 CZK',
+        description: 'Scabbard Type I, 1700 CZK + belt price',
         longDescription: scabbardDescription('A (900 CZK), B (1200 CZK), C (1200 CZK), D (1200 CZK)', true),
         price: 1700,
         images: [
@@ -452,7 +457,7 @@ export const categories = [
       {
         id: 'scabbard-ii',
         title: 'Scabbard Type II',
-        description: 'Scabbard Type II, 1700 CZK',
+        description: 'Scabbard Type II, 1700 CZK + belt price',
         longDescription: scabbardDescription('A (900 CZK), B (1200 CZK), C (1200 CZK), D (1200 CZK)', false),
         price: 1700,
         images: [
@@ -465,7 +470,7 @@ export const categories = [
       {
         id: 'scabbard-i',
         title: 'Scabbard Type III',
-        description: 'Scabbard Type III, 1800 CZK',
+        description: 'Scabbard Type III, 1800 CZK + belt price',
         longDescription: scabbardDescription('A (900 CZK), B (1200 CZK), C (1200 CZK), D (1200 CZK)', true),
         price: 1800,
         images: [
@@ -479,7 +484,7 @@ export const categories = [
       {
         id: 'scabbard-iv',
         title: 'Scabbard Type IV',
-        description: 'Scabbard Type IV, 1800 CZK',
+        description: 'Scabbard Type IV, 1800 CZK + belt price',
         longDescription: scabbardDescription('A (900 CZK), B (1200 CZK), C (1200 CZK), D (1200 CZK)', true),
         price: 1800,
         images: [
@@ -492,7 +497,7 @@ export const categories = [
       {
         id: 'scabbard-v',
         title: 'Scabbard Type V',
-        description: 'Scabbard Type V, 2100 CZK',
+        description: 'Scabbard Type V, 2100 CZK + belt price',
         longDescription: scabbardDescription('A (900 CZK), B (1200 CZK), C (1200 CZK), D (1200 CZK)', false),
         price: 2100,
         images: [
@@ -505,7 +510,7 @@ export const categories = [
       {
         id: 'scabbard-vi',
         title: 'Scabbard Type VI',
-        description: 'Scabbard Type VI, 2100 CZK',
+        description: 'Scabbard Type VI, 2100 CZK + belt price',
         longDescription: scabbardDescription('A (900 CZK), B (1200 CZK)', false),
         price: 2100,
         images: [
