@@ -63,8 +63,8 @@ export const About = ({ active, setActive }) => {
       <h3>How to order, and how long does delivery take?</h3>
       <p>
         At the moment, you can order in the messenger on our Facebook; we will
-        be happy to advise you and arrange it with you. Or you can use the order
-        form on our website. Alternatively, contact us on our email or
+        be happy to advise you and arrange it with you. {/*Or you can use the order
+        form on our website.*/} Alternatively, contact us on our email (<a href="mailto:info@fakesteel.cz">info@fakesteel.cz</a>) or
         Instagram. We currently manufacture larp weapons mostly to order
         individually, and with a few exceptions, we do not have goods in stock.
         So your weapons go into production only after ordering and paying.

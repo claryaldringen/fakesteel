@@ -7,7 +7,7 @@ export const Category = ({ id, items, active, setActive }) => {
   return (
     <div id={id}>
       {items.map((item, i) => (
-        <Item key={`item_${i}`} {...item} />
+        <Item key={`item_${i}`} {...item} categoryId={id} />
       ))}
     </div>
   )

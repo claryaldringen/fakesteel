@@ -1,28 +1,52 @@
-import { useState, useMemo, useCallback } from 'react'
+import { useState, useCallback } from 'react'
+import validator from 'validator'
+
+import { countries } from '../../data/countries'
 
 import styles from './OrderForm.module.scss'
+import classNames from 'classnames'
 
-export const RecapitulationForm = () => {
-  const [name, setName] = useState()
-  const [email, setEmail] = useState()
-  const [phone, setPhone] = useState()
-  const [street, setStreet] = useState()
-  const [city, setCity] = useState()
-  const [code, setCode] = useState()
+export const RecapitulationForm = ({ basket, setBasket }) => {
+  const [name, setName] = useState('')
+  const [email, setEmail] = useState('')
+  const [phone, setPhone] = useState('')
+  const [street, setStreet] = useState('')
+  const [city, setCity] = useState('')
+  const [code, setCode] = useState('')
   const [country, setCountry] = useState('Czech Republic')
-  const [shipping, setShipping] = useState()
-  const [notice, setNotice] = useState()
+  const [shipping, setShipping] = useState('send')
+  const [notice, setNotice] = useState('')
   const [additional, setAdditional] = useState()
+  const [showModal, setShowModal] = useState(false)
+  const [emailError, setEmailError] = useState('')
+  const [phoneError, setPhoneError] = useState('')
+  const [sending, setSending] = useState(false)
 
   const onNameChange = useCallback((event) => setName(event.target.value), [
     setName,
   ])
-  const onEmailChange = useCallback((event) => setEmail(event.target.value), [
-    setEmail,
-  ])
-  const onPhoneChange = useCallback((event) => setPhone(event.target.value), [
-    setPhone,
-  ])
+  const onEmailChange = useCallback(
+    (event) => {
+      setEmail(event.target.value)
+      if (validator.isEmail(event.target.value)) {
+        setEmailError('')
+      } else {
+        setEmailError(`The email isn't valid!`)
+      }
+    },
+    [setEmail, setEmailError]
+  )
+  const onPhoneChange = useCallback(
+    (event) => {
+      setPhone(event.target.value)
+      if (validator.isMobilePhone(event.target.value)) {
+        setPhoneError('')
+      } else {
+        setPhoneError(`The phone number isn't valid!`)
+      }
+    },
+    [setPhone, setPhoneError]
+  )
   const onStreetChange = useCallback((event) => setStreet(event.target.value), [
     setStreet,
   ])
@@ -44,13 +68,14 @@ export const RecapitulationForm = () => {
     setName,
   ])
   const onAdditionalChange = useCallback(
-    (event) => setNotice(event.target.value),
+    (event) => setAdditional(event.target.value),
     [setName]
   )
 
   const onClick = useCallback(
     (e) => {
       e.preventDefault()
+      e.stopPropagation()
 
       const data = {
         name,
@@ -61,9 +86,11 @@ export const RecapitulationForm = () => {
         country,
         shipping,
         notice,
+        additional,
+        basket,
       }
 
-      console.log(data)
+      setSending(true)
       fetch('/api/order', {
         method: 'POST',
         headers: {
@@ -76,126 +103,163 @@ export const RecapitulationForm = () => {
         if (res.status === 200) {
           console.log('Response ok')
         }
+        setSending(false)
+        setShowModal(true)
       })
     },
-    [name, email, street, city, code, country, shipping, notice]
+    [
+      name,
+      email,
+      street,
+      city,
+      code,
+      country,
+      shipping,
+      notice,
+      additional,
+      basket,
+      setShowModal,
+    ]
   )
+
+  const closeModal = useCallback(() => {
+    setBasket([])
+    setName('')
+    setEmail('')
+    setPhone('')
+    setStreet('')
+    setCity('')
+    setCode('')
+    setCountry('Czech Republic')
+    setAdditional('')
+    setNotice('')
+    setShowModal(false)
+  }, [setShowModal])
+
+  const enabled =
+    name &&
+    email &&
+    street &&
+    city &&
+    code &&
+    basket.length &&
+    !emailError &&
+    !sending
 
   return (
     <div>
+      {showModal && (
+        <div className={styles.overlay}>
+          <div className={styles.modal}>
+            <h2>
+              Your order has just been dispatched. Confirmation has been sent to
+              your email {email}.
+            </h2>
+            <button onClick={closeModal}>OK</button>
+          </div>
+        </div>
+      )}
+      <h2>Shipping information</h2>
       <form className={styles.form}>
-        <table className={styles.leftTable}>
-          <tbody>
-            <tr>
-              <td>Full name:</td>
-              <td>
-                <input
-                  type="text"
-                  value={name}
-                  onChange={onNameChange}
-                  required
-                />
-              </td>
-            </tr>
-            <tr>
-              <td>Email:</td>
-              <td>
-                <input
-                  type="email"
-                  value={email}
-                  onChange={onEmailChange}
-                  required
-                />
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <label htmlFor="phone">Phone number:</label>
-                <br />
-                <input
-                  id="phone"
-                  type="text"
-                  value={phone}
-                  onChange={onPhoneChange}
-                  required
-                />
-              </td>
-            </tr>
-            <tr>
-              <td>Street and No.:</td>
-              <td>
-                <input
-                  type="text"
-                  value={street}
-                  onChange={onStreetChange}
-                  required
-                />
-              </td>
-            </tr>
-            <tr>
-              <td>City:</td>
-              <td>
-                <input
-                  type="text"
-                  value={city}
-                  onChange={onCityChange}
-                  required
-                />
-              </td>
-            </tr>
-            <tr>
-              <td>Post code:</td>
-              <td>
-                <input
-                  type="text"
-                  value={code}
-                  onChange={onCodeChange}
-                  required
-                />
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <label htmlFor="country">Country:</label>
-                <br />
-                <input id="country" type="text" value={country} onChange={onCountryChange} />
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <label htmlFor="additional">Additional information:</label>
-                <br />
-                <input id="additional" type="text" value={additional} onChange={onAdditionalChange} />
-              </td>
-            </tr>
-          </tbody>
-        </table>
-        <table className={styles.rightTable}>
-          <tbody>
-            <tr>
-              <td>
-                <label>Shipping:</label>
-              </td>
-              <td>
-                <select value={shipping} onChange={onShippingChange}>
-                  <option value="dpd">Send it to me, please</option>
-                  <option value="cp">I'll pick it up in Prague</option>
-                </select>
-              </td>
-            </tr>
-            <tr>
-              <td colSpan={2}>
-                <label>Notice:</label>
-                <textarea value={notice} onChange={onNoticeChange} />
-              </td>
-            </tr>
-            <tr>
-              <td colSpan={2}>
-                <button onClick={onClick}>Send order</button>
-              </td>
-            </tr>
-          </tbody>
-        </table>
+        <div className={styles.group}>
+          Full name:<span className={styles.required}>*</span>
+          <br />
+          <input type="text" value={name} onChange={onNameChange} required />
+        </div>
+        <div className={styles.group}>
+          Email:<span className={styles.required}>*</span>
+          <br />
+          <input type="email" value={email} onChange={onEmailChange} required />
+          {emailError && (
+            <>
+              <br />
+              <span className={styles.invalid}>{emailError}</span>
+            </>
+          )}
+        </div>
+        <div className={styles.group}>
+          <label htmlFor="phone">
+            Phone number:<span className={styles.required}>*</span>
+          </label>
+          <br />
+          <input
+            id="phone"
+            type="text"
+            value={phone}
+            onChange={onPhoneChange}
+            required
+          />
+          {phoneError && (
+            <>
+              <br />
+              <span className={styles.invalid}>{phoneError}</span>
+            </>
+          )}
+        </div>
+        <div className={styles.group}>
+          Street and No.:<span className={styles.required}>*</span>
+          <br />
+          <input
+            type="text"
+            value={street}
+            onChange={onStreetChange}
+            required
+          />
+        </div>
+        <div className={styles.group}>
+          City:<span className={styles.required}>*</span>
+          <br />
+          <input type="text" value={city} onChange={onCityChange} required />
+        </div>
+        <div className={styles.group}>
+          Post code:<span className={styles.required}>*</span>
+          <br />
+          <input type="text" value={code} onChange={onCodeChange} required />
+        </div>
+        <div className={styles.group}>
+          <label htmlFor="country">Country:</label>
+          <br />
+          <select id="country" value={country} onChange={onCountryChange}>
+            {countries.map(({ name, code }) => (
+              <option key={code} value={name}>
+                {name}
+              </option>
+            ))}
+          </select>
+        </div>
+        <div className={styles.group}>
+          <label htmlFor="additional">Additional information:</label>
+          <br />
+          <input
+            id="additional"
+            type="text"
+            value={additional}
+            onChange={onAdditionalChange}
+          />
+        </div>
+        <div className={styles.group}>
+          <label>Shipping:</label>
+          <br />
+          <select value={shipping} onChange={onShippingChange}>
+            <option value="send">Send it to me, please</option>
+            <option value="pick">I'll pick it up in Prague</option>
+          </select>
+        </div>
+        <div className={styles.group}>
+          <label>Notice:</label>
+          <br />
+          <textarea value={notice} onChange={onNoticeChange} />
+        </div>
+        <div className={styles.clear} />
+        <div className={styles.buttonGroup}>
+          <button
+            onClick={onClick}
+            disabled={!enabled}
+            className={classNames({ [styles.disabled]: !enabled })}
+          >
+            {sending ? 'Sending order...' : 'Send order'}
+          </button>
+        </div>
       </form>
     </div>
   )

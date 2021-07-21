@@ -9,7 +9,7 @@ import { categories } from '../data/data'
 import { Footer } from '../components/Footer/Footer'
 import { Order } from '../components/Order/Order'
 
-export default () => {
+const Index = () => {
   const [active, setActive] = useState()
 
   return (
@@ -31,7 +31,7 @@ export default () => {
             active={active}
           />
         ))}
-        <Order active={active} setActive={setActive} />
+        {/*<Order active={active} setActive={setActive} />*/}
         <About active={active} setActive={setActive} />
       </main>
 
@@ -41,3 +41,5 @@ export default () => {
     </div>
   )
 }
+
+export default Index

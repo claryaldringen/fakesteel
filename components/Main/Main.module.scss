@@ -1,8 +1,24 @@
-
 .main {
   width: 100%;
   max-height: 100vh;
   overflow: hidden;
+
+  div {
+    div {
+      button {
+        position: absolute;
+        top: 16px;
+      }
+
+      button:first-of-type {
+        left: 42%;
+      }
+
+      button:last-of-type {
+        right: 42%;
+      }
+    }
+  }
 }
 
 .image {

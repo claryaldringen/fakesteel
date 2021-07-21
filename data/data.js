@@ -14,11 +14,18 @@ const maceDescription = (
 <p>The "${type}" Mace is another in a series of crushing all-foam weapons that we produce.<br>
 The shaft has a 18 cm steel tube cast on a round core in handle for better controllability and balance of the weapon.</p>`
 
-const scabbardDescription = (belts, decoration) => `<p>Now you can order scabbards with a belt for our one-handed swords. The scabbard consists of an extremely durable PP plastic core, which is covered in cow leather with a metal chape. The scabbard includes a sword belt with a brass buckle.<br>When ordering, you can choose the type and color of the scabbard and belt with straps, then the metal chape, the shape of the brass buckle and possibly your own decorative motif under the leather.</p>
+const scabbardDescription = (
+  belts,
+  decoration
+) => `<p>Now you can order scabbards with a belt for our one-handed swords. The scabbard consists of an extremely durable PP plastic core, which is covered in cow leather with a metal chape. The scabbard includes a sword belt with a brass buckle.<br>When ordering, you can choose the type and color of the scabbard and belt with straps, then the metal chape, the shape of the brass buckle and possibly your own decorative motif under the leather.</p>
 <ul>
     <li>This scabbard can be combined with belts ${belts}.</li>
     <li>The type of brass buckles, chapes and leather color can be combined completely freely.</li>
-    ${decoration ? `<li>The simple decorative motif under the leather must have a size of 6x6 cm and can be used for this scabbard (+300 CZK).</li>` : ''}
+    ${
+      decoration
+        ? `<li>The simple decorative motif under the leather must have a size of 6x6 cm and can be used for this scabbard (+300 CZK).</li>`
+        : ''
+    }
     <li>Before ordering, it is necessary to measure the waist circumference, due to the holes in the belt. Measure yourself in clothes or armor to which you will wear the scabbard.</li>
     <li>The end of the belt is normally in the triangle shape, but we can leave it unfinished square if you would like to put your own belt end on it.</li>
     <li><b>Scabbards can only be ordered with swords. We do not sell them alone!</b></li>
@@ -349,7 +356,6 @@ export const categories = [
         images: [
           { src: 'kopi', width: 5800, height: 3867 },
           { src: 'kopi_nakres', width: 1622, height: 1083 },
-          { src: 'kopi_kombo_3', width: 5504, height: 3672, fill: true },
           { src: 'kopi_detail', width: 5375, height: 3583, fill: true },
         ],
       },
@@ -392,8 +398,7 @@ export const categories = [
         price: 800,
         images: [
           { src: 'basilard', width: 1802, height: 1201 },
-          { src: 'basilard_stribr_detail', width: 5800, height: 3867, fill: true },
-          { src: 'basilard_zlata_detail', width: 5800, height: 3867, fill: true },
+          { src: 'basilard', width: 1802, height: 1201 },
           { src: 'basilard_combo', width: 4469, height: 2979, fill: true },
           { src: 'basilard_detail', width: 5800, height: 3867, fill: true },
         ],
@@ -412,6 +417,7 @@ export const categories = [
         price: 1000,
         images: [
           { src: 'bollock', width: 1672, height: 1115 },
+          { src: 'bollock', width: 1672, height: 1115 },
           { src: 'koularka_detail_1', width: 5800, height: 3867, fill: true },
         ],
       },
@@ -429,10 +435,10 @@ export const categories = [
           Weight: 100 g<br>`,
         price: 1150,
         images: [
-          { src: 'quillon_daggers', width: 2261, height: 1508, fill: true },
+          { src: 'quillon', width: 1744, height: 1162 },
           { src: 'mince_stribr_detail', width: 5800, height: 3867, fill: true },
-          { src: 'mince_zlata_detail', width: 5800, height: 3867 },
-          { src: 'mince_cerv_detail', width: 5800, height: 3867 },
+          { src: 'mince_zlata_detail', width: 5800, height: 3867, fill: true },
+          { src: 'mince_cerv_detail', width: 5800, height: 3867, fill: true },
         ],
       },
     ],
@@ -445,79 +451,115 @@ export const categories = [
         id: 'scabbard-i',
         title: 'Scabbard Type I',
         description: 'Scabbard Type I, 1700 CZK + belt price',
-        longDescription: scabbardDescription('A (900 CZK), B (1200 CZK), C (1200 CZK), D (1200 CZK)', true),
+        longDescription: scabbardDescription(
+          'A (900 CZK), B (1200 CZK), C (1200 CZK), D (1200 CZK)',
+          true
+        ),
         price: 1700,
         images: [
           { src: 'pochva6', width: 5800, height: 3867 },
           { src: 'pochva6', width: 5800, height: 3867 },
-          { src: 'belts', width: 1314, height: 1801 },
-          { src: 'buckles', width: 1713, height: 1061 },
+          { src: 'belt_a', width: 2653, height: 445 },
+          { src: 'belt_b', width: 2653, height: 445 },
+          { src: 'belt_c', width: 2653, height: 445 },
+          { src: 'belt_d', width: 2653, height: 417 },
+          { src: 'buckles', width: 2612, height: 1361 },
         ],
       },
       {
         id: 'scabbard-ii',
         title: 'Scabbard Type II',
         description: 'Scabbard Type II, 1700 CZK + belt price',
-        longDescription: scabbardDescription('A (900 CZK), B (1200 CZK), C (1200 CZK), D (1200 CZK)', false),
+        longDescription: scabbardDescription(
+          'A (900 CZK), B (1200 CZK), C (1200 CZK), D (1200 CZK)',
+          false
+        ),
         price: 1700,
         images: [
+          { src: 'ryba3', width: 5800, height: 3867 },
           { src: 'pochva1', width: 5800, height: 3867 },
-          { src: 'pochva1', width: 5800, height: 3867 },
-          { src: 'belts', width: 1314, height: 1801 },
-          { src: 'buckles', width: 1713, height: 1061 },
+          { src: 'belt_a', width: 2653, height: 445 },
+          { src: 'belt_b', width: 2653, height: 445 },
+          { src: 'belt_c', width: 2653, height: 445 },
+          { src: 'belt_d', width: 2653, height: 417 },
+          { src: 'buckles', width: 2612, height: 1361 },
         ],
       },
       {
         id: 'scabbard-i',
         title: 'Scabbard Type III',
         description: 'Scabbard Type III, 1800 CZK + belt price',
-        longDescription: scabbardDescription('A (900 CZK), B (1200 CZK), C (1200 CZK), D (1200 CZK)', true),
+        longDescription: scabbardDescription(
+          'A (900 CZK), B (1200 CZK), C (1200 CZK), D (1200 CZK)',
+          true
+        ),
         price: 1800,
         images: [
           { src: 'pochva5', width: 5800, height: 3867 },
           { src: 'pochva5', width: 5800, height: 3867 },
           { src: 'pochva8', width: 5800, height: 3867 },
-          { src: 'belts', width: 1314, height: 1801 },
-          { src: 'buckles', width: 1713, height: 1061 },
+          { src: 'belt_a', width: 2653, height: 445 },
+          { src: 'belt_b', width: 2653, height: 445 },
+          { src: 'belt_c', width: 2653, height: 445 },
+          { src: 'belt_d', width: 2653, height: 417 },
+          { src: 'buckles', width: 2612, height: 1361 },
         ],
       },
       {
         id: 'scabbard-iv',
         title: 'Scabbard Type IV',
         description: 'Scabbard Type IV, 1800 CZK + belt price',
-        longDescription: scabbardDescription('A (900 CZK), B (1200 CZK), C (1200 CZK), D (1200 CZK)', true),
+        longDescription: scabbardDescription(
+          'A (900 CZK), B (1200 CZK), C (1200 CZK), D (1200 CZK)',
+          true
+        ),
         price: 1800,
         images: [
           { src: 'pochva7', width: 5800, height: 3867 },
           { src: 'pochva7', width: 5800, height: 3867 },
-          { src: 'belts', width: 1314, height: 1801 },
-          { src: 'buckles', width: 1713, height: 1061 },
+          { src: 'belt_a', width: 2653, height: 445 },
+          { src: 'belt_b', width: 2653, height: 445 },
+          { src: 'belt_c', width: 2653, height: 445 },
+          { src: 'belt_d', width: 2653, height: 417 },
+          { src: 'buckles', width: 2612, height: 1361 },
         ],
       },
       {
         id: 'scabbard-v',
         title: 'Scabbard Type V',
         description: 'Scabbard Type V, 2100 CZK + belt price',
-        longDescription: scabbardDescription('A (900 CZK), B (1200 CZK), C (1200 CZK), D (1200 CZK)', false),
+        longDescription: scabbardDescription(
+          'A (900 CZK), B (1200 CZK), C (1200 CZK), D (1200 CZK)',
+          false
+        ),
         price: 2100,
         images: [
           { src: 'pochva2', width: 5800, height: 3867 },
           { src: 'pochva2', width: 5800, height: 3867 },
-          { src: 'belts', width: 1314, height: 1801 },
-          { src: 'buckles', width: 1713, height: 1061 },
+          { src: 'belt_a', width: 2653, height: 445 },
+          { src: 'belt_b', width: 2653, height: 445 },
+          { src: 'belt_c', width: 2653, height: 445 },
+          { src: 'belt_d', width: 2653, height: 417 },
+          { src: 'buckles', width: 2612, height: 1361 },
         ],
       },
       {
         id: 'scabbard-vi',
         title: 'Scabbard Type VI',
         description: 'Scabbard Type VI, 2100 CZK + belt price',
-        longDescription: scabbardDescription('A (900 CZK), B (1200 CZK)', false),
+        longDescription: scabbardDescription(
+          'A (900 CZK), B (1200 CZK)',
+          false
+        ),
         price: 2100,
         images: [
+          { src: 'pochva3', width: 5800, height: 3867, fill: true },
           { src: 'pochva3', width: 5800, height: 3867 },
-          { src: 'pochva3', width: 5800, height: 3867 },
-          { src: 'belts', width: 1314, height: 1801 },
-          { src: 'buckles', width: 1713, height: 1061 },
+          { src: 'belt_a', width: 2653, height: 445 },
+          { src: 'belt_b', width: 2653, height: 445 },
+          { src: 'belt_c', width: 2653, height: 445 },
+          { src: 'belt_d', width: 2653, height: 417 },
+          { src: 'buckles', width: 2612, height: 1361 },
         ],
       },
     ],
@@ -526,7 +568,7 @@ export const categories = [
 
 export const orderOptions = [
   {
-    id: 'polearms',
+    id: 'polearm',
     title: 'Polearms',
     price: 900,
     components: [
@@ -1114,7 +1156,7 @@ export const orderOptions = [
     ],
   },
   {
-    id: 'daggers',
+    id: 'dagger',
     title: 'Daggers',
     price: 800,
     components: [

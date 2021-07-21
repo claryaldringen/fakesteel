@@ -6,7 +6,7 @@ import { Header } from '../../components/Header/Header'
 import { categories } from '../../data/data'
 import { Detail } from '../../components/Detail/Detail'
 
-export default ({ item, category }) => {
+const DetailPage = ({ item, category }) => {
   return (
     <div className={styles.container}>
       <Head>
@@ -39,3 +39,5 @@ export const getServerSideProps = async ({ params }) => {
     }
   }
 }
+
+export default DetailPage

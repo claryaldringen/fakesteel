@@ -16,7 +16,7 @@ export const Order = ({ active, setActive }) => {
       <OrderForm basket={basket} setBasket={setBasket} />
       <Basket basket={basket} />
       <div className={styles.clear} />
-      <RecapitulationForm />
+      <RecapitulationForm basket={basket} setBasket={setBasket} />
       <div className={styles.clear} />
     </div>
   )
