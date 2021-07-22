@@ -20,6 +20,7 @@ export const Item = ({ images, title, description, categoryId }) => {
           src={`/images/weapons/${image.src}.jpg`}
           width={image.width}
           height={image.height}
+          priority={true}
         />
         <div className={styles.description}>
           <div className={styles.icon}>
