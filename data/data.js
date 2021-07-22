@@ -1,11 +1,18 @@
 const LABEL1 = `For more information on blade and hilts materials, balancing and more, see our <a href="/#about">FAQ</a>.`
-const LABEL2 = `What can you choose or modify when ordering this weapon?
-  <ol>
-  <li>Blade type and length. The standard and maximum length of the blades is 70 cm. They can be shortened by request.</li>
-  <li>The colour of the metallic shade of the hilt and blade. The hilt can be steel, graphite or brass. The blade can be steel or graphite. The pommel may have a different colour than the crossguard.</li>
-  <li>Leather grip type and colour. Either classic leather grip or deluxe version. The colour can be either brown, black or red.</li>
-  <li>Fiberglass core. The sword can have either a round 10mm or rectangular 15x6mm core. We also offer a heavier and stronger 16x8mm core. Suitable for Czech hard „kekel“ battles.</li>
-</ol>`
+
+const swordLabel2 = (
+  leather = true
+) => `What can you choose or modify when ordering this weapon?
+    <ol>
+      <li>Blade type and length. The standard and maximum length of the blades is 70 cm. They can be shortened by request.</li>
+      <li>The colour of the metallic shade of the hilt and blade. The hilt can be steel, graphite or brass. The blade can be steel or graphite. The pommel may have a different colour than the crossguard.</li>
+      ${
+        leather
+          ? `<li>Leather grip type and colour. Either classic leather grip or deluxe version. The colour can be either brown, black or red.</li>`
+          : ''
+      }
+      <li>Fiberglass core. The sword can have either a round 10mm or rectangular 15x6mm core. We also offer a heavier and stronger 16x8mm core. Suitable for Czech hard „kekel“ battles.</li>
+    </ol>`
 
 const maceDescription = (
   type
@@ -52,7 +59,7 @@ export const categories = [
           Blade width: 5.5 cm<br>
           Weight: 680 g<br>
           Point of Balance: 8.5 cm<br>
-          </b><br>${LABEL2}<br>${LABEL1}`,
+          </b><br>${swordLabel2()}<br>${LABEL1}`,
         price: 2300,
         images: [
           { src: 'mince_uzka', width: 1920, height: 1280 },
@@ -73,7 +80,7 @@ export const categories = [
           Blade width: 5.5 cm<br>
           Weight: 660 g<br>
           Point of Balance: 9 cm<br>
-          </b><br>${LABEL2}<br>${LABEL1}
+          </b><br>${swordLabel2()}<br>${LABEL1}
           `,
         price: 2400,
         images: [
@@ -96,7 +103,7 @@ export const categories = [
           Blade width: 5.5 cm<br>
           Weight: 700 g<br>
           Point of Balance: 7.5 cm<br>
-          </b><br>${LABEL2}<br>${LABEL1}`,
+          </b><br>${swordLabel2()}<br>${LABEL1}`,
         price: 2300,
         images: [
           { src: 'hruska_uzka', width: 1920, height: 1280 },
@@ -117,7 +124,7 @@ export const categories = [
           Blade width: 5.5 cm<br>
           Weight: 670 g<br>
           Point of Balance: 8.5 cm<br>
-          </b><br>${LABEL2}<br>${LABEL1}`,
+          </b><br>${swordLabel2()}<br>${LABEL1}`,
         price: 2400,
         images: [
           { src: 'ryba', width: 1920, height: 1280 },
@@ -139,7 +146,7 @@ export const categories = [
           Blade width: 4.5 cm<br>
           Weight: 670 g<br>
           Point of Balance: 8 cm<br>
-          </b><br>${LABEL2}<br>${LABEL1}`,
+          </b><br>${swordLabel2()}<br>${LABEL1}`,
         price: 2400,
         images: [
           { src: 'doge_ocel_nova_uvodka', width: 1920, height: 731 },
@@ -160,7 +167,7 @@ export const categories = [
           Blade width: 5.5 cm<br>
           Weight: 640 g<br>
           Point of Balance: 11 cm<br>
-          </b><br>${LABEL2}<br>${LABEL1}
+          </b><br>${swordLabel2()}<br>${LABEL1}
           `,
         price: 2300,
         images: [
@@ -182,7 +189,7 @@ export const categories = [
           Blade width: 5.5 cm<br>
           Weight: 690 g<br>
           Point of Balance: 9.5 cm<br>
-          </b><br>${LABEL2}<br>${LABEL1}
+          </b><br>${swordLabel2()}<br>${LABEL1}
           `,
         price: 2300,
         images: [
@@ -209,7 +216,7 @@ export const categories = [
           Blade width: 4 cm<br>
           Weight: 600 g<br>
           Point of Balance: 9 cm<br>
-          </b><br>${LABEL2}<br>${LABEL1}`,
+          </b><br>${swordLabel2()}<br>${LABEL1}`,
         price: 2300,
         images: [
           { src: 'falchion_1', width: 1920, height: 1280 },
@@ -229,7 +236,7 @@ export const categories = [
           Blade width: 4 cm<br>
           Weight: 670 g<br>
           Point of Balance: 8.5 cm<br>
-          </b><br>${LABEL2}<br>${LABEL1}`,
+          </b><br>${swordLabel2(false)}<br>${LABEL1}`,
         price: 2300,
         images: [
           { src: 'messer_1', width: 1920, height: 1280 },
@@ -250,7 +257,7 @@ export const categories = [
           Blade width: 4 cm<br>
           Weight: 620 g<br>
           Point of Balance: 16 cm<br>
-          </b><br>${LABEL2}<br>${LABEL1}`,
+          </b><br>${swordLabel2(false)}<br>${LABEL1}`,
         price: 2200,
         images: [
           { src: 'savle_1', width: 1920, height: 1280 },
