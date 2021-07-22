@@ -477,6 +477,7 @@ export const categories = [
         price: 1700,
         images: [
           { src: 'ryba3', width: 5800, height: 3867 },
+          { src: 'ryba3', width: 5800, height: 3867 },
           { src: 'pochva1', width: 5800, height: 3867 },
           { src: 'belt_a', width: 2653, height: 445 },
           { src: 'belt_b', width: 2653, height: 445 },
@@ -555,6 +556,7 @@ export const categories = [
         images: [
           { src: 'pochva3', width: 5800, height: 3867, fill: true },
           { src: 'pochva3', width: 5800, height: 3867 },
+          { src: 'pochva4', width: 5800, height: 3867 },
           { src: 'belt_a', width: 2653, height: 445 },
           { src: 'belt_b', width: 2653, height: 445 },
           { src: 'belt_c', width: 2653, height: 445 },

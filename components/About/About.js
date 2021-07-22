@@ -60,17 +60,40 @@ export const About = ({ active, setActive }) => {
         The sword will last depending on the style of fencing and the force with
         which you strike hard sharper materials.
       </p>
+      <div className={styles.videos}>
+        <div className={styles.video}>
+          <iframe
+            src="https://www.youtube.com/embed/8RdeTLfFcik"
+            title="YouTube video player"
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+          ></iframe>
+        </div>
+        <div className={styles.video}>
+          <iframe
+            src="https://www.youtube.com/embed/W3SUbVkdGf4"
+            title="YouTube video player"
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+          ></iframe>
+        </div>
+      </div>
       <h3>How to order, and how long does delivery take?</h3>
       <p>
         At the moment, you can order in the messenger on our Facebook; we will
-        be happy to advise you and arrange it with you. {/*Or you can use the order
-        form on our website.*/} Alternatively, contact us on our email (<a href="mailto:info@fakesteel.cz">info@fakesteel.cz</a>) or
-        Instagram. We currently manufacture larp weapons mostly to order
-        individually, and with a few exceptions, we do not have goods in stock.
-        So your weapons go into production only after ordering and paying.
-        Production takes about 30 days. We try to send the weapons as quickly as
-        possible, but we cannot guarantee precisely when we will complete the
-        order. We are currently around 20-40 days on average.
+        be happy to advise you and arrange it with you.{' '}
+        {/*Or you can use the order
+        form on our website.*/}{' '}
+        Alternatively, contact us on our email (
+        <a href="mailto:info@fakesteel.cz">info@fakesteel.cz</a>) or Instagram.
+        We currently manufacture larp weapons mostly to order individually, and
+        with a few exceptions, we do not have goods in stock. So your weapons go
+        into production only after ordering and paying. Production takes about
+        30 days. We try to send the weapons as quickly as possible, but we
+        cannot guarantee precisely when we will complete the order. We are
+        currently around 20-40 days on average.
       </p>
       <h3>Round or rectangular fiberglass core?</h3>
       <p>

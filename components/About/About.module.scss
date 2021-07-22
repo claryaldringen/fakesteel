@@ -9,3 +9,23 @@
   }
 }
 
+.videos {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.video {
+  iframe {
+    width: 560px;
+    height: 315px;
+
+    @media (max-width: 640px) {
+      width: 280px;
+      height: 158px;
+    }
+  }
+
+}
+
