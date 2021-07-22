@@ -82,7 +82,7 @@ export const About = ({ active, setActive }) => {
       </div>
       <h3>How to order, and how long does delivery take?</h3>
       <p>
-        At the moment, you can order in the messenger on our Facebook; we will
+          At the moment, you can order in the messenger on our <a href="https://www.facebook.com/fakesteel">Facebook</a>; we will
         be happy to advise you and arrange it with you.{' '}
         {/*Or you can use the order
         form on our website.*/}{' '}
