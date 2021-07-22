@@ -60,6 +60,10 @@ export const About = ({ active, setActive }) => {
         The sword will last depending on the style of fencing and the force with
         which you strike hard sharper materials.
       </p>
+      <p>
+        Review and test videos of the Octagon arming sword from our US customer
+        Rob IE:
+      </p>
       <div className={styles.videos}>
         <div className={styles.video}>
           <iframe
@@ -82,8 +86,9 @@ export const About = ({ active, setActive }) => {
       </div>
       <h3>How to order, and how long does delivery take?</h3>
       <p>
-          At the moment, you can order in the messenger on our <a href="https://www.facebook.com/fakesteel">Facebook</a>; we will
-        be happy to advise you and arrange it with you.{' '}
+        At the moment, you can order in the messenger on our{' '}
+        <a href="https://www.facebook.com/fakesteel">Facebook</a>; we will be
+        happy to advise you and arrange it with you.{' '}
         {/*Or you can use the order
         form on our website.*/}{' '}
         Alternatively, contact us on our email (
