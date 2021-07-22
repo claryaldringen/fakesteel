@@ -241,7 +241,7 @@ export const categories = [
       {
         id: 'one-handed-sword-sabre-briquet',
         title: 'One-handed sabre - Briquet',
-        description: 'One-handed sabre - Briquet, 2300 CZK',
+        description: 'One-handed sabre - Briquet, 2200 CZK',
         longDescription: `The inspiration for us were the French short infantry sabers "Briquet", which became famous especially during the revolution and the Napoleonic Wars. These small sabers very often had an almost straight single-edged blade, so it was the perfect option for us.
           <br><br><b>
           Specifications<br>
@@ -251,7 +251,7 @@ export const categories = [
           Weight: 620 g<br>
           Point of Balance: 16 cm<br>
           </b><br>${LABEL2}<br>${LABEL1}`,
-        price: 2300,
+        price: 2200,
         images: [
           { src: 'savle_1', width: 5440, height: 3627 },
           { src: 'savle_combo', width: 5800, height: 3867 },
