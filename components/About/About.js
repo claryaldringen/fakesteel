@@ -103,17 +103,29 @@ export const About = ({ active, setActive }) => {
       <h3>Round or rectangular fiberglass core?</h3>
       <p>
         When ordering, you must choose whether you want a round 10mm core or a
-        15x6mm rectangular core. Round core: the sword is generally about 50 g
-        lighter. The round core bends a little and vibrates in the same way in
-        all directions, even in the direction of the blow. This core has no
-        weakness in any direction where is a greater risk of breakage.
-        Rectangular core: the sword is generally about 50 g heavier. The
-        rectangle behaves more like an actual sword blade. It does not bend and
-        vibrates only minimally in the direction of the cut; on the contrary,
-        when you hit flat, it bends and vibrates even more than the round core.
-        With strong or frequent blows from the flat side of the blade, there is
-        a more considerable risk of damaging the rectangular core than with a
-        round one. The rectangular core is better for fencing.
+        15x6mm rectangular core.
+        <ul>
+          <li>
+            <b>Round core:</b>&nbsp;the sword is generally about 50 g lighter.
+            The round core bends a little and vibrates in the same way in all
+            directions, even in the direction of the blow. This core has no
+            weakness in any direction where is a greater risk of breakage.
+            <br />
+            <br />
+          </li>
+          <li>
+            <b>Rectangular core:</b>&nbsp;the sword is generally about 50 g
+            heavier. The rectangle behaves more like an actual sword blade. It
+            does not bend and vibrates only minimally in the direction of the
+            cut; on the contrary, when you hit flat, it bends and vibrates even
+            more than the round core. With strong or frequent blows from the
+            flat side of the blade, there is a more considerable risk of
+            damaging the rectangular core than with a round one. The rectangular
+            core is better for fencing.A round core (10) is narrower than a
+            rectangular core (15x6 or 16x8), so the foam of the blade may be
+            slightly softer than that of a rectangular core.
+          </li>
+        </ul>
       </p>
       <p>
         It is also possible to choose a heavier and more durable 16x8mm
@@ -123,7 +135,7 @@ export const About = ({ active, setActive }) => {
         increase. Suitable if you want to use the weapon primarily for hard
         battles in armour. Such as the Czech "kekel".
       </p>
-      <Image src="/images/construction.png" width={2048} height={1954} />
+      <Image src="/images/construction2.jpg" width={1920} height={1832} />
       <h3>How to take care of weapons and repair them?</h3>
       <p>
         All double-edged and single-edged sword blades are made with reinforced
@@ -165,6 +177,7 @@ export const About = ({ active, setActive }) => {
         and we do not think it is safe to stab with any weapon without eye
         protection.
       </p>
+      <Image src="/images/double_edged_blades.jpg" width={1920} height={1280} />
       <h3>
         What weapons can the scabbard be ordered for, and how are they designed?
       </h3>

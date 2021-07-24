@@ -15,7 +15,7 @@ export const Footer = () => {
         <br /><br />IČ: 03386007<br /><br />
         <a href="mailto:info@fakesteel.com">info@fakesteel.com</a>
         <br />
-        +420 722 954 861
+        +420 733 580 425
       </div>
       <div className={styles.social}>
         <div className={styles.icon}>
