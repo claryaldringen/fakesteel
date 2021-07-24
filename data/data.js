@@ -87,7 +87,7 @@ export const categories = [
           { src: 'oktagon', width: 1920, height: 1280 },
           { src: 'oktagon_2', width: 1920, height: 1280 },
           { src: 'oktagon_3', width: 1920, height: 1280 },
-          { src: 'oktagon_4', width: 1920, height: 1280 },
+          { src: 'oktagon4', width: 1920, height: 1164 },
           { src: 'oktagon_1', width: 1920, height: 1280, fill: true },
         ],
       },

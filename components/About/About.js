@@ -102,14 +102,17 @@ export const About = ({ active, setActive }) => {
       </p>
       <h3>Round or rectangular fiberglass core?</h3>
       <p>
-        When ordering, you must choose whether you want a round 10mm core or a
-        15x6mm rectangular core.
+        When ordering, you must choose whether you want a <b>round 10mm core</b>{' '}
+        or a <b>15x6mm rectangular core</b>.
         <ul>
           <li>
             <b>Round core:</b>&nbsp;the sword is generally about 50 g lighter.
             The round core bends a little and vibrates in the same way in all
             directions, even in the direction of the blow. This core has no
-            weakness in any direction where is a greater risk of breakage.
+            weakness in any direction where is a greater risk of breakage. A
+            round core (10) is narrower than a rectangular core (15x6 or 16x8),
+            so the foam of the blade may be slightly softer than that of a
+            rectangular core.
             <br />
             <br />
           </li>
@@ -121,19 +124,17 @@ export const About = ({ active, setActive }) => {
             more than the round core. With strong or frequent blows from the
             flat side of the blade, there is a more considerable risk of
             damaging the rectangular core than with a round one. The rectangular
-            core is better for fencing.A round core (10) is narrower than a
-            rectangular core (15x6 or 16x8), so the foam of the blade may be
-            slightly softer than that of a rectangular core.
+            core is better for fencing.
           </li>
         </ul>
       </p>
       <p>
-        It is also possible to choose a heavier and more durable 16x8mm
-        rectangular core. The weapon will be about another 50g heavier, and the
-        PoB will move a little more to the tip of the sword. However, the
-        overall durability and strength of the weapon will significantly
-        increase. Suitable if you want to use the weapon primarily for hard
-        battles in armour. Such as the Czech "kekel".
+        It is also possible to choose a heavier and more durable{' '}
+        <b>16x8mm rectangular core</b>. The weapon will be about another 50g
+        heavier, and the PoB will move a little more to the tip of the sword.
+        However, the overall durability and strength of the weapon will
+        significantly increase. Suitable if you want to use the weapon primarily
+        for hard battles in armour. Such as the Czech "kekel".
       </p>
       <Image src="/images/construction2.jpg" width={1920} height={1832} />
       <h3>How to take care of weapons and repair them?</h3>
