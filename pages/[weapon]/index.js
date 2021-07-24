@@ -6,22 +6,20 @@ import { Header } from '../../components/Header/Header'
 import { categories } from '../../data/data'
 import { Detail } from '../../components/Detail/Detail'
 
-const DetailPage = ({ item, category }) => {
-  return (
-    <div className={styles.container}>
-      <Head>
-        <title>FakeSteel armory</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-      <Header active={category.id} setActive={() => null} />
-      <main>
-        <Detail {...item} />
-      </main>
+const DetailPage = ({ item, category }) => (
+  <div className={styles.container}>
+    <Head>
+      <title>{item.title} - FakeSteel Armory</title>
+      <link rel="icon" href="/favicon.ico" />
+    </Head>
+    <Header active={category.id} setActive={() => null} />
+    <main>
+      <Detail {...item} />
+    </main>
 
-      <footer className={styles.footer}></footer>
-    </div>
-  )
-}
+    <footer className={styles.footer}></footer>
+  </div>
+)
 
 export const getServerSideProps = async ({ params }) => {
   for (let i = 0; i < categories.length; i++) {

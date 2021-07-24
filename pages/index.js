@@ -15,7 +15,7 @@ const Index = () => {
   return (
     <div className={styles.container}>
       <Head>
-        <title>FakeSteel armory</title>
+        <title>FakeSteel Armory</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header active={active} setActive={setActive} />

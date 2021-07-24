@@ -169,11 +169,11 @@ export const About = ({ active, setActive }) => {
         What weapons can the scabbard be ordered for, and how are they designed?
       </h3>
       <p>
-        We currently offer scabbards for one type of one-handed blades and all
-        daggers. The scabbards for swords have a durable PP plastic core and are
-        covered with leather and a steel or brass chape; they also have a
-        leather belt with a brass buckle. The sheaths for the daggers are only
-        leather with a steel or brass chape.
+        We currently offer scabbards for two types of one-handed blades (arming
+        and doge blades) and all daggers. The scabbards for swords have a
+        durable PP plastic core and are covered with leather and a steel or
+        brass chape; they also have a leather belt with a brass buckle. The
+        sheaths for the daggers are only leather with a steel or brass chape.
       </p>
       <p>
         We believe that you will like our weapons and that you will be maximally

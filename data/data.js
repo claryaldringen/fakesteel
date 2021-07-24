@@ -465,7 +465,7 @@ export const categories = [
         price: 1700,
         images: [
           { src: 'pochva6', width: 1920, height: 1280 },
-          { src: 'pochva6', width: 1920, height: 1280 },
+          { src: 'scabbard-1-B', width: 1600, height: 1067 },
           { src: 'belt_a', width: 2653, height: 445 },
           { src: 'belt_b', width: 2653, height: 445 },
           { src: 'belt_c', width: 2653, height: 445 },
@@ -484,8 +484,8 @@ export const categories = [
         price: 1700,
         images: [
           { src: 'ryba3', width: 1920, height: 1280 },
-          { src: 'ryba3', width: 1920, height: 1280 },
-          { src: 'pochva1', width: 1920, height: 1280 },
+          { src: 'scabbard-2-C', width: 1600, height: 1067 },
+          { src: 'scabbard-2-D', width: 1600, height: 1067 },
           { src: 'belt_a', width: 2653, height: 445 },
           { src: 'belt_b', width: 2653, height: 445 },
           { src: 'belt_c', width: 2653, height: 445 },
@@ -504,8 +504,8 @@ export const categories = [
         price: 1800,
         images: [
           { src: 'pochva5', width: 1920, height: 1280 },
-          { src: 'pochva5', width: 1920, height: 1280 },
-          { src: 'pochva8', width: 1920, height: 1280 },
+          { src: 'scabbard-3-C', width: 1920, height: 1280 },
+          { src: 'scabbard-3-C2', width: 1920, height: 1280 },
           { src: 'belt_a', width: 2653, height: 445 },
           { src: 'belt_b', width: 2653, height: 445 },
           { src: 'belt_c', width: 2653, height: 445 },
@@ -524,7 +524,7 @@ export const categories = [
         price: 1800,
         images: [
           { src: 'pochva7', width: 1920, height: 1280 },
-          { src: 'pochva7', width: 1920, height: 1280 },
+          { src: 'scabbard-4-C', width: 1920, height: 1280 },
           { src: 'belt_a', width: 2653, height: 445 },
           { src: 'belt_b', width: 2653, height: 445 },
           { src: 'belt_c', width: 2653, height: 445 },
@@ -543,7 +543,7 @@ export const categories = [
         price: 2100,
         images: [
           { src: 'pochva2', width: 1920, height: 1280 },
-          { src: 'pochva2', width: 1920, height: 1280 },
+          { src: 'scabbard-5-C', width: 1920, height: 1280 },
           { src: 'belt_a', width: 2653, height: 445 },
           { src: 'belt_b', width: 2653, height: 445 },
           { src: 'belt_c', width: 2653, height: 445 },
@@ -562,8 +562,8 @@ export const categories = [
         price: 2100,
         images: [
           { src: 'pochva3', width: 1920, height: 1280, fill: true },
-          { src: 'pochva3', width: 1920, height: 1280 },
-          { src: 'pochva4', width: 1920, height: 1280 },
+          { src: 'scabbard-6-A', width: 1920, height: 1280 },
+          { src: 'scabbard-6-B', width: 1920, height: 1280 },
           { src: 'belt_a', width: 2653, height: 445 },
           { src: 'belt_b', width: 2653, height: 445 },
           { src: 'belt_c', width: 2653, height: 445 },
