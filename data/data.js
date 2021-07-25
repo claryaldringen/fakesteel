@@ -396,7 +396,7 @@ export const categories = [
         title: 'Baselard dagger',
         description: 'Baselard dagger, 1100 CZK',
         longDescription: `<p>The baselard or "Swiss dagger" is a historical Swiss blade weapon with a crescent-shaped pommel and crossguard. Their curved shapes appeared as early as the 13th century and remained peculiar to Switzerland, and do not appear to have been imitated elsewhere.</p>
-          <p>The basic model of the dagger has only a steel rivet on the bottom of the handle. You can also order a version with steel or brass cladding.<br>The blade can be ordered in a length of 24 or 29 cm. It has a 6 mm round fiberglass core, which ends 6 cm in front of the tip, and for safer stabbing and strengthening of the foam, the end of the core is finished with Kevlar fabric.</p>          
+          <p>The basic model of the dagger has only a steel rivet on the bottom of the handle. You can also order a version with steel or brass cladding (+300 CZK).<br>The blade can be ordered in a length of 24 or 29 cm. It has a 6 mm round fiberglass core, which ends 6 cm in front of the tip, and for safer stabbing and strengthening of the foam, the end of the core is finished with Kevlar fabric.</p>          
           <br><br><b>
           Specifications<br>
           Total length: 38-43 cm<br>
