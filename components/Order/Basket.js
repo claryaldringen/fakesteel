@@ -1,3 +1,4 @@
+import React from 'react'
 import { idToLabel } from '../../utils'
 import { useMemo } from 'react'
 import styles from './OrderForm.module.scss'
@@ -10,12 +11,14 @@ export const Basket = ({ basket }) => {
 
   return (
     <div className={styles.basket}>
-        <h2>Your basket {total > 0 && `(total: ${total} CZK)`}</h2>
+      <h2>Your basket {total > 0 && `(total: ${total} CZK)`}</h2>
       {basket.map(({ count, weapon, price, ...props }, i) => (
         <table key={`table_${i}`} className={styles.item}>
           <thead>
             <th colSpan={2}>
-                <h4>{count}x {idToLabel(weapon)}</h4>
+              <h4>
+                {count}x {idToLabel(weapon)}
+              </h4>
             </th>
           </thead>
           <tbody>

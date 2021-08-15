@@ -1,4 +1,6 @@
-import MessengerCustomerChat from 'react-messenger-customer-chat'
+import React from 'react'
+
+// import MessengerCustomerChat from 'react-messenger-customer-chat'
 
 //export const Chat = ({ pageId }) => <MessengerCustomerChat pageId={152209902206613} appId="page1" />
 

@@ -2,7 +2,6 @@ import { idToLabel } from '../../utils'
 
 export default (req, res) => {
   console.log(req.body)
-  require('dotenv').config()
 
   let nodemailer = require('nodemailer')
   const transporter = nodemailer.createTransport({
@@ -18,20 +17,19 @@ export default (req, res) => {
   const vs = Date.now().toString().substr(-10)
   const total = req.body.basket.reduce((total, { price }) => total + price, 0)
 
-  const summary = req.body.basket.map(
-    ({ count, weapon, price, ...props }, i) => {
-      const propRows = Object.keys(props).map(
-        (key, j) =>
-          `<tr><td style="width: 70%;">${idToLabel(key)}:</td><td>${
-            props[key]
-          }</td></tr>`
-      )
+  const summary = req.body.basket.map(({ count, weapon, price, ...props }) => {
+    const propRows = Object.keys(props).map(
+      (key) =>
+        `<tr><td style="width: 70%;">${idToLabel(key)}:</td><td>${
+          props[key]
+        }</td></tr>`
+    )
 
-      return `<table style="border-bottom: solid 1px black;width: 100%;">
+    return `<table style="border-bottom: solid 1px black;width: 100%;">
           <thead>
             <th colSpan={2} style="text-align: left;">${count}x ${idToLabel(
-        weapon
-      )}</th>
+      weapon
+    )}</th>
           </thead>
           <tbody>
             ${propRows}
@@ -47,8 +45,7 @@ export default (req, res) => {
             </tr>
           </tfoot>
         </table>`
-    }
-  )
+  })
 
   let billing = ''
   if (req.body.country === 'Czech Republic') {
@@ -61,7 +58,7 @@ export default (req, res) => {
   }
 
   let shipping = `<div style="float: right;"><b>Shipping to</b><br>${req.body.name}<br>${req.body.street}<br>${req.body.city}<br>${req.body.code}<br>${req.body.country}<br>${req.body.additional}</div>`
-  if(req.body.shipping == 'pick') {
+  if (req.body.shipping == 'pick') {
     shipping = `<div style="float: right;"><b>Shipment to be picked up at</b><br></div>`
   }
 

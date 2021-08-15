@@ -1,4 +1,4 @@
-import { useState, useCallback } from 'react'
+import React, { useState, useCallback } from 'react'
 import validator from 'validator'
 
 import { countries } from '../../data/countries'
@@ -219,7 +219,7 @@ export const RecapitulationForm = ({ basket, setBasket }) => {
         <div className={styles.group}>
           <label htmlFor="country">Country:</label>
           <br />
-          <select id="country" value={country} onChange={onCountryChange}>
+          <select id="country" value={country} onBlur={onCountryChange}>
             {countries.map(({ name, code }) => (
               <option key={code} value={name}>
                 {name}
@@ -238,15 +238,15 @@ export const RecapitulationForm = ({ basket, setBasket }) => {
           />
         </div>
         <div className={styles.group}>
-          <label>Shipping:</label>
+          <label htmlFor="shipping">Shipping:</label>
           <br />
-          <select value={shipping} onChange={onShippingChange}>
+          <select value={shipping} onBlur={onShippingChange}>
             <option value="send">Send it to me, please</option>
-            <option value="pick">I'll pick it up in Prague</option>
+            <option value="pick">I&apos;ll pick it up in Prague</option>
           </select>
         </div>
         <div className={styles.group}>
-          <label>Notice:</label>
+          <label htmlFor="notice">Notice:</label>
           <br />
           <textarea value={notice} onChange={onNoticeChange} />
         </div>

@@ -1,3 +1,4 @@
+import React from 'react'
 import Image from 'next/image'
 
 import styles from './About.module.scss'
@@ -56,9 +57,9 @@ export const About = ({ active, setActive }) => {
         weapons, we try to be as inspired as possible by real historical pieces
         and understand why and how different weapons looked like. The foam of
         the blade lasts a really long time. We have successfully used weapons in
-        Czech soft and hard "Kekel" battles. However, no foam is indestructible.
-        The sword will last depending on the style of fencing and the force with
-        which you strike hard sharper materials.
+        Czech soft and hard &quot;Kekel&quot; battles. However, no foam is
+        indestructible. The sword will last depending on the style of fencing
+        and the force with which you strike hard sharper materials.
       </p>
       <p>
         Review and test videos of the Octagon arming sword from our US customer
@@ -134,7 +135,7 @@ export const About = ({ active, setActive }) => {
         heavier, and the PoB will move a little more to the tip of the sword.
         However, the overall durability and strength of the weapon will
         significantly increase. Suitable if you want to use the weapon primarily
-        for hard battles in armour. Such as the Czech "kekel".
+        for hard battles in armour. Such as the Czech &quot;kekel&quot;.
       </p>
       <Image src="/images/construction2.jpg" width={1920} height={1832} />
       <h3>How to take care of weapons and repair them?</h3>
@@ -151,19 +152,19 @@ export const About = ({ active, setActive }) => {
         flexible adhesive glueing PUR (e.g. our favourite flexible instant
         adhesive with a mixture of rubber-Loctite Super Attak Power Flex gel,
         which fills up and strengthens the crack after about 10 minutes). The
-        sword's colour can be restored or changed at your discretion with other
-        colours made for plastics. Do not cut into weapons with sharp objects.
-        Do not hit hard or heavy obstacles, such as a rock, benches or trees.
-        Try to avoid a substantial impact on sharp parts of the armour. Also,
-        pay attention to the sharp edges of plate gloves, some tend to cut into
-        crossguards or other parts of the sword when fencing from below, and
-        there is a risk of unnecessary damage to the hilt. Pay close attention
-        to long-term bends to protect, e.g. during storage. Flexible crossguards
-        made of hard rubber do not mind blows in combat. They bend slightly at
-        most but return immediately. The problem can occur during extreme
-        bending, for example, in the trunk of a car, when the sword is put under
-        luggage, and the crossguard is bent at a sharp angle under pressure for
-        a long time.
+        sword&apos;s colour can be restored or changed at your discretion with
+        other colours made for plastics. Do not cut into weapons with sharp
+        objects. Do not hit hard or heavy obstacles, such as a rock, benches or
+        trees. Try to avoid a substantial impact on sharp parts of the armour.
+        Also, pay attention to the sharp edges of plate gloves, some tend to cut
+        into crossguards or other parts of the sword when fencing from below,
+        and there is a risk of unnecessary damage to the hilt. Pay close
+        attention to long-term bends to protect, e.g. during storage. Flexible
+        crossguards made of hard rubber do not mind blows in combat. They bend
+        slightly at most but return immediately. The problem can occur during
+        extreme bending, for example, in the trunk of a car, when the sword is
+        put under luggage, and the crossguard is bent at a sharp angle under
+        pressure for a long time.
       </p>
       <h3>How safe are weapons? Is it possible to thrust with them?</h3>
       <p>

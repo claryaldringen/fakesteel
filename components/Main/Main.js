@@ -1,3 +1,4 @@
+import React from 'react'
 import styles from './Main.module.scss'
 
 import { Slide } from 'react-slideshow-image'
@@ -11,10 +12,19 @@ export const Main = ({ active, setActive }) => {
 
   return (
     <div id="main" className={styles.main}>
-      <Slide easing="ease" arrows={true} duration={3000} transitionDuration={2000}>
+      <Slide
+        easing="ease"
+        arrows={true}
+        duration={3000}
+        transitionDuration={2000}
+      >
         {images.map((image, i) => (
           <div key={`image_${i}`}>
-            <img src={`/images/main/${image}.jpg`} className={styles.image} />
+            <img
+              src={`/images/main/${image}.jpg`}
+              className={styles.image}
+              alt=""
+            />
           </div>
         ))}
       </Slide>

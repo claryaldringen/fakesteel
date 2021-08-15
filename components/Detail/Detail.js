@@ -1,4 +1,4 @@
-import { useMemo } from 'react'
+import React, { useMemo } from 'react'
 import Image from 'next/image'
 import styles from './Detail.module.scss'
 import classNames from 'classnames'
@@ -8,8 +8,9 @@ export const Detail = ({ images, title, longDescription, price }) => {
 
   return (
     <div className={styles.detail}>
-      {slicedImages.map(({ src, width, height, fill }) => (
+      {slicedImages.map(({ src, width, height, fill }, index) => (
         <div
+          key={`di_${index}`}
           className={classNames(
             styles.image,
             fill ? styles.tall : styles.short
@@ -30,10 +31,15 @@ export const Detail = ({ images, title, longDescription, price }) => {
         <span className={styles.price}>Price: {price} CZK</span>
         <div>
           For orders and other questions, do not hesitate to contact us on our{' '}
-          <a href="https://www.facebook.com/fakesteel" target="_blank">
+          <a
+            href="https://www.facebook.com/fakesteel"
+            target="_blank"
+            rel="noreferrer noopener"
+          >
             Facebook
           </a>{' '}
-          or use our email <a href="mailto:info@fakesteel.cz">info@fakesteel.cz</a>.
+          or use our email{' '}
+          <a href="mailto:info@fakesteel.cz">info@fakesteel.cz</a>.
           {/*or use our <a href="/#order">order form</a>!*/}
         </div>
       </div>

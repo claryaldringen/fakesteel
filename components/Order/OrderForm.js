@@ -1,4 +1,4 @@
-import { useState, useMemo, useCallback } from 'react'
+import React, { useState, useMemo, useCallback } from 'react'
 
 import { orderOptions } from '../../data/data'
 import { idToLabel, labelToId } from '../../utils'
@@ -9,9 +9,7 @@ const getPrice = (params, weaponId, count = 1) => {
   let total = weapon.price * 1
   const components = weapon.components
   Object.keys(params).forEach((id) => {
-    const component = components.find(
-      ({ label }) => label == idToLabel(id)
-    )
+    const component = components.find(({ label }) => label == idToLabel(id))
     const { price } = component.options.find(({ value }) => value == params[id])
     total += price
   })
@@ -57,7 +55,7 @@ const renderFormElement = (
   switch (type) {
     case 'select':
       return (
-        <select id={id} onChange={onSelectChange} value={weaponParams[id]}>
+        <select id={id} onBlur={onSelectChange} value={weaponParams[id]}>
           {params.options.map(({ title, value }) => (
             <>
               <option key={`${label}–${value}`} value={value}>
@@ -130,65 +128,65 @@ export const OrderForm = ({ basket, setBasket }) => {
     <div className={styles.orderForm}>
       <h2>Weapon selection</h2>
       <form className={styles.form}>
-      <table>
-        <tbody>
-          <tr>
-            <td>
-              <label htmlFor="wt">Weapon type:</label>
-            </td>
-            <td>
-              <select id="wt" onChange={onWeaponChange} value={weapon}>
-                {orderOptions.map(({ id, title }) => (
-                  <option key={id} value={id}>
-                    {title}
-                  </option>
-                ))}
-              </select>
-            </td>
-          </tr>
-          {components.map((component) => (
-            <>
-              {isConditionTrue(component, weaponParams) && (
-                <tr key={labelToId(component.label)}>
-                  <td>
-                    <label htmlFor={labelToId(component.label)}>
-                      {component.label}:&nbsp;
-                    </label>
-                  </td>
-                  <td>
-                    {renderFormElement(component, weaponParams, onChange)}
-                  </td>
-                </tr>
-              )}
-            </>
-          ))}
-          <tr>
-            <td>
-              <label htmlFor="count">Count:</label>
-            </td>
-            <td>
-              {' '}
-              <input
-                id="count"
-                type="number"
-                step={1}
-                min={1}
-                onChange={onCountChange}
-                value={count}
-              />
-            </td>
-          </tr>
-          <tr>
-            <td>Price:</td>
-            <td>{price} CZK</td>
-          </tr>
-          <tr>
-            <td colSpan={2}>
-              <button onClick={addToOrder}>Add to order</button>
-            </td>
-          </tr>
-        </tbody>
-      </table>
+        <table>
+          <tbody>
+            <tr>
+              <td>
+                <label htmlFor="wt">Weapon type:</label>
+              </td>
+              <td>
+                <select id="wt" onBlur={onWeaponChange} value={weapon}>
+                  {orderOptions.map(({ id, title }) => (
+                    <option key={id} value={id}>
+                      {title}
+                    </option>
+                  ))}
+                </select>
+              </td>
+            </tr>
+            {components.map((component) => (
+              <>
+                {isConditionTrue(component, weaponParams) && (
+                  <tr key={labelToId(component.label)}>
+                    <td>
+                      <label htmlFor={labelToId(component.label)}>
+                        {component.label}:&nbsp;
+                      </label>
+                    </td>
+                    <td>
+                      {renderFormElement(component, weaponParams, onChange)}
+                    </td>
+                  </tr>
+                )}
+              </>
+            ))}
+            <tr>
+              <td>
+                <label htmlFor="count">Count:</label>
+              </td>
+              <td>
+                {' '}
+                <input
+                  id="count"
+                  type="number"
+                  step={1}
+                  min={1}
+                  onChange={onCountChange}
+                  value={count}
+                />
+              </td>
+            </tr>
+            <tr>
+              <td>Price:</td>
+              <td>{price} CZK</td>
+            </tr>
+            <tr>
+              <td colSpan={2}>
+                <button onClick={addToOrder}>Add to order</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
       </form>
     </div>
   )

@@ -1,3 +1,4 @@
+import React from 'react'
 import slugify from 'slugify'
 
 import styles from '../../styles/Home.module.css'
