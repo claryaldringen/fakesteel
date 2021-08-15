@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import Head from 'next/head'
+
 import styles from '../styles/Home.module.css'
 import { Header } from '../components/Header/Header'
 import { Main } from '../components/Main/Main'
@@ -8,16 +8,18 @@ import { About } from '../components/About/About'
 import { categories } from '../data/data'
 import { Footer } from '../components/Footer/Footer'
 import { Order } from '../components/Order/Order'
+import { StyledCookieConsent } from '../components/CookieConsent/StyledCookieConsent'
+import { WebHead } from '../components/Head'
+import { Chat } from '../components/Chat/Chat'
 
 const Index = () => {
   const [active, setActive] = useState()
 
+  console.log(process.env)
+
   return (
     <div className={styles.container}>
-      <Head>
-        <title>FakeSteel Armory</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+      <WebHead />
       <Header active={active} setActive={setActive} />
       <main>
         <Main active={active} setActive={setActive} />
@@ -38,6 +40,8 @@ const Index = () => {
       <footer>
         <Footer />
       </footer>
+      <Chat />
+      <StyledCookieConsent />
     </div>
   )
 }

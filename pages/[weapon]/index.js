@@ -1,23 +1,22 @@
-import Head from 'next/head'
 import slugify from 'slugify'
 
 import styles from '../../styles/Home.module.css'
 import { Header } from '../../components/Header/Header'
 import { categories } from '../../data/data'
 import { Detail } from '../../components/Detail/Detail'
+import { StyledCookieConsent } from '../../components/CookieConsent/StyledCookieConsent'
+import { WebHead } from '../../components/Head'
 
 const DetailPage = ({ item, category }) => (
   <div className={styles.container}>
-    <Head>
-      <title>{item.title} - FakeSteel Armory</title>
-      <link rel="icon" href="/favicon.ico" />
-    </Head>
+    <WebHead />
     <Header active={category.id} setActive={() => null} />
     <main>
       <Detail {...item} />
     </main>
 
     <footer className={styles.footer}></footer>
+    <StyledCookieConsent />
   </div>
 )
 

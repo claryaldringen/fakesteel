@@ -27,7 +27,7 @@ const scabbardDescription = (
 ) => `<p>Now you can order scabbards with a belt for our one-handed swords. The scabbard consists of an extremely durable PP plastic core, which is covered in cow leather with a metal chape. The scabbard includes a sword belt with a brass buckle.<br>When ordering, you can choose the type and color of the scabbard and belt with straps, then the metal chape, the shape of the brass buckle and possibly your own decorative motif under the leather.</p>
 <ul>
     <li>This scabbard can be combined with belts ${belts}.</li>
-    <li>The type of brass buckles, chapes and leather color can be combined completely freely.</li>
+    <li>The type of brass buckles (1-4), chapes (steel, brass) and leather color of scabbard and sword belt (brown, black, red, yellow, green) can be combined completely freely.</li>
     ${
       decoration
         ? `<li>The simple decorative motif under the leather must have a size of 6x6 cm and can be used for this scabbard (+300 CZK).</li>`
