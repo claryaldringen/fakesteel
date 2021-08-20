@@ -580,6 +580,7 @@ export const orderOptions = [
     id: 'polearm',
     title: 'Polearms',
     price: 900,
+    weight: 0.175,
     components: [
       {
         type: 'select',
@@ -594,6 +595,7 @@ export const orderOptions = [
             title: 'spear',
             value: 'spear',
             price: 100,
+            weight: 0.1,
           },
         ],
       },
@@ -610,6 +612,7 @@ export const orderOptions = [
             title: 'with 2m shaft (+800 CZK, CZ only)',
             value: 'with 2m shaft',
             price: 800,
+            weight: 3,
           },
         ],
       },
@@ -656,6 +659,7 @@ export const orderOptions = [
     id: 'sword',
     title: 'Swords',
     price: 2300,
+    weight: 0.7,
     components: [
       {
         type: 'select',
@@ -845,31 +849,37 @@ export const orderOptions = [
             title: 'type I',
             value: 'type I',
             price: 1700,
+            weight: 0.7,
           },
           {
             title: 'type II',
             value: 'type II',
             price: 1700,
+            weight: 0.7,
           },
           {
             title: 'type III',
             value: 'type III',
             price: 1800,
+            weight: 0.7,
           },
           {
             title: 'type IV',
             value: 'type IV',
             price: 1800,
+            weight: 0.7,
           },
           {
             title: 'type V',
             value: 'type V',
             price: 2100,
+            weight: 0.7,
           },
           {
             title: 'type VI',
             value: 'type VI',
             price: 2100,
+            weight: 0.7,
           },
         ],
       },
@@ -1114,6 +1124,7 @@ export const orderOptions = [
     id: 'mace',
     title: 'Maces & hammers',
     price: 1800,
+    weight: 0.45,
     components: [
       {
         type: 'select',
@@ -1138,6 +1149,7 @@ export const orderOptions = [
             title: 'hammer',
             value: 'hammer',
             price: 0,
+            weight: 0.1,
           },
         ],
       },
@@ -1168,6 +1180,7 @@ export const orderOptions = [
     id: 'dagger',
     title: 'Daggers',
     price: 800,
+    weight: 0.15,
     components: [
       {
         type: 'select',

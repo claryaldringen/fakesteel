@@ -1,4 +1,4 @@
-import { idToLabel } from '../../utils'
+import { calculateShipping, idToLabel } from '../../utils'
 
 export default (req, res) => {
   console.log(req.body)
@@ -15,15 +15,29 @@ export default (req, res) => {
   })
 
   const vs = Date.now().toString().substr(-10)
-  const total = req.body.basket.reduce((total, { price }) => total + price, 0)
+  const itemsPrice = req.body.basket.reduce(
+    (total, { price }) => total + price,
+    0
+  )
+  const shippingPrice =
+    req.body.shipping === 'send'
+      ? calculateShipping(
+          req.body.country,
+          req.body.basket.reduce((total, { weight }) => total + weight, 0)
+        )
+      : 0
+
+  const total = itemsPrice + shippingPrice
 
   const summary = req.body.basket.map(({ count, weapon, price, ...props }) => {
-    const propRows = Object.keys(props).map(
-      (key) =>
-        `<tr><td style="width: 70%;">${idToLabel(key)}:</td><td>${
-          props[key]
-        }</td></tr>`
-    )
+    const propRows = Object.keys(props)
+      .filter((prop) => prop !== 'weight')
+      .map(
+        (key) =>
+          `<tr><td style="width: 70%;">${idToLabel(key)}:</td><td>${
+            props[key]
+          }</td></tr>`
+      )
 
     return `<table style="border-bottom: solid 1px black;width: 100%;">
           <thead>
@@ -47,17 +61,31 @@ export default (req, res) => {
         </table>`
   })
 
-  let billing = ''
+  let billing = `
+    <table style="float: left;">
+        <tr><td>IBAN:</td><td><b>CZ3120100000002702013198</b></td></tr>
+        <tr><td>BIC/SWIFT:</td><td><b>FIOBCZPPXXX</b></td></tr>
+        <tr><td>Identification:</td><td><b>${vs}</b></td></tr>
+        <tr><td>Total price:</td><td><b>${total} CZK</b></td></tr>
+    </table>`
   if (req.body.country === 'Czech Republic') {
     billing = `
     <table style="float: left;">
-        <tr><td>Account number:</td><td><b>0000-12345/2010</b></td></tr>
+        <tr><td>Account number:</td><td><b>2702013198/2010</b></td></tr>
         <tr><td>Variable symbol:</td><td><b>${vs}</b></td></tr>
         <tr><td>Total price:</td><td><b>${total} CZK</b></td></tr>
     </table>`
   }
 
-  let shipping = `<div style="float: right;"><b>Shipping to</b><br>${req.body.name}<br>${req.body.street}<br>${req.body.city}<br>${req.body.code}<br>${req.body.country}<br>${req.body.additional}</div>`
+  let shipping = `<div style="float: right;">
+    <b>Shipping to</b><br>
+    ${req.body.name}<br>
+    ${req.body.street}<br>
+    ${req.body.city}<br>${req.body.code}<br>
+    ${req.body.country}<br>
+    ${req.body.additional}<br>
+    <b>Shipping price: ${shippingPrice} CZK</b>
+    </div>`
   if (req.body.shipping == 'pick') {
     shipping = `<div style="float: right;"><b>Shipment to be picked up at</b><br></div>`
   }

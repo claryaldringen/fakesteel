@@ -1,20 +1,8 @@
-import React, { useState, useMemo, useCallback } from 'react'
+import React, { useState, useMemo, useCallback, Fragment } from 'react'
 
 import { orderOptions } from '../../data/data'
-import { idToLabel, labelToId } from '../../utils'
+import { calculatePrice, calculateWeight, labelToId } from '../../utils'
 import styles from './OrderForm.module.scss'
-
-const getPrice = (params, weaponId, count = 1) => {
-  const weapon = orderOptions.find(({ id }) => id == weaponId)
-  let total = weapon.price * 1
-  const components = weapon.components
-  Object.keys(params).forEach((id) => {
-    const component = components.find(({ label }) => label == idToLabel(id))
-    const { price } = component.options.find(({ value }) => value == params[id])
-    total += price
-  })
-  return total * count
-}
 
 const isConditionTrue = (component, weaponParams) => {
   if (component && !component.condition) return true
@@ -55,13 +43,11 @@ const renderFormElement = (
   switch (type) {
     case 'select':
       return (
-        <select id={id} onBlur={onSelectChange} value={weaponParams[id]}>
+        <select id={id} onChange={onSelectChange} value={weaponParams[id]}>
           {params.options.map(({ title, value }) => (
-            <>
-              <option key={`${label}–${value}`} value={value}>
-                {title}
-              </option>
-            </>
+            <option key={`${label}–${value}`} value={value}>
+              {title}
+            </option>
           ))}
         </select>
       )
@@ -74,7 +60,13 @@ export const OrderForm = ({ basket, setBasket }) => {
   const [weaponParams, setWeaponParams] = useState(prepareInitialState(weapon))
   const [count, setCount] = useState(1)
 
-  const price = useMemo(() => getPrice(weaponParams, weapon, count), [
+  const price = useMemo(() => calculatePrice(weaponParams, weapon, count), [
+    weaponParams,
+    weapon,
+    count,
+  ])
+
+  const weight = useMemo(() => calculateWeight(weaponParams, weapon, count), [
     weaponParams,
     weapon,
     count,
@@ -98,7 +90,7 @@ export const OrderForm = ({ basket, setBasket }) => {
   )
 
   const addToOrder = useCallback(() => {
-    setBasket([{ count, weapon, price, ...weaponParams }, ...basket])
+    setBasket([{ count, weapon, price, weight, ...weaponParams }, ...basket])
     setWeapon(defaultWeaponId)
     setWeaponParams(prepareInitialState(defaultWeaponId))
     setCount(1)
@@ -135,7 +127,7 @@ export const OrderForm = ({ basket, setBasket }) => {
                 <label htmlFor="wt">Weapon type:</label>
               </td>
               <td>
-                <select id="wt" onBlur={onWeaponChange} value={weapon}>
+                <select id="wt" onChange={onWeaponChange} value={weapon}>
                   {orderOptions.map(({ id, title }) => (
                     <option key={id} value={id}>
                       {title}
@@ -144,8 +136,8 @@ export const OrderForm = ({ basket, setBasket }) => {
                 </select>
               </td>
             </tr>
-            {components.map((component) => (
-              <>
+            {components.map((component, i) => (
+              <Fragment key={`c_${i}`}>
                 {isConditionTrue(component, weaponParams) && (
                   <tr key={labelToId(component.label)}>
                     <td>
@@ -158,7 +150,7 @@ export const OrderForm = ({ basket, setBasket }) => {
                     </td>
                   </tr>
                 )}
-              </>
+              </Fragment>
             ))}
             <tr>
               <td>

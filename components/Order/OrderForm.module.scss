@@ -132,3 +132,27 @@
   font-size: 0.8rem;
   color: #ff0000;
 }
+
+.recapTable {
+  border-collapse: collapse;
+  width: 100%;
+
+  td {
+    padding: 8px 0;
+  }
+}
+
+.priceCell {
+  text-align: right;
+}
+
+.totalLabel {
+  border-top: solid 1px #000;
+  font-weight: bold;
+}
+
+.totalPrice {
+  border-top: solid 1px #000;
+  text-align: right;
+  font-weight: bold;
+}

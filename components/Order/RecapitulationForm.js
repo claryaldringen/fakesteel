@@ -1,12 +1,13 @@
-import React, { useState, useCallback } from 'react'
+import React, { useState, useCallback, useMemo } from 'react'
 import validator from 'validator'
 
 import { countries } from '../../data/countries'
 
 import styles from './OrderForm.module.scss'
 import classNames from 'classnames'
+import { calculateShipping } from '../../utils'
 
-export const RecapitulationForm = ({ basket, setBasket }) => {
+export const RecapitulationForm = ({ basket, setBasket, itemsPrice }) => {
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
   const [phone, setPhone] = useState('')
@@ -70,6 +71,17 @@ export const RecapitulationForm = ({ basket, setBasket }) => {
   const onAdditionalChange = useCallback(
     (event) => setAdditional(event.target.value),
     [setName]
+  )
+
+  const shippingPrice = useMemo(
+    () =>
+      shipping === 'send'
+        ? calculateShipping(
+            country,
+            basket.reduce((total, { weight }) => total + weight, 0)
+          )
+        : 0,
+    [country, shipping, basket]
   )
 
   const onClick = useCallback(
@@ -219,7 +231,7 @@ export const RecapitulationForm = ({ basket, setBasket }) => {
         <div className={styles.group}>
           <label htmlFor="country">Country:</label>
           <br />
-          <select id="country" value={country} onBlur={onCountryChange}>
+          <select id="country" value={country} onChange={onCountryChange}>
             {countries.map(({ name, code }) => (
               <option key={code} value={name}>
                 {name}
@@ -240,7 +252,7 @@ export const RecapitulationForm = ({ basket, setBasket }) => {
         <div className={styles.group}>
           <label htmlFor="shipping">Shipping:</label>
           <br />
-          <select value={shipping} onBlur={onShippingChange}>
+          <select value={shipping} onChange={onShippingChange}>
             <option value="send">Send it to me, please</option>
             <option value="pick">I&apos;ll pick it up in Prague</option>
           </select>
@@ -251,6 +263,24 @@ export const RecapitulationForm = ({ basket, setBasket }) => {
           <textarea value={notice} onChange={onNoticeChange} />
         </div>
         <div className={styles.clear} />
+        <table className={styles.recapTable}>
+          <tbody>
+            <tr>
+              <td>Items price:</td>
+              <td className={styles.priceCell}>{itemsPrice} CZK</td>
+            </tr>
+            <tr>
+              <td>Shipping price:</td>
+              <td className={styles.priceCell}>{shippingPrice} CZK</td>
+            </tr>
+            <tr>
+              <td className={styles.totalLabel}>Total price:</td>
+              <td className={styles.totalPrice}>
+                {shippingPrice + itemsPrice} CZK
+              </td>
+            </tr>
+          </tbody>
+        </table>
         <div className={styles.buttonGroup}>
           <button
             onClick={onClick}

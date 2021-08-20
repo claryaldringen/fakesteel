@@ -10,6 +10,7 @@ import { Footer } from '../components/Footer/Footer'
 import { StyledCookieConsent } from '../components/CookieConsent/StyledCookieConsent'
 import { WebHead } from '../components/Head'
 import { Chat } from '../components/Chat/Chat'
+import { Order } from '../components/Order/Order'
 
 const Index = () => {
   const [active, setActive] = useState()
@@ -30,7 +31,7 @@ const Index = () => {
             active={active}
           />
         ))}
-        {/*<Order active={active} setActive={setActive} />*/}
+        <Order active={active} setActive={setActive} />
         <About active={active} setActive={setActive} />
       </main>
 

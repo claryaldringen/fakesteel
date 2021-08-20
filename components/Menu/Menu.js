@@ -5,7 +5,7 @@ import { categories } from '../../data/data'
 const menuItems = [
   ...categories,
   { id: '', label: '' },
-  // { id: 'order', label: 'Order' },
+  { id: 'order', label: 'Order' },
   { id: 'about', label: 'FAQ' },
 ]
 
