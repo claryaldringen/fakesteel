@@ -29,21 +29,22 @@ export default (req, res) => {
 
   const total = itemsPrice + shippingPrice
 
-  const summary = req.body.basket.map(({ count, weapon, price, ...props }) => {
-    const propRows = Object.keys(props)
-      .filter((prop) => prop !== 'weight')
-      .map(
-        (key) =>
-          `<tr><td style="width: 70%;">${idToLabel(key)}:</td><td>${
-            props[key]
-          }</td></tr>`
-      )
+  const summary = req.body.basket
+    .map(({ count, weapon, price, ...props }) => {
+      const propRows = Object.keys(props)
+        .filter((prop) => prop !== 'weight')
+        .map(
+          (key) =>
+            `<tr><td style="width: 70%;">${idToLabel(key)}:</td><td>${
+              props[key]
+            }</td></tr>`
+        )
 
-    return `<table style="border-bottom: solid 1px black;width: 100%;">
+      return `<table style="border-bottom: solid 1px black;width: 100%;">
           <thead>
             <th colSpan={2} style="text-align: left;">${count}x ${idToLabel(
-      weapon
-    )}</th>
+        weapon
+      )}</th>
           </thead>
           <tbody>
             ${propRows}
@@ -59,7 +60,8 @@ export default (req, res) => {
             </tr>
           </tfoot>
         </table>`
-  })
+    })
+    .reduce((acc, item) => `${acc}${item}`, '')
 
   let billing = `
     <table style="float: left;">
@@ -95,7 +97,7 @@ export default (req, res) => {
     to: 'info@fakesteel.cz',
     subject: `Order no. ${vs}`,
     text: req.body.message + ' | Sent from: ' + req.body.email,
-    html: `${req.body.name} (<a href="mailto:${req.body.email}">${req.body.email}</a>) just sent his/her order.<div style="text-align: center;"><h2>Billing and shipping</h2></div>${billing}${shipping}<div style="clear: both; text-align: center;"><h2>Order summary</h2></div>${summary}`,
+    html: `${req.body.name} (<a href="mailto:${req.body.email}">${req.body.email}</a>) just sent his/her order.<div style="text-align: center;"><h2>Billing and shipping</h2></div>${billing}${shipping}<div style="clear: both; text-align: center;"><h2>Order summary</h2></div>${summary}<b>Total items price: ${itemsPrice} CZK</b>`,
   }
 
   const mailData1 = {
@@ -106,7 +108,7 @@ export default (req, res) => {
     html: `<div style="max-width: 600px;"><div style="text-align: center; background: #333333; color: #ffffff; padding: 6%;"><h1>ORDER CONFIRMATION</h1>${req.body.name}, thank you for your order!
     <p>We've received your order and will dispatch it as soon as we receive payment into our bank account. You can find your purchase information below.</p></div>
     <div style="text-align: center;"><h2>Billing and shipping</h2></div>${billing}${shipping}
-    <div style="clear: both; text-align: center;"><h2>Order summary</h2></div>${summary}</div>`,
+    <div style="clear: both; text-align: center;"><h2>Order summary</h2></div>${summary}<table style="width: 100%;"><tbody><tr><td style="width: 70%;font-weight: bold;">Total items price:</td><td style="font-weight: bold;">${itemsPrice} CZK</td></tr></tbody></table></div>`,
   }
 
   transporter.sendMail(mailData1, (err1) => {
