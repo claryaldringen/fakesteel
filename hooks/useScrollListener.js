@@ -1,6 +1,9 @@
 import { useEffect } from 'react'
+import { useActive } from './useActive'
 
-export const useScrollListener = (id, active, setActive) => {
+export const useScrollListener = (id) => {
+  const { active, setActive } = useActive()
+
   useEffect(() => {
     const element = document.getElementById(id)
     const top = element.offsetTop

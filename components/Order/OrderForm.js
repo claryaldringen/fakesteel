@@ -1,19 +1,13 @@
 import React, { useState, useMemo, useCallback, Fragment } from 'react'
 
 import { orderOptions } from '../../data/data'
-import { calculatePrice, calculateWeight, labelToId } from '../../utils'
+import {
+  calculatePrice,
+  calculateWeight,
+  isConditionTrue,
+  labelToId,
+} from '../../utils'
 import styles from './OrderForm.module.scss'
-
-const isConditionTrue = (component, weaponParams) => {
-  if (component && !component.condition) return true
-
-  const condId = labelToId(component.condition.label)
-
-  return (
-    weaponParams[condId] &&
-    component.condition.values.includes(weaponParams[condId])
-  )
-}
 
 const prepareInitialState = (weaponId, state = {}) =>
   orderOptions
@@ -66,12 +60,6 @@ export const OrderForm = ({ basket, setBasket }) => {
     count,
   ])
 
-  const weight = useMemo(() => calculateWeight(weaponParams, weapon, count), [
-    weaponParams,
-    weapon,
-    count,
-  ])
-
   const onWeaponChange = useCallback(
     (event) => {
       setWeapon(event.target.value)
@@ -89,22 +77,58 @@ export const OrderForm = ({ basket, setBasket }) => {
     [setWeaponParams, weaponParams]
   )
 
-  const addToOrder = useCallback(() => {
-    setBasket([{ count, weapon, price, weight, ...weaponParams }, ...basket])
-    setWeapon(defaultWeaponId)
-    setWeaponParams(prepareInitialState(defaultWeaponId))
-    setCount(1)
-  }, [
-    count,
-    setCount,
-    defaultWeaponId,
-    weaponParams,
-    basket,
-    weapon,
-    setBasket,
-    setWeapon,
-    setWeaponParams,
-  ])
+  const addToOrder = useCallback(
+    (e) => {
+      e.stopPropagation()
+      e.preventDefault()
+      const index = basket.findIndex((item) =>
+        Object.keys(weaponParams).reduce(
+          (acc, param) => acc && item[param] === weaponParams[param],
+          true
+        )
+      )
+      if (index > -1) {
+        const oldCount = basket[index].count
+        basket.splice(index, 1)
+
+        setBasket([
+          {
+            count: count + oldCount,
+            weapon,
+            price,
+            weight: calculateWeight(weaponParams, weapon, count + oldCount),
+            ...weaponParams,
+          },
+          ...basket,
+        ])
+      } else {
+        setBasket([
+          {
+            count,
+            weapon,
+            price,
+            weight: calculateWeight(weaponParams, weapon, count),
+            ...weaponParams,
+          },
+          ...basket,
+        ])
+      }
+      setWeapon(defaultWeaponId)
+      setWeaponParams(prepareInitialState(defaultWeaponId))
+      setCount(1)
+    },
+    [
+      count,
+      setCount,
+      defaultWeaponId,
+      weaponParams,
+      basket,
+      weapon,
+      setBasket,
+      setWeapon,
+      setWeaponParams,
+    ]
+  )
 
   const components = useMemo(
     () => orderOptions.find(({ id }) => id == weapon).components,

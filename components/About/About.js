@@ -4,8 +4,8 @@ import Image from 'next/image'
 import styles from './About.module.scss'
 import { useScrollListener } from '../../hooks/useScrollListener'
 
-export const About = ({ active, setActive }) => {
-  useScrollListener('about', active, setActive)
+export const About = () => {
+  useScrollListener('about')
 
   return (
     <div id="about" className={styles.about}>
@@ -105,30 +105,30 @@ export const About = ({ active, setActive }) => {
       <p>
         When ordering, you must choose whether you want a <b>round 10mm core</b>{' '}
         or a <b>15x6mm rectangular core</b>.
-        <ul>
-          <li>
-            <b>Round core:</b>&nbsp;the sword is generally about 50 g lighter.
-            The round core bends a little and vibrates in the same way in all
-            directions, even in the direction of the blow. This core has no
-            weakness in any direction where is a greater risk of breakage. A
-            round core (10) is narrower than a rectangular core (15x6 or 16x8),
-            so the foam of the blade may be slightly softer than that of a
-            rectangular core.
-            <br />
-            <br />
-          </li>
-          <li>
-            <b>Rectangular core:</b>&nbsp;the sword is generally about 50 g
-            heavier. The rectangle behaves more like an actual sword blade. It
-            does not bend and vibrates only minimally in the direction of the
-            cut; on the contrary, when you hit flat, it bends and vibrates even
-            more than the round core. With strong or frequent blows from the
-            flat side of the blade, there is a more considerable risk of
-            damaging the rectangular core than with a round one. The rectangular
-            core is better for fencing.
-          </li>
-        </ul>
       </p>
+      <ul>
+        <li>
+          <b>Round core:</b>&nbsp;the sword is generally about 50 g lighter. The
+          round core bends a little and vibrates in the same way in all
+          directions, even in the direction of the blow. This core has no
+          weakness in any direction where is a greater risk of breakage. A round
+          core (10) is narrower than a rectangular core (15x6 or 16x8), so the
+          foam of the blade may be slightly softer than that of a rectangular
+          core.
+          <br />
+          <br />
+        </li>
+        <li>
+          <b>Rectangular core:</b>&nbsp;the sword is generally about 50 g
+          heavier. The rectangle behaves more like an actual sword blade. It
+          does not bend and vibrates only minimally in the direction of the cut;
+          on the contrary, when you hit flat, it bends and vibrates even more
+          than the round core. With strong or frequent blows from the flat side
+          of the blade, there is a more considerable risk of damaging the
+          rectangular core than with a round one. The rectangular core is better
+          for fencing.
+        </li>
+      </ul>
       <p>
         It is also possible to choose a heavier and more durable{' '}
         <b>16x8mm rectangular core</b>. The weapon will be about another 50g

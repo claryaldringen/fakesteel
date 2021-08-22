@@ -1,6 +1,7 @@
 import React from 'react'
 import styles from './Menu.module.scss'
 import { categories } from '../../data/data'
+import { useActive } from '../../hooks/useActive'
 
 const menuItems = [
   ...categories,
@@ -9,7 +10,8 @@ const menuItems = [
   { id: 'about', label: 'FAQ' },
 ]
 
-export const Menu = ({ active, setActive }) => {
+export const Menu = () => {
+  const { active, setActive } = useActive()
   return (
     <div>
       <ul className={styles.menu}>

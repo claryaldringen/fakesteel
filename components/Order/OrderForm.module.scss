@@ -42,6 +42,7 @@
 }
 
 .item {
+  position: relative;
   display: block;
   background: #333;
   color: #ccc;
@@ -155,4 +156,15 @@
   border-top: solid 1px #000;
   text-align: right;
   font-weight: bold;
+}
+
+.closeIcon {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  color: #ffffff;
+  font-weight: bold;
+  font-family: Arial;
+  z-index: 3;
+  cursor: pointer;
 }

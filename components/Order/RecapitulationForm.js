@@ -7,7 +7,7 @@ import styles from './OrderForm.module.scss'
 import classNames from 'classnames'
 import { calculateShipping } from '../../utils'
 
-export const RecapitulationForm = ({ basket, setBasket, itemsPrice }) => {
+export const RecapitulationForm = ({ basket, setBasket }) => {
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
   const [phone, setPhone] = useState('')
@@ -22,6 +22,16 @@ export const RecapitulationForm = ({ basket, setBasket, itemsPrice }) => {
   const [emailError, setEmailError] = useState('')
   const [phoneError, setPhoneError] = useState('')
   const [sending, setSending] = useState(false)
+
+  const itemsPrice = useMemo(
+    () => basket.reduce((total, { price }) => total + price, 0),
+    [basket]
+  )
+
+  const weight = useMemo(
+    () => basket.reduce((total, { weight }) => total + weight, 0),
+    [basket]
+  )
 
   const onNameChange = useCallback((event) => setName(event.target.value), [
     setName,
@@ -74,13 +84,7 @@ export const RecapitulationForm = ({ basket, setBasket, itemsPrice }) => {
   )
 
   const shippingPrice = useMemo(
-    () =>
-      shipping === 'send'
-        ? calculateShipping(
-            country,
-            basket.reduce((total, { weight }) => total + weight, 0)
-          )
-        : 0,
+    () => (shipping === 'send' ? calculateShipping(country, weight) : 0),
     [country, shipping, basket]
   )
 

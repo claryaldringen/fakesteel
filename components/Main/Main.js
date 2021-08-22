@@ -7,8 +7,8 @@ import { useScrollListener } from '../../hooks/useScrollListener'
 
 const images = [1, 17, 2, 18, 3, 7, 4, 5, 6, 8, 9, 10, 11, 12, 13, 14, 15, 16]
 
-export const Main = ({ active, setActive }) => {
-  useScrollListener('main', active, setActive)
+export const Main = () => {
+  useScrollListener('main')
 
   return (
     <div id="main" className={styles.main}>

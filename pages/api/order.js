@@ -47,7 +47,7 @@ export default (req, res) => {
       )}</th>
           </thead>
           <tbody>
-            ${propRows}
+            ${propRows.reduce((acc, row) => `${acc}${row}`, '')}
           </tbody>
           <tfoot>
             <tr className={styles.small}>

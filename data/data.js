@@ -577,85 +577,6 @@ export const categories = [
 
 export const orderOptions = [
   {
-    id: 'polearm',
-    title: 'Polearms',
-    price: 900,
-    weight: 0.175,
-    components: [
-      {
-        type: 'select',
-        label: 'Head',
-        options: [
-          {
-            title: 'pike',
-            value: 'pike',
-            price: 0,
-          },
-          {
-            title: 'spear',
-            value: 'spear',
-            price: 100,
-            weight: 0.1,
-          },
-        ],
-      },
-      {
-        type: 'select',
-        label: 'Length',
-        options: [
-          {
-            title: 'only head',
-            value: 'only head',
-            price: 0,
-          },
-          {
-            title: 'with 2m shaft (+800 CZK, CZ only)',
-            value: 'with 2m shaft',
-            price: 800,
-            weight: 3,
-          },
-        ],
-      },
-      {
-        type: 'select',
-        label: 'Version',
-        options: [
-          {
-            title: 'soft',
-            value: 'soft',
-            price: 0,
-          },
-          {
-            title: 'hard',
-            value: 'hard',
-            price: 0,
-          },
-        ],
-      },
-      {
-        type: 'select',
-        label: 'Color',
-        options: [
-          {
-            title: 'steel',
-            value: 'steel',
-            price: 0,
-          },
-          {
-            title: 'graphite',
-            value: 'graphite',
-            price: 0,
-          },
-          {
-            title: 'brass',
-            value: 'brass',
-            price: 0,
-          },
-        ],
-      },
-    ],
-  },
-  {
     id: 'sword',
     title: 'Swords',
     price: 2300,
@@ -1091,11 +1012,12 @@ export const orderOptions = [
             value: 'steel',
             price: 0,
           },
+          /*
           {
             title: 'brass',
             value: 'brass',
             price: 0,
-          },
+          },*/
         ],
       },
       {
@@ -1150,6 +1072,85 @@ export const orderOptions = [
             value: 'hammer',
             price: 0,
             weight: 0.1,
+          },
+        ],
+      },
+      {
+        type: 'select',
+        label: 'Color',
+        options: [
+          {
+            title: 'steel',
+            value: 'steel',
+            price: 0,
+          },
+          {
+            title: 'graphite',
+            value: 'graphite',
+            price: 0,
+          },
+          {
+            title: 'brass',
+            value: 'brass',
+            price: 0,
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: 'polearm',
+    title: 'Polearms',
+    price: 900,
+    weight: 0.175,
+    components: [
+      {
+        type: 'select',
+        label: 'Head',
+        options: [
+          {
+            title: 'pike',
+            value: 'pike',
+            price: 0,
+          },
+          {
+            title: 'spear',
+            value: 'spear',
+            price: 100,
+            weight: 0.1,
+          },
+        ],
+      },
+      {
+        type: 'select',
+        label: 'Length',
+        options: [
+          {
+            title: 'only head',
+            value: 'only head',
+            price: 0,
+          },
+          {
+            title: 'with 2m shaft (+800 CZK, CZ only)',
+            value: 'with 2m shaft',
+            price: 800,
+            weight: 7.6,
+          },
+        ],
+      },
+      {
+        type: 'select',
+        label: 'Version',
+        options: [
+          {
+            title: 'soft',
+            value: 'soft',
+            price: 0,
+          },
+          {
+            title: 'hard',
+            value: 'hard',
+            price: 0,
           },
         ],
       },

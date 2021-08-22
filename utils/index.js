@@ -13,13 +13,24 @@ export const idToLabel = (id) => {
   return string.charAt(0).toUpperCase() + string.slice(1)
 }
 
+export const isConditionTrue = (component, weaponParams) => {
+  if (component && !component.condition) return true
+
+  const condId = labelToId(component.condition.label)
+
+  return (
+    weaponParams[condId] &&
+    component.condition.values.includes(weaponParams[condId])
+  )
+}
+
 export const calculateShipping = (countryName, weight) => {
   const country = countries.find(({ name }) => name === countryName)
   const pricesPerKilograms =
     country && shipping[country.code] ? shipping[country.code] : shipping.WORLD
   const kilograms = Object.keys(pricesPerKilograms)
   const max = kilograms[kilograms.length - 1]
-  const restOfWeight = weight % max
+  const restOfWeight = (weight * 1.1) % max
   const shippingPrice = kilograms.reduce((price, kgs) => {
     if (restOfWeight < kgs && !price) {
       price = pricesPerKilograms[kgs]
@@ -37,7 +48,10 @@ export const calculatePrice = (params, weaponId, count = 1) => {
   let total = weapon.price * 1
   const components = weapon.components
   Object.keys(params).forEach((id) => {
-    const component = components.find(({ label }) => label == idToLabel(id))
+    const component = components.find(
+      (component) =>
+        isConditionTrue(component, params) && component.label == idToLabel(id)
+    )
     const { price } = component.options.find(({ value }) => value == params[id])
     total += price
   })
@@ -49,7 +63,10 @@ export const calculateWeight = (params, weaponId, count = 1) => {
   let total = weapon.weight * 1
   const components = weapon.components
   Object.keys(params).forEach((id) => {
-    const component = components.find(({ label }) => label == idToLabel(id))
+    const component = components.find(
+      (component) =>
+        isConditionTrue(component, params) && component.label == idToLabel(id)
+    )
     const { weight = 0 } = component.options.find(
       ({ value }) => value == params[id]
     )
