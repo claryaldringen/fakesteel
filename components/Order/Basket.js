@@ -21,7 +21,6 @@ export const Basket = ({ basket, total, removeFromBasket }) => (
           </thead>
           <tbody>
             {Object.keys(props)
-              .reverse()
               .map((key, j) => (
                 <tr key={`row_${i}_${j}`} className={styles.small}>
                   <td>

@@ -52,8 +52,8 @@ export const calculatePrice = (params, weaponId, count = 1) => {
       (component) =>
         isConditionTrue(component, params) && component.label == idToLabel(id)
     )
-    const { price } = component.options.find(({ value }) => value == params[id])
-    total += price
+    const option = component?.options.find(({ value }) => value == params[id])
+    total += option?.price ?? 0
   })
   return total * count
 }
@@ -67,10 +67,21 @@ export const calculateWeight = (params, weaponId, count = 1) => {
       (component) =>
         isConditionTrue(component, params) && component.label == idToLabel(id)
     )
-    const { weight = 0 } = component.options.find(
-      ({ value }) => value == params[id]
-    )
-    total += weight
+    const option = component?.options.find(({ value }) => value == params[id])
+    total += option?.weight ?? 0
   })
   return total * count
+}
+
+export const calculateValues = (weaponId, selectedValues = {}) => {
+  const selectedWeapon = orderOptions.find(({ id }) => id == weaponId)
+  return selectedWeapon.components.reduce((acc, component) => {
+    const componentId = labelToId(component.label)
+    if (isConditionTrue(component, acc)) {
+      acc[componentId] = selectedValues[componentId]
+        ? selectedValues[componentId]
+        : component.options[0].value
+    }
+    return acc
+  }, {})
 }

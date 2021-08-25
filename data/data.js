@@ -594,6 +594,7 @@ export const orderOptions = [
           { title: 'viking E', value: 'viking E', price: 0 },
           { title: 'viking H', value: 'viking H', price: 0 },
           { title: 'langmesser', value: 'langmesser', price: 0 },
+          { title: 'falchion', value: 'falchion', price: 0 },
           { title: 'sabre', value: 'sabre', price: 0 },
         ],
       },
@@ -1068,8 +1069,8 @@ export const orderOptions = [
             price: 0,
           },
           {
-            title: 'hammer',
-            value: 'hammer',
+            title: 'war hammer',
+            value: 'war hammer',
             price: 0,
             weight: 0.1,
           },
