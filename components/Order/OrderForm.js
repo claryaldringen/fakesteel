@@ -59,7 +59,7 @@ export const OrderForm = ({ basket, setBasket }) => {
           {
             count: count + oldCount,
             weapon,
-            price,
+            price: calculatePrice(weaponParams, weapon, count + oldCount),
             weight: calculateWeight(weaponParams, weapon, count + oldCount),
             ...weaponParams,
           },
