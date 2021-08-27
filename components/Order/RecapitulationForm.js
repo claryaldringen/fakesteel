@@ -15,9 +15,10 @@ export const RecapitulationForm = ({ basket, setBasket }) => {
   const [city, setCity] = useState('')
   const [code, setCode] = useState('')
   const [country, setCountry] = useState('Czech Republic')
+  const [state, setState] = useState('')
   const [shipping, setShipping] = useState('send')
   const [notice, setNotice] = useState('')
-  const [additional, setAdditional] = useState()
+  const [additional, setAdditional] = useState('')
   const [showModal, setShowModal] = useState(false)
   const [emailError, setEmailError] = useState('')
   const [phoneError, setPhoneError] = useState('')
@@ -71,6 +72,9 @@ export const RecapitulationForm = ({ basket, setBasket }) => {
     (event) => setCountry(event.target.value),
     [setCountry]
   )
+  const onStateChange = useCallback((event) => setState(event.target.value), [
+    setState,
+  ])
   const onShippingChange = useCallback(
     (event) => setShipping(event.target.value),
     [setShipping]
@@ -100,6 +104,7 @@ export const RecapitulationForm = ({ basket, setBasket }) => {
         city,
         code,
         country,
+        state,
         shipping,
         notice,
         additional,
@@ -130,6 +135,7 @@ export const RecapitulationForm = ({ basket, setBasket }) => {
       city,
       code,
       country,
+      state,
       shipping,
       notice,
       additional,
@@ -147,6 +153,7 @@ export const RecapitulationForm = ({ basket, setBasket }) => {
     setCity('')
     setCode('')
     setCountry('Czech Republic')
+    setState('')
     setAdditional('')
     setNotice('')
     setShowModal(false)
@@ -242,6 +249,11 @@ export const RecapitulationForm = ({ basket, setBasket }) => {
               </option>
             ))}
           </select>
+        </div>
+        <div className={styles.group}>
+          State or district:
+          <br />
+          <input type="text" value={state} onChange={onStateChange} />
         </div>
         <div className={styles.group}>
           <label htmlFor="additional">Additional information:</label>

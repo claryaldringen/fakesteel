@@ -6,7 +6,7 @@ import { useActive } from '../../hooks/useActive'
 const menuItems = [
   ...categories,
   { id: '', label: '' },
-  { id: 'order', label: 'Order' },
+  { id: 'order', label: 'Order form' },
   { id: 'about', label: 'FAQ' },
 ]
 

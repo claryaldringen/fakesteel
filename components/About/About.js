@@ -89,10 +89,9 @@ export const About = () => {
       <p>
         At the moment, you can order in the messenger on our{' '}
         <a href="https://www.facebook.com/fakesteel">Facebook</a>; we will be
-        happy to advise you and arrange it with you.{' '}
-        {/*Or you can use the order
-        form on our website.*/}{' '}
-        Alternatively, contact us on our email (
+        happy to advise you and arrange it with you, or you can use the{' '}
+        <a href="#order">order form</a> on our website. Alternatively, contact
+        us on our email (
         <a href="mailto:info@fakesteel.cz">info@fakesteel.cz</a>) or Instagram.
         We currently manufacture larp weapons mostly to order individually, and
         with a few exceptions, we do not have goods in stock. So your weapons go

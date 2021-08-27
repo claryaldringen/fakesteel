@@ -63,18 +63,24 @@ export default (req, res) => {
     })
     .reduce((acc, item) => `${acc}${item}`, '')
 
-  let billing = `
-    <table style="float: left;">
+  /*
         <tr><td>IBAN:</td><td><b>CZ3120100000002702013198</b></td></tr>
         <tr><td>BIC/SWIFT:</td><td><b>FIOBCZPPXXX</b></td></tr>
         <tr><td>Identification:</td><td><b>${vs}</b></td></tr>
+
+        <tr><td>Account number:</td><td><b>2702013198/2010</b></td></tr>
+        <tr><td>Variable symbol:</td><td><b>${vs}</b></td></tr>
+  */
+
+  let billing = `
+    <table style="float: left;">
+        <tr><td colspan="2">The payment information will be sent as soon as possible.</td></tr>
         <tr><td>Total price:</td><td><b>${total} CZK</b></td></tr>
     </table>`
   if (req.body.country === 'Czech Republic') {
     billing = `
     <table style="float: left;">
-        <tr><td>Account number:</td><td><b>2702013198/2010</b></td></tr>
-        <tr><td>Variable symbol:</td><td><b>${vs}</b></td></tr>
+        <tr><td colspan="2">The payment information will be sent as soon as possible.</td></tr>
         <tr><td>Total price:</td><td><b>${total} CZK</b></td></tr>
     </table>`
   }
@@ -85,6 +91,7 @@ export default (req, res) => {
     ${req.body.street}<br>
     ${req.body.city}<br>${req.body.code}<br>
     ${req.body.country}<br>
+    ${req.body.state}<br>
     ${req.body.additional}<br>
     <b>Shipping price: ${shippingPrice} CZK</b>
     </div>`
@@ -106,7 +113,7 @@ export default (req, res) => {
     subject: `Order confirmation from Fakesteel armory`,
     text: req.body.message + ' | Sent from: ' + req.body.email,
     html: `<div style="max-width: 600px;"><div style="text-align: center; background: #333333; color: #ffffff; padding: 6%;"><h1>ORDER CONFIRMATION</h1>${req.body.name}, thank you for your order!
-    <p>We've received your order and will dispatch it as soon as we receive payment into our bank account. You can find your purchase information below.</p></div>
+    <p>We've received your order and will send you the payment information and the invoice as soon as possible<!--will dispatch it as soon as we receive payment into our bank account-->. You can find your purchase information below.</p></div>
     <div style="text-align: center;"><h2>Billing and shipping</h2></div>${billing}${shipping}
     <div style="clear: both; text-align: center;"><h2>Order summary</h2></div>${summary}<table style="width: 100%;"><tbody><tr><td style="width: 70%;font-weight: bold;">Total items price:</td><td style="font-weight: bold;">${itemsPrice} CZK</td></tr></tbody></table></div>`,
   }

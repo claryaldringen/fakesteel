@@ -636,7 +636,7 @@ export const orderOptions = [
         type: 'select',
         condition: {
           label: 'Hilt',
-          values: ['coin', 'pear', 'octagon', 'fishtail', 'doge'],
+          values: ['coin', 'pear', 'octagon', 'fishtail', 'doge', 'falchion'],
         },
         label: 'Crossguard color',
         options: [
