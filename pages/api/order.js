@@ -1,8 +1,6 @@
 import { calculateShipping, idToLabel } from '../../utils'
 
 export default (req, res) => {
-  console.log(req.body)
-
   let nodemailer = require('nodemailer')
   const transporter = nodemailer.createTransport({
     port: 465,
@@ -73,13 +71,19 @@ export default (req, res) => {
   */
 
   let billing = `
-    <table style="float: left;">
+    <table style="float: left;max-width: 290px;">
+        <tr><td>Payment method:</td><td>${
+          req.body.payment == 'transfer' ? 'Bak transfer' : 'PayPal'
+        }</td></tr>
         <tr><td colspan="2">The payment information will be sent as soon as possible.</td></tr>
         <tr><td>Total price:</td><td><b>${total} CZK</b></td></tr>
     </table>`
   if (req.body.country === 'Czech Republic') {
     billing = `
-    <table style="float: left;">
+    <table style="float: left;max-width: 290px;">
+         <tr><td>Payment method:</td><td>${
+           req.body.payment == 'transfer' ? 'Bak transfer' : 'PayPal'
+         }</td></tr>
         <tr><td colspan="2">The payment information will be sent as soon as possible.</td></tr>
         <tr><td>Total price:</td><td><b>${total} CZK</b></td></tr>
     </table>`
@@ -93,11 +97,12 @@ export default (req, res) => {
     ${req.body.country}<br>
     ${req.body.state}<br>
     ${req.body.additional}<br>
-    Phone number: ${req.body.phone}<br>
+    Phone no.: ${req.body.phone}<br>
+    Notice: <br> ${req.body.notice}
     <b>Shipping price: ${shippingPrice} CZK</b>
     </div>`
   if (req.body.shipping == 'pick') {
-    shipping = `<div style="float: right;"><b>Shipment to be picked up at</b><br></div>`
+    shipping = `<div style="float: right;"><b>Shipment to be picked up at</b><br>Na Hřebenech II 1718/10<br>14000 Praha 4</div>`
   }
 
   const mailData2 = {
@@ -114,7 +119,7 @@ export default (req, res) => {
     subject: `Order confirmation from Fakesteel armory`,
     text: req.body.message + ' | Sent from: ' + req.body.email,
     html: `<div style="max-width: 600px;"><div style="text-align: center; background: #333333; color: #ffffff; padding: 6%;"><h1>ORDER CONFIRMATION</h1>${req.body.name}, thank you for your order!
-    <p>We've received your order and will send you the payment information and the invoice as soon as possible<!--will dispatch it as soon as we receive payment into our bank account-->. You can find your purchase information below.</p></div>
+    <p>We've received your order and will send you the payment information and the invoice as soon as possible<!--will dispatch it as soon as we receive payment into our bank account-->. You can find your purchase information below.</p><p style="text-align: left;padding-top: 16px;">Team FakeSteel Armory</p></div>
     <div style="text-align: center;"><h2>Billing and shipping</h2></div>${billing}${shipping}
     <div style="clear: both; text-align: center;"><h2>Order summary</h2></div>${summary}<table style="width: 100%;"><tbody><tr><td style="width: 70%;font-weight: bold;">Total items price:</td><td style="font-weight: bold;">${itemsPrice} CZK</td></tr></tbody></table></div>`,
   }

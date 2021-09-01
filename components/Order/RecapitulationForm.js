@@ -17,6 +17,7 @@ export const RecapitulationForm = ({ basket, setBasket }) => {
   const [country, setCountry] = useState('Czech Republic')
   const [state, setState] = useState('')
   const [shipping, setShipping] = useState('send')
+  const [payment, setPayment] = useState('transfer')
   const [notice, setNotice] = useState('')
   const [additional, setAdditional] = useState('')
   const [showModal, setShowModal] = useState(false)
@@ -79,6 +80,10 @@ export const RecapitulationForm = ({ basket, setBasket }) => {
     (event) => setShipping(event.target.value),
     [setShipping]
   )
+  const onPaymentChange = useCallback(
+    (event) => setPayment(event.target.value),
+    [setPayment]
+  )
   const onNoticeChange = useCallback((event) => setNotice(event.target.value), [
     setName,
   ])
@@ -107,6 +112,7 @@ export const RecapitulationForm = ({ basket, setBasket }) => {
         country,
         state,
         shipping,
+        payment,
         notice,
         additional,
         basket,
@@ -139,9 +145,11 @@ export const RecapitulationForm = ({ basket, setBasket }) => {
       country,
       state,
       shipping,
+      payment,
       notice,
       additional,
       basket,
+      setSending,
       setShowModal,
     ]
   )
@@ -157,9 +165,11 @@ export const RecapitulationForm = ({ basket, setBasket }) => {
     setCountry('Czech Republic')
     setState('')
     setAdditional('')
+    setShipping('send')
+    setPayment('transfer')
     setNotice('')
     setShowModal(false)
-  }, [setShowModal])
+  }, [])
 
   const enabled =
     name &&
@@ -270,9 +280,17 @@ export const RecapitulationForm = ({ basket, setBasket }) => {
         <div className={styles.group}>
           <label htmlFor="shipping">Shipping:</label>
           <br />
-          <select value={shipping} onChange={onShippingChange}>
+          <select value={shipping} id="shipping" onChange={onShippingChange}>
             <option value="send">Send it to me, please</option>
             <option value="pick">I&apos;ll pick it up in Prague</option>
+          </select>
+        </div>
+        <div className={styles.group}>
+          <label htmlFor="payment">Payment method:</label>
+          <br />
+          <select value={payment} id="payment" onChange={onPaymentChange}>
+            <option value="transfer">Bank transfer</option>
+            <option value="paypal">PayPal</option>
           </select>
         </div>
         <div className={styles.group}>

@@ -34,15 +34,16 @@ export const About = () => {
         bendable PU resin) or foam handle and fibreglass round or rectangular
         core. The swords are further balanced in the hilt or shaft by lead and a
         steel tube into which the core with the blade is glued. The handle is
-        wrapped in genuine cow leather. All parts and materials of swords and
-        other weapons come from the EU; we only outsource dagger blades from PG,
-        as they are not subject to high resistance requirements. The weapons are
+        wrapped in cow leather. All parts and materials of swords and other
+        weapons come from the EU; we only outsource dagger blades from PG, as
+        they are not subject to high resistance requirements. The weapons are
         hand-cast, painted and manufactured in Prague. Due to the fact that it
         is a manual production, not the work of machines, not every manufactured
         piece has the exact weight per gram or millimetre of the same length.
         However, we emphasize that each piece produced meets our strict criteria
         for appearance and quality.
       </p>
+      <Image src="/images/deluxe.jpg" width={1920} height={890} />
       <h3>
         How are FakeSteel weapons different from other foam weapons on the
         market?
@@ -136,7 +137,9 @@ export const About = () => {
         significantly increase. Suitable if you want to use the weapon primarily
         for hard battles in armour. Such as the Czech &quot;kekel&quot;.
       </p>
-      <Image src="/images/construction2.jpg" width={1920} height={1832} />
+      <div className={styles.image}>
+        <Image src="/images/construction2.jpg" width={1920} height={1832} />
+      </div>
       <h3>How to take care of weapons and repair them?</h3>
       <p>
         All double-edged and single-edged sword blades are made with reinforced
