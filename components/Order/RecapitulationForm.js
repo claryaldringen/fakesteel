@@ -100,6 +100,7 @@ export const RecapitulationForm = ({ basket, setBasket }) => {
       const data = {
         name,
         email,
+        phone,
         street,
         city,
         code,
@@ -131,6 +132,7 @@ export const RecapitulationForm = ({ basket, setBasket }) => {
     [
       name,
       email,
+      phone,
       street,
       city,
       code,

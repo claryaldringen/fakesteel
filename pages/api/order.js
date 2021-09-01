@@ -93,6 +93,7 @@ export default (req, res) => {
     ${req.body.country}<br>
     ${req.body.state}<br>
     ${req.body.additional}<br>
+    Phone number: ${req.body.phone}<br>
     <b>Shipping price: ${shippingPrice} CZK</b>
     </div>`
   if (req.body.shipping == 'pick') {
