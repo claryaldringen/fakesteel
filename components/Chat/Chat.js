@@ -7,7 +7,6 @@ import React from 'react'
 const SCRIPT = `var chatbox = document.getElementById('fb-customer-chat');
       chatbox.setAttribute("page_id", "${process.env.NEXT_PUBLIC_PAGE_ID}");
       chatbox.setAttribute("attribution", "biz_inbox");
-      console.log('FB CHAT SCRIPT LOADED');
       window.fbAsyncInit = function() {
         FB.init({
           xfbml            : true,

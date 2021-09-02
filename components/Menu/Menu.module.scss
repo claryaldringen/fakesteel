@@ -62,20 +62,23 @@ $height: $width * 1.8738;
 .item {
   @include space;
 
-  &:hover {
-    width: $width * 12;
-    transition: width 1s;
-    .ribbon {
-      padding-left: $width * 4.5;
-      transition: padding-left 1s;
+  @media (min-width: 640px) {
+    &:hover {
+      width: $width * 12;
+      transition: width 1s;
 
-      .title {
-        color: #fff;
-        transition: color 1s 0.5s;
+      .ribbon {
+        padding-left: $width * 4.5;
+        transition: padding-left 1s;
+
+        .title {
+          color: #fff;
+          transition: color 1s 0.5s;
+        }
       }
-    }
 
-    @include active-icons;
+      @include active-icons;
+    }
   }
 }
 

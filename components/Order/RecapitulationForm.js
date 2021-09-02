@@ -1,10 +1,11 @@
-import React, { useState, useCallback } from 'react'
+import React, { useState, useCallback, useMemo } from 'react'
 import validator from 'validator'
 
 import { countries } from '../../data/countries'
 
 import styles from './OrderForm.module.scss'
 import classNames from 'classnames'
+import { calculateShipping } from '../../utils'
 
 export const RecapitulationForm = ({ basket, setBasket }) => {
   const [name, setName] = useState('')
@@ -14,13 +15,25 @@ export const RecapitulationForm = ({ basket, setBasket }) => {
   const [city, setCity] = useState('')
   const [code, setCode] = useState('')
   const [country, setCountry] = useState('Czech Republic')
+  const [state, setState] = useState('')
   const [shipping, setShipping] = useState('send')
+  const [payment, setPayment] = useState('transfer')
   const [notice, setNotice] = useState('')
-  const [additional, setAdditional] = useState()
+  const [additional, setAdditional] = useState('')
   const [showModal, setShowModal] = useState(false)
   const [emailError, setEmailError] = useState('')
   const [phoneError, setPhoneError] = useState('')
   const [sending, setSending] = useState(false)
+
+  const itemsPrice = useMemo(
+    () => basket.reduce((total, { price }) => total + price, 0),
+    [basket]
+  )
+
+  const weight = useMemo(
+    () => basket.reduce((total, { weight }) => total + weight, 0),
+    [basket]
+  )
 
   const onNameChange = useCallback((event) => setName(event.target.value), [
     setName,
@@ -60,9 +73,16 @@ export const RecapitulationForm = ({ basket, setBasket }) => {
     (event) => setCountry(event.target.value),
     [setCountry]
   )
+  const onStateChange = useCallback((event) => setState(event.target.value), [
+    setState,
+  ])
   const onShippingChange = useCallback(
     (event) => setShipping(event.target.value),
     [setShipping]
+  )
+  const onPaymentChange = useCallback(
+    (event) => setPayment(event.target.value),
+    [setPayment]
   )
   const onNoticeChange = useCallback((event) => setNotice(event.target.value), [
     setName,
@@ -70,6 +90,11 @@ export const RecapitulationForm = ({ basket, setBasket }) => {
   const onAdditionalChange = useCallback(
     (event) => setAdditional(event.target.value),
     [setName]
+  )
+
+  const shippingPrice = useMemo(
+    () => (shipping === 'send' ? calculateShipping(country, weight) : 0),
+    [country, shipping, basket]
   )
 
   const onClick = useCallback(
@@ -80,11 +105,14 @@ export const RecapitulationForm = ({ basket, setBasket }) => {
       const data = {
         name,
         email,
+        phone,
         street,
         city,
         code,
         country,
+        state,
         shipping,
+        payment,
         notice,
         additional,
         basket,
@@ -110,14 +138,18 @@ export const RecapitulationForm = ({ basket, setBasket }) => {
     [
       name,
       email,
+      phone,
       street,
       city,
       code,
       country,
+      state,
       shipping,
+      payment,
       notice,
       additional,
       basket,
+      setSending,
       setShowModal,
     ]
   )
@@ -131,10 +163,13 @@ export const RecapitulationForm = ({ basket, setBasket }) => {
     setCity('')
     setCode('')
     setCountry('Czech Republic')
+    setState('')
     setAdditional('')
+    setShipping('send')
+    setPayment('transfer')
     setNotice('')
     setShowModal(false)
-  }, [setShowModal])
+  }, [])
 
   const enabled =
     name &&
@@ -219,13 +254,18 @@ export const RecapitulationForm = ({ basket, setBasket }) => {
         <div className={styles.group}>
           <label htmlFor="country">Country:</label>
           <br />
-          <select id="country" value={country} onBlur={onCountryChange}>
+          <select id="country" value={country} onChange={onCountryChange}>
             {countries.map(({ name, code }) => (
               <option key={code} value={name}>
                 {name}
               </option>
             ))}
           </select>
+        </div>
+        <div className={styles.group}>
+          State or district:
+          <br />
+          <input type="text" value={state} onChange={onStateChange} />
         </div>
         <div className={styles.group}>
           <label htmlFor="additional">Additional information:</label>
@@ -240,9 +280,17 @@ export const RecapitulationForm = ({ basket, setBasket }) => {
         <div className={styles.group}>
           <label htmlFor="shipping">Shipping:</label>
           <br />
-          <select value={shipping} onBlur={onShippingChange}>
+          <select value={shipping} id="shipping" onChange={onShippingChange}>
             <option value="send">Send it to me, please</option>
             <option value="pick">I&apos;ll pick it up in Prague</option>
+          </select>
+        </div>
+        <div className={styles.group}>
+          <label htmlFor="payment">Payment method:</label>
+          <br />
+          <select value={payment} id="payment" onChange={onPaymentChange}>
+            <option value="transfer">Bank transfer</option>
+            <option value="paypal">PayPal</option>
           </select>
         </div>
         <div className={styles.group}>
@@ -251,6 +299,24 @@ export const RecapitulationForm = ({ basket, setBasket }) => {
           <textarea value={notice} onChange={onNoticeChange} />
         </div>
         <div className={styles.clear} />
+        <table className={styles.recapTable}>
+          <tbody>
+            <tr>
+              <td>Items price:</td>
+              <td className={styles.priceCell}>{itemsPrice} CZK</td>
+            </tr>
+            <tr>
+              <td>Shipping price:</td>
+              <td className={styles.priceCell}>{shippingPrice} CZK</td>
+            </tr>
+            <tr>
+              <td className={styles.totalLabel}>Total price:</td>
+              <td className={styles.totalPrice}>
+                {shippingPrice + itemsPrice} CZK
+              </td>
+            </tr>
+          </tbody>
+        </table>
         <div className={styles.buttonGroup}>
           <button
             onClick={onClick}

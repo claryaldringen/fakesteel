@@ -4,8 +4,8 @@ import Image from 'next/image'
 import styles from './About.module.scss'
 import { useScrollListener } from '../../hooks/useScrollListener'
 
-export const About = ({ active, setActive }) => {
-  useScrollListener('about', active, setActive)
+export const About = () => {
+  useScrollListener('about')
 
   return (
     <div id="about" className={styles.about}>
@@ -34,15 +34,16 @@ export const About = ({ active, setActive }) => {
         bendable PU resin) or foam handle and fibreglass round or rectangular
         core. The swords are further balanced in the hilt or shaft by lead and a
         steel tube into which the core with the blade is glued. The handle is
-        wrapped in genuine cow leather. All parts and materials of swords and
-        other weapons come from the EU; we only outsource dagger blades from PG,
-        as they are not subject to high resistance requirements. The weapons are
+        wrapped in cow leather. All parts and materials of swords and other
+        weapons come from the EU; we only outsource dagger blades from PG, as
+        they are not subject to high resistance requirements. The weapons are
         hand-cast, painted and manufactured in Prague. Due to the fact that it
         is a manual production, not the work of machines, not every manufactured
         piece has the exact weight per gram or millimetre of the same length.
         However, we emphasize that each piece produced meets our strict criteria
         for appearance and quality.
       </p>
+      <Image src="/images/deluxe.jpg" width={1920} height={890} />
       <h3>
         How are FakeSteel weapons different from other foam weapons on the
         market?
@@ -89,10 +90,9 @@ export const About = ({ active, setActive }) => {
       <p>
         At the moment, you can order in the messenger on our{' '}
         <a href="https://www.facebook.com/fakesteel">Facebook</a>; we will be
-        happy to advise you and arrange it with you.{' '}
-        {/*Or you can use the order
-        form on our website.*/}{' '}
-        Alternatively, contact us on our email (
+        happy to advise you and arrange it with you, or you can use the{' '}
+        <a href="#order">order form</a> on our website. Alternatively, contact
+        us on our email (
         <a href="mailto:info@fakesteel.cz">info@fakesteel.cz</a>) or Instagram.
         We currently manufacture larp weapons mostly to order individually, and
         with a few exceptions, we do not have goods in stock. So your weapons go
@@ -105,30 +105,30 @@ export const About = ({ active, setActive }) => {
       <p>
         When ordering, you must choose whether you want a <b>round 10mm core</b>{' '}
         or a <b>15x6mm rectangular core</b>.
-        <ul>
-          <li>
-            <b>Round core:</b>&nbsp;the sword is generally about 50 g lighter.
-            The round core bends a little and vibrates in the same way in all
-            directions, even in the direction of the blow. This core has no
-            weakness in any direction where is a greater risk of breakage. A
-            round core (10) is narrower than a rectangular core (15x6 or 16x8),
-            so the foam of the blade may be slightly softer than that of a
-            rectangular core.
-            <br />
-            <br />
-          </li>
-          <li>
-            <b>Rectangular core:</b>&nbsp;the sword is generally about 50 g
-            heavier. The rectangle behaves more like an actual sword blade. It
-            does not bend and vibrates only minimally in the direction of the
-            cut; on the contrary, when you hit flat, it bends and vibrates even
-            more than the round core. With strong or frequent blows from the
-            flat side of the blade, there is a more considerable risk of
-            damaging the rectangular core than with a round one. The rectangular
-            core is better for fencing.
-          </li>
-        </ul>
       </p>
+      <ul>
+        <li>
+          <b>Round core:</b>&nbsp;the sword is generally about 50 g lighter. The
+          round core bends a little and vibrates in the same way in all
+          directions, even in the direction of the blow. This core has no
+          weakness in any direction where is a greater risk of breakage. A round
+          core (10) is narrower than a rectangular core (15x6 or 16x8), so the
+          foam of the blade may be slightly softer than that of a rectangular
+          core.
+          <br />
+          <br />
+        </li>
+        <li>
+          <b>Rectangular core:</b>&nbsp;the sword is generally about 50 g
+          heavier. The rectangle behaves more like an actual sword blade. It
+          does not bend and vibrates only minimally in the direction of the cut;
+          on the contrary, when you hit flat, it bends and vibrates even more
+          than the round core. With strong or frequent blows from the flat side
+          of the blade, there is a more considerable risk of damaging the
+          rectangular core than with a round one. The rectangular core is better
+          for fencing.
+        </li>
+      </ul>
       <p>
         It is also possible to choose a heavier and more durable{' '}
         <b>16x8mm rectangular core</b>. The weapon will be about another 50g
@@ -137,7 +137,9 @@ export const About = ({ active, setActive }) => {
         significantly increase. Suitable if you want to use the weapon primarily
         for hard battles in armour. Such as the Czech &quot;kekel&quot;.
       </p>
-      <Image src="/images/construction2.jpg" width={1920} height={1832} />
+      <div className={styles.image}>
+        <Image src="/images/construction2.jpg" width={1920} height={1832} />
+      </div>
       <h3>How to take care of weapons and repair them?</h3>
       <p>
         All double-edged and single-edged sword blades are made with reinforced

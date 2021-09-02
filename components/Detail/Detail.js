@@ -39,8 +39,8 @@ export const Detail = ({ images, title, longDescription, price }) => {
             Facebook
           </a>{' '}
           or use our email{' '}
-          <a href="mailto:info@fakesteel.cz">info@fakesteel.cz</a>.
-          {/*or use our <a href="/#order">order form</a>!*/}
+          <a href="mailto:info@fakesteel.cz">info@fakesteel.cz</a>, or use our{' '}
+          <a href="/#order">order form</a>!
         </div>
       </div>
     </div>

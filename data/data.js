@@ -88,7 +88,7 @@ export const categories = [
           { src: 'oktagon_2', width: 1920, height: 1280 },
           { src: 'oktagon_3', width: 1920, height: 1280 },
           { src: 'oktagon4', width: 1920, height: 1164 },
-          { src: 'oktagon_1', width: 1920, height: 1280, fill: true },
+          { src: 'octagon', width: 1600, height: 1066, fill: true },
         ],
       },
       {
@@ -496,12 +496,12 @@ export const categories = [
       {
         id: 'scabbard-i',
         title: 'Scabbard Type III',
-        description: 'Scabbard Type III, 1800 CZK + belt price',
+        description: 'Scabbard Type III, 1900 CZK + belt price',
         longDescription: scabbardDescription(
           'A (900 CZK), B (1200 CZK), C (1200 CZK), D (1200 CZK)',
           true
         ),
-        price: 1800,
+        price: 1900,
         images: [
           { src: 'pochva5', width: 1920, height: 1280 },
           { src: 'scabbard-3-C', width: 1920, height: 1280 },
@@ -516,12 +516,12 @@ export const categories = [
       {
         id: 'scabbard-iv',
         title: 'Scabbard Type IV',
-        description: 'Scabbard Type IV, 1800 CZK + belt price',
+        description: 'Scabbard Type IV, 1900 CZK + belt price',
         longDescription: scabbardDescription(
           'A (900 CZK), B (1200 CZK), C (1200 CZK), D (1200 CZK)',
           true
         ),
-        price: 1800,
+        price: 1900,
         images: [
           { src: 'pochva7', width: 1920, height: 1280 },
           { src: 'scabbard-4-C', width: 1920, height: 1280 },
@@ -577,98 +577,24 @@ export const categories = [
 
 export const orderOptions = [
   {
-    id: 'polearm',
-    title: 'Polearms',
-    price: 900,
-    components: [
-      {
-        type: 'select',
-        label: 'Head',
-        options: [
-          {
-            title: 'pike',
-            value: 'pike',
-            price: 0,
-          },
-          {
-            title: 'spear',
-            value: 'spear',
-            price: 100,
-          },
-        ],
-      },
-      {
-        type: 'select',
-        label: 'Length',
-        options: [
-          {
-            title: 'only head',
-            value: 'only head',
-            price: 0,
-          },
-          {
-            title: 'with 2m shaft (+800 CZK, CZ only)',
-            value: 'with 2m shaft',
-            price: 800,
-          },
-        ],
-      },
-      {
-        type: 'select',
-        label: 'Version',
-        options: [
-          {
-            title: 'soft',
-            value: 'soft',
-            price: 0,
-          },
-          {
-            title: 'hard',
-            value: 'hard',
-            price: 0,
-          },
-        ],
-      },
-      {
-        type: 'select',
-        label: 'Color',
-        options: [
-          {
-            title: 'steel',
-            value: 'steel',
-            price: 0,
-          },
-          {
-            title: 'graphite',
-            value: 'graphite',
-            price: 0,
-          },
-          {
-            title: 'brass',
-            value: 'brass',
-            price: 0,
-          },
-        ],
-      },
-    ],
-  },
-  {
     id: 'sword',
     title: 'Swords',
-    price: 2300,
+    price: 2200,
+    weight: 0.7,
     components: [
       {
         type: 'select',
         label: 'Hilt',
         options: [
-          { title: 'coin', value: 'coin', price: 0 },
-          { title: 'pear', value: 'pear', price: 0 },
-          { title: 'octagon', value: 'octagon', price: 100 },
-          { title: 'fishtail', value: 'fishtail', price: 100 },
-          { title: 'doge', value: 'doge', price: 100 },
-          { title: 'viking E', value: 'viking E', price: 0 },
-          { title: 'viking H', value: 'viking H', price: 0 },
-          { title: 'langmesser', value: 'langmesser', price: 0 },
+          { title: 'coin', value: 'coin', price: 100 },
+          { title: 'pear', value: 'pear', price: 100 },
+          { title: 'octagon', value: 'octagon', price: 200 },
+          { title: 'fishtail', value: 'fishtail', price: 200 },
+          { title: 'doge', value: 'doge', price: 200 },
+          { title: 'viking E', value: 'viking E', price: 100 },
+          { title: 'viking H', value: 'viking H', price: 100 },
+          { title: 'langmesser', value: 'langmesser', price: 100 },
+          { title: 'falchion', value: 'falchion', price: 100 },
           { title: 'sabre', value: 'sabre', price: 0 },
         ],
       },
@@ -710,7 +636,7 @@ export const orderOptions = [
         type: 'select',
         condition: {
           label: 'Hilt',
-          values: ['coin', 'pear', 'octagon', 'fishtail', 'doge'],
+          values: ['coin', 'pear', 'octagon', 'fishtail', 'doge', 'falchion'],
         },
         label: 'Crossguard color',
         options: [
@@ -770,7 +696,7 @@ export const orderOptions = [
         type: 'select',
         condition: {
           label: 'Hilt',
-          values: ['viking E', 'viking H', 'coin', 'pear'],
+          values: ['pear'],
         },
         label: 'Grip color',
         options: [
@@ -796,7 +722,14 @@ export const orderOptions = [
         label: 'Grip color',
         condition: {
           label: 'Hilt',
-          values: ['octagon', 'fishtail', 'doge'],
+          values: [
+            'octagon',
+            'fishtail',
+            'doge',
+            'viking E',
+            'viking H',
+            'coin',
+          ],
         },
         options: [
           {
@@ -845,31 +778,37 @@ export const orderOptions = [
             title: 'type I',
             value: 'type I',
             price: 1700,
+            weight: 0.7,
           },
           {
             title: 'type II',
             value: 'type II',
             price: 1700,
+            weight: 0.7,
           },
           {
             title: 'type III',
             value: 'type III',
-            price: 1800,
+            price: 1900,
+            weight: 0.7,
           },
           {
             title: 'type IV',
             value: 'type IV',
-            price: 1800,
+            price: 1900,
+            weight: 0.7,
           },
           {
             title: 'type V',
             value: 'type V',
             price: 2100,
+            weight: 0.7,
           },
           {
             title: 'type VI',
             value: 'type VI',
             price: 2100,
+            weight: 0.7,
           },
         ],
       },
@@ -1081,11 +1020,12 @@ export const orderOptions = [
             value: 'steel',
             price: 0,
           },
+          /*
           {
             title: 'brass',
             value: 'brass',
             price: 0,
-          },
+          },*/
         ],
       },
       {
@@ -1114,6 +1054,7 @@ export const orderOptions = [
     id: 'mace',
     title: 'Maces & hammers',
     price: 1800,
+    weight: 0.45,
     components: [
       {
         type: 'select',
@@ -1135,8 +1076,88 @@ export const orderOptions = [
             price: 0,
           },
           {
-            title: 'hammer',
-            value: 'hammer',
+            title: 'war hammer',
+            value: 'war hammer',
+            price: 0,
+            weight: 0.1,
+          },
+        ],
+      },
+      {
+        type: 'select',
+        label: 'Color',
+        options: [
+          {
+            title: 'steel',
+            value: 'steel',
+            price: 0,
+          },
+          {
+            title: 'graphite',
+            value: 'graphite',
+            price: 0,
+          },
+          {
+            title: 'brass',
+            value: 'brass',
+            price: 0,
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: 'polearm',
+    title: 'Polearms',
+    price: 900,
+    weight: 0.175,
+    components: [
+      {
+        type: 'select',
+        label: 'Head',
+        options: [
+          {
+            title: 'pike',
+            value: 'pike',
+            price: 0,
+          },
+          {
+            title: 'spear',
+            value: 'spear',
+            price: 100,
+            weight: 0.1,
+          },
+        ],
+      },
+      {
+        type: 'select',
+        label: 'Length',
+        options: [
+          {
+            title: 'only head',
+            value: 'only head',
+            price: 0,
+          },
+          {
+            title: 'with 2m shaft (+800 CZK, CZ only)',
+            value: 'with 2m shaft',
+            price: 800,
+            weight: 7.6,
+          },
+        ],
+      },
+      {
+        type: 'select',
+        label: 'Version',
+        options: [
+          {
+            title: 'soft',
+            value: 'soft',
+            price: 0,
+          },
+          {
+            title: 'hard',
+            value: 'hard',
             price: 0,
           },
         ],
@@ -1168,6 +1189,7 @@ export const orderOptions = [
     id: 'dagger',
     title: 'Daggers',
     price: 800,
+    weight: 0.15,
     components: [
       {
         type: 'select',

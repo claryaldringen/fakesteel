@@ -1,80 +1,24 @@
-import React, { useState, useMemo, useCallback } from 'react'
+import React, { useState, useMemo, useCallback, Fragment } from 'react'
+
+import { Select } from './Select'
 
 import { orderOptions } from '../../data/data'
-import { idToLabel, labelToId } from '../../utils'
+import {
+  calculatePrice,
+  calculateValues,
+  calculateWeight,
+  isConditionTrue,
+  labelToId,
+} from '../../utils'
 import styles from './OrderForm.module.scss'
-
-const getPrice = (params, weaponId, count = 1) => {
-  const weapon = orderOptions.find(({ id }) => id == weaponId)
-  let total = weapon.price * 1
-  const components = weapon.components
-  Object.keys(params).forEach((id) => {
-    const component = components.find(({ label }) => label == idToLabel(id))
-    const { price } = component.options.find(({ value }) => value == params[id])
-    total += price
-  })
-  return total * count
-}
-
-const isConditionTrue = (component, weaponParams) => {
-  if (component && !component.condition) return true
-
-  const condId = labelToId(component.condition.label)
-
-  return (
-    weaponParams[condId] &&
-    component.condition.values.includes(weaponParams[condId])
-  )
-}
-
-const prepareInitialState = (weaponId, state = {}) =>
-  orderOptions
-    .find(({ id }) => id == weaponId)
-    .components.reduce((acc, { label, options, condition }) => {
-      if (isConditionTrue({ condition }, state)) {
-        const componentId = labelToId(label)
-        if (acc[componentId]) return acc
-        return {
-          [componentId]: options[0].value,
-          ...acc,
-        }
-      }
-      return acc
-    }, state)
-
-const renderFormElement = (
-  { type, label, ...params },
-  weaponParams,
-  onChange
-) => {
-  const onSelectChange = (event) =>
-    onChange(labelToId(label), event.target.value)
-
-  const id = labelToId(label)
-
-  switch (type) {
-    case 'select':
-      return (
-        <select id={id} onBlur={onSelectChange} value={weaponParams[id]}>
-          {params.options.map(({ title, value }) => (
-            <>
-              <option key={`${label}–${value}`} value={value}>
-                {title}
-              </option>
-            </>
-          ))}
-        </select>
-      )
-  }
-}
 
 export const OrderForm = ({ basket, setBasket }) => {
   const defaultWeaponId = orderOptions[0].id
   const [weapon, setWeapon] = useState(defaultWeaponId)
-  const [weaponParams, setWeaponParams] = useState(prepareInitialState(weapon))
+  const [weaponParams, setWeaponParams] = useState(calculateValues(weapon))
   const [count, setCount] = useState(1)
 
-  const price = useMemo(() => getPrice(weaponParams, weapon, count), [
+  const price = useMemo(() => calculatePrice(weaponParams, weapon, count), [
     weaponParams,
     weapon,
     count,
@@ -83,36 +27,72 @@ export const OrderForm = ({ basket, setBasket }) => {
   const onWeaponChange = useCallback(
     (event) => {
       setWeapon(event.target.value)
-      setWeaponParams(prepareInitialState(event.target.value))
+      setWeaponParams(calculateValues(event.target.value))
     },
-    [setWeapon]
+    [setWeapon, setWeaponParams]
   )
 
   const onChange = useCallback(
     (item, value) => {
       const newState = { ...weaponParams }
       newState[item] = value
-      setWeaponParams(prepareInitialState(weapon, newState))
+      setWeaponParams(calculateValues(weapon, newState))
     },
     [setWeaponParams, weaponParams]
   )
 
-  const addToOrder = useCallback(() => {
-    setBasket([{ count, weapon, price, ...weaponParams }, ...basket])
-    setWeapon(defaultWeaponId)
-    setWeaponParams(prepareInitialState(defaultWeaponId))
-    setCount(1)
-  }, [
-    count,
-    setCount,
-    defaultWeaponId,
-    weaponParams,
-    basket,
-    weapon,
-    setBasket,
-    setWeapon,
-    setWeaponParams,
-  ])
+  const addToOrder = useCallback(
+    (e) => {
+      e.stopPropagation()
+      e.preventDefault()
+      const index = basket.findIndex((item) =>
+        Object.keys(weaponParams).reduce(
+          (acc, param) => acc && item[param] === weaponParams[param],
+          true
+        )
+      )
+      if (index > -1) {
+        const oldCount = basket[index].count
+        basket.splice(index, 1)
+
+        setBasket([
+          {
+            count: count + oldCount,
+            weapon,
+            price: calculatePrice(weaponParams, weapon, count + oldCount),
+            weight: calculateWeight(weaponParams, weapon, count + oldCount),
+            ...weaponParams,
+          },
+          ...basket,
+        ])
+      } else {
+        setBasket([
+          {
+            count,
+            weapon,
+            price,
+            weight: calculateWeight(weaponParams, weapon, count),
+            ...weaponParams,
+          },
+          ...basket,
+        ])
+      }
+      setWeapon(defaultWeaponId)
+      setWeaponParams(calculateValues(defaultWeaponId))
+      setCount(1)
+    },
+    [
+      count,
+      setCount,
+      defaultWeaponId,
+      weaponParams,
+      basket,
+      weapon,
+      setBasket,
+      setWeapon,
+      setWeaponParams,
+    ]
+  )
 
   const components = useMemo(
     () => orderOptions.find(({ id }) => id == weapon).components,
@@ -135,7 +115,7 @@ export const OrderForm = ({ basket, setBasket }) => {
                 <label htmlFor="wt">Weapon type:</label>
               </td>
               <td>
-                <select id="wt" onBlur={onWeaponChange} value={weapon}>
+                <select id="wt" onChange={onWeaponChange} value={weapon}>
                   {orderOptions.map(({ id, title }) => (
                     <option key={id} value={id}>
                       {title}
@@ -144,8 +124,8 @@ export const OrderForm = ({ basket, setBasket }) => {
                 </select>
               </td>
             </tr>
-            {components.map((component) => (
-              <>
+            {components.map((component, i) => (
+              <Fragment key={`c_${i}`}>
                 {isConditionTrue(component, weaponParams) && (
                   <tr key={labelToId(component.label)}>
                     <td>
@@ -154,11 +134,16 @@ export const OrderForm = ({ basket, setBasket }) => {
                       </label>
                     </td>
                     <td>
-                      {renderFormElement(component, weaponParams, onChange)}
+                      <Select
+                        options={component.options}
+                        label={component.label}
+                        weaponParams={weaponParams}
+                        onChange={onChange}
+                      />
                     </td>
                   </tr>
                 )}
-              </>
+              </Fragment>
             ))}
             <tr>
               <td>

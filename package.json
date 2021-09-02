@@ -5,7 +5,8 @@
   "scripts": {
     "dev": "next dev -p 3006",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "lint": "next lint"
   },
   "eslintConfig": {
     "root": true,
@@ -29,7 +30,6 @@
     "extends": [
       "eslint:recommended",
       "plugin:react/recommended",
-      "plugin:jsx-a11y/recommended",
       "plugin:prettier/recommended"
     ],
     "rules": {
