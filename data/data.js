@@ -662,16 +662,16 @@ export const orderOptions = [
         label: 'Blade',
         options: [
           {
-            title: 'arming sword blade (scabbard available)',
-            value: 'arming sword',
+            title: 'arming blade (scabbard available)',
+            value: 'arming',
             price: 0,
           },
-          { title: 'viking sword blade', value: 'viking sword', price: 0 },
+          { title: 'viking blade', value: 'viking', price: 0 },
           { title: 'langmesser blade', value: 'langmesser', price: 0 },
           { title: 'falchion blade', value: 'falchion', price: 0 },
           {
-            title: 'doge sword blade (scabbard available)',
-            value: 'doge sword',
+            title: 'doge blade (scabbard available)',
+            value: 'doge',
             price: 0,
           },
         ],
