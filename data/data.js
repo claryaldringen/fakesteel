@@ -616,16 +616,7 @@ export const orderOptions = [
         label: 'Pommel color',
         condition: {
           label: 'Hilt',
-          values: [
-            'coin',
-            'pear',
-            'octagon',
-            'fishtail',
-            'doge',
-            'viking E',
-            'viking H',
-            'falchion',
-          ],
+          values: ['coin', 'pear', 'octagon', 'fishtail', 'doge', 'falchion'],
         },
         options: [
           {
@@ -650,7 +641,7 @@ export const orderOptions = [
         label: 'Hilt color',
         condition: {
           label: 'Hilt',
-          values: ['langmesser', 'sabre'],
+          values: ['langmesser', 'sabre', 'viking E', 'viking H'],
         },
         options: [
           {
@@ -989,11 +980,11 @@ export const orderOptions = [
         },
         label: 'Buckle',
         options: [
-          {
+          /*{
             title: 'type 1',
             value: 'type 1',
             price: 0,
-          },
+          },*/
           {
             title: 'type 2',
             value: 'type 2',

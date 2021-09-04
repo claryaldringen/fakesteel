@@ -85,7 +85,7 @@ export default (req, res) => {
            req.body.payment == 'transfer' ? 'Bank transfer' : 'PayPal'
          }</td></tr>
         <tr><td colspan="2">The payment information will be sent as soon as possible.</td></tr>
-        <tr><td>Total price:</td><td><b>${total} CZK</b></td></tr>
+        <tr><td><b style="font-size: 110%;">Total price:</b></td><td><b style="font-size: 110%;">${total} CZK</b></td></tr>
     </table>`
   }
 
@@ -98,7 +98,7 @@ export default (req, res) => {
     ${req.body.state}<br>
     ${req.body.additional}<br>
     Phone no.: ${req.body.phone}<br>
-    Notice: <br> ${req.body.notice}
+    Notice: <br> ${req.body.notice}<br>
     <b>Shipping price: ${shippingPrice} CZK</b>
     </div>`
   if (req.body.shipping == 'pick') {

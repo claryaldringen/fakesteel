@@ -89,17 +89,30 @@ export const About = () => {
       <h3>How to order, and how long does delivery take?</h3>
       <p>
         At the moment, you can order in the messenger on our{' '}
-        <a href="https://www.facebook.com/fakesteel">Facebook</a>; we will be
-        happy to advise you and arrange it with you, or you can use the{' '}
-        <a href="#order">order form</a> on our website. Alternatively, contact
-        us on our email (
-        <a href="mailto:info@fakesteel.cz">info@fakesteel.cz</a>) or Instagram.
-        We currently manufacture larp weapons mostly to order individually, and
-        with a few exceptions, we do not have goods in stock. So your weapons go
-        into production only after ordering and paying. Production takes about
-        30 days. We try to send the weapons as quickly as possible, but we
-        cannot guarantee precisely when we will complete the order. We are
-        currently around 20-40 days on average.
+        <a
+          href="https://www.facebook.com/fakesteel"
+          target="_blank"
+          rel="noreferrer"
+        >
+          Facebook
+        </a>
+        ; we will be happy to advise you and arrange it with you, or you can use
+        the <a href="#order">order form</a> on our website. Alternatively,
+        contact us on our email (
+        <a href="mailto:info@fakesteel.cz">info@fakesteel.cz</a>) or{' '}
+        <a
+          href="https://www.instagram.com/fakesteelarmory/"
+          target="_blank"
+          rel="noreferrer"
+        >
+          Instagram
+        </a>
+        . We currently manufacture larp weapons mostly to order individually,
+        and with a few exceptions, we do not have goods in stock. So your
+        weapons go into production only after ordering and paying. Production
+        takes about 30 days. We try to send the weapons as quickly as possible,
+        but we cannot guarantee precisely when we will complete the order. We
+        are currently around 20-40 days on average.
       </p>
       <h3>Round or rectangular fiberglass core?</h3>
       <p>
