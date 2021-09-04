@@ -82,7 +82,7 @@ export default (req, res) => {
     billing = `
     <table style="float: left;max-width: 290px;">
          <tr><td>Payment method:</td><td>${
-           req.body.payment == 'transfer' ? 'Bak transfer' : 'PayPal'
+           req.body.payment == 'transfer' ? 'Bank transfer' : 'PayPal'
          }</td></tr>
         <tr><td colspan="2">The payment information will be sent as soon as possible.</td></tr>
         <tr><td>Total price:</td><td><b>${total} CZK</b></td></tr>

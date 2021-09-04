@@ -181,7 +181,7 @@ export const About = () => {
         and we do not think it is safe to stab with any weapon without eye
         protection.
       </p>
-      <Image src="/images/blades.jpg" width={1921} height={1280} />
+      <Image src="/images/ryba_combo.jpg" width={1921} height={1280} />
       <h3>
         What weapons can the scabbard be ordered for, and how are they designed?
       </h3>

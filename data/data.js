@@ -394,7 +394,7 @@ export const categories = [
       {
         id: 'baselard-dagger',
         title: 'Baselard dagger',
-        description: 'Baselard dagger, 1100 CZK',
+        description: 'Baselard dagger, 800 CZK',
         longDescription: `<p>The baselard or "Swiss dagger" is a historical Swiss blade weapon with a crescent-shaped pommel and crossguard. Their curved shapes appeared as early as the 13th century and remained peculiar to Switzerland, and do not appear to have been imitated elsewhere.</p>
           <p>The basic model of the dagger has only a steel rivet on the bottom of the handle. You can also order a version with steel or brass cladding (+300 CZK).<br>The blade can be ordered in a length of 24 or 29 cm. It has a 6 mm round fiberglass core, which ends 6 cm in front of the tip, and for safer stabbing and strengthening of the foam, the end of the core is finished with Kevlar fabric.</p>          
           <br><br><b>
@@ -440,7 +440,7 @@ export const categories = [
           Total length: 38-43 cm<br>
           Blade length: 24-29 cm<br>
           Weight: 100 g<br>`,
-        price: 1150,
+        price: 1000,
         images: [
           { src: 'quillon', width: 1744, height: 1162 },
           { src: 'mince_stribr_detail', width: 1920, height: 1280, fill: true },
@@ -614,6 +614,44 @@ export const orderOptions = [
       {
         type: 'select',
         label: 'Pommel color',
+        condition: {
+          label: 'Hilt',
+          values: [
+            'coin',
+            'pear',
+            'octagon',
+            'fishtail',
+            'doge',
+            'viking E',
+            'viking H',
+            'falchion',
+          ],
+        },
+        options: [
+          {
+            title: 'steel',
+            value: 'steel',
+            price: 0,
+          },
+          {
+            title: 'graphite',
+            value: 'graphite',
+            price: 0,
+          },
+          {
+            title: 'brass',
+            value: 'brass',
+            price: 0,
+          },
+        ],
+      },
+      {
+        type: 'select',
+        label: 'Hilt color',
+        condition: {
+          label: 'Hilt',
+          values: ['langmesser', 'sabre'],
+        },
         options: [
           {
             title: 'steel',
@@ -663,15 +701,15 @@ export const orderOptions = [
         options: [
           {
             title: 'arming blade (scabbard available)',
-            value: 'arming',
+            value: 'arming sword',
             price: 0,
           },
-          { title: 'viking blade', value: 'viking', price: 0 },
-          { title: 'langmesser blade', value: 'langmesser', price: 0 },
+          { title: 'viking blade', value: 'viking sword', price: 0 },
+          { title: 'langmesser/sabre blade', value: 'langmesser', price: 0 },
           { title: 'falchion blade', value: 'falchion', price: 0 },
           {
             title: 'doge blade (scabbard available)',
-            value: 'doge',
+            value: 'doge sword',
             price: 0,
           },
         ],
@@ -1283,7 +1321,7 @@ export const orderOptions = [
         label: 'Grip color',
         condition: {
           label: 'Dagger type',
-          values: ['quillon dagger', 'baselard'],
+          values: ['quillon dagger'],
         },
         options: [
           {
