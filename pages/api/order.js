@@ -1,4 +1,4 @@
-import { calculateShipping, idToLabel } from '../../utils'
+import { calculatePayment, calculateShipping, idToLabel } from '../../utils'
 
 export default (req, res) => {
   let nodemailer = require('nodemailer')
@@ -25,7 +25,12 @@ export default (req, res) => {
         )
       : 0
 
-  const total = itemsPrice + shippingPrice
+  const paymentPrice = calculatePayment(
+    itemsPrice + shippingPrice,
+    req.body.payment === 'transfer' ? 0 : 0.05
+  )
+
+  const total = itemsPrice + shippingPrice + paymentPrice
 
   const summary = req.body.basket
     .map(({ count, weapon, price, ...props }) => {
@@ -73,10 +78,11 @@ export default (req, res) => {
   let billing = `
     <table style="float: left;max-width: 290px;">
         <tr><td>Payment method:</td><td>${
-          req.body.payment == 'transfer' ? 'Bak transfer' : 'PayPal'
+          req.body.payment == 'transfer' ? 'Bank transfer' : 'PayPal'
         }</td></tr>
         <tr><td colspan="2">The payment information will be sent as soon as possible.</td></tr>
-        <tr><td>Total price:</td><td><b>${total} CZK</b></td></tr>
+        <tr><td><b>Payment price:</b></td><td><b>${paymentPrice} CZK</b></td></tr>
+        <tr><td><b style="font-size: 110%;">Total price:</b></td><td><b style="font-size: 110%;">${total} CZK</b></td></tr>
     </table>`
   if (req.body.country === 'Czech Republic') {
     billing = `
@@ -85,6 +91,7 @@ export default (req, res) => {
            req.body.payment == 'transfer' ? 'Bank transfer' : 'PayPal'
          }</td></tr>
         <tr><td colspan="2">The payment information will be sent as soon as possible.</td></tr>
+         <tr><td><b>Payment price:</b></td><td><b>${paymentPrice} CZK</b></td></tr>
         <tr><td><b style="font-size: 110%;">Total price:</b></td><td><b style="font-size: 110%;">${total} CZK</b></td></tr>
     </table>`
   }

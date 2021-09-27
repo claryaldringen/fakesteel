@@ -85,3 +85,6 @@ export const calculateValues = (weaponId, selectedValues = {}) => {
     return acc
   }, {})
 }
+
+export const calculatePayment = (total, percentage) =>
+  Math.ceil(total * percentage)
