@@ -294,7 +294,9 @@ export const RecapitulationForm = ({ basket, setBasket }) => {
           <label htmlFor="payment">Payment method:</label>
           <br />
           <select value={payment} id="payment" onChange={onPaymentChange}>
-            <option value="transfer">Bank transfer</option>
+            <option value="transfer">
+              Bank transfer {country != 'Czech Republic' && '(+100 CZK)'}
+            </option>
             <option value="paypal">PayPal (+5%)</option>
           </select>
         </div>
