@@ -85,3 +85,10 @@ export const calculateValues = (weaponId, selectedValues = {}) => {
     return acc
   }, {})
 }
+
+export const calculatePayment = (total, payment, country) => {
+  if (payment === 'transfer') {
+    return country === 'Czech Republic' ? 0 : 100
+  }
+  return Math.ceil(total * 0.05)
+}

@@ -924,12 +924,12 @@ export const orderOptions = [
           {
             title: 'type A',
             value: 'type A',
-            price: 0,
+            price: 900,
           },
           {
             title: 'type B',
             value: 'type B',
-            price: 0,
+            price: 1200,
           },
         ],
       },

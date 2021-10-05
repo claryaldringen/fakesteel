@@ -5,7 +5,7 @@ import { countries } from '../../data/countries'
 
 import styles from './OrderForm.module.scss'
 import classNames from 'classnames'
-import { calculateShipping } from '../../utils'
+import { calculatePayment, calculateShipping } from '../../utils'
 
 export const RecapitulationForm = ({ basket, setBasket }) => {
   const [name, setName] = useState('')
@@ -95,6 +95,11 @@ export const RecapitulationForm = ({ basket, setBasket }) => {
   const shippingPrice = useMemo(
     () => (shipping === 'send' ? calculateShipping(country, weight) : 0),
     [country, shipping, basket]
+  )
+
+  const paymentPrice = useMemo(
+    () => calculatePayment(shippingPrice + itemsPrice, payment, country),
+    [shippingPrice, itemsPrice, payment]
   )
 
   const onClick = useCallback(
@@ -290,7 +295,7 @@ export const RecapitulationForm = ({ basket, setBasket }) => {
           <br />
           <select value={payment} id="payment" onChange={onPaymentChange}>
             <option value="transfer">Bank transfer</option>
-            <option value="paypal">PayPal</option>
+            <option value="paypal">PayPal (+5%)</option>
           </select>
         </div>
         <div className={styles.group}>
@@ -310,9 +315,13 @@ export const RecapitulationForm = ({ basket, setBasket }) => {
               <td className={styles.priceCell}>{shippingPrice} CZK</td>
             </tr>
             <tr>
+              <td>Payment price:</td>
+              <td className={styles.priceCell}>{paymentPrice} CZK</td>
+            </tr>
+            <tr>
               <td className={styles.totalLabel}>Total price:</td>
               <td className={styles.totalPrice}>
-                {shippingPrice + itemsPrice} CZK
+                {shippingPrice + itemsPrice + paymentPrice} CZK
               </td>
             </tr>
           </tbody>
