@@ -27,7 +27,8 @@ export default (req, res) => {
 
   const paymentPrice = calculatePayment(
     itemsPrice + shippingPrice,
-    req.body.payment === 'transfer' ? 0 : 0.05
+    req.body.payment,
+    req.body.country
   )
 
   const total = itemsPrice + shippingPrice + paymentPrice

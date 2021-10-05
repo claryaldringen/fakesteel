@@ -98,11 +98,7 @@ export const RecapitulationForm = ({ basket, setBasket }) => {
   )
 
   const paymentPrice = useMemo(
-    () =>
-      calculatePayment(
-        shippingPrice + itemsPrice,
-        payment === 'transfer' ? 0 : 0.05
-      ),
+    () => calculatePayment(shippingPrice + itemsPrice, payment, country),
     [shippingPrice, itemsPrice, payment]
   )
 
