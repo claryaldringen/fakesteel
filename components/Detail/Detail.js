@@ -3,7 +3,13 @@ import Image from 'next/image'
 import styles from './Detail.module.scss'
 import classNames from 'classnames'
 
-export const Detail = ({ images, title, longDescription, price }) => {
+export const Detail = ({
+  images,
+  title,
+  longDescription,
+  price,
+  additionalPrice,
+}) => {
   const slicedImages = useMemo(() => images.slice(1), [images])
 
   return (
@@ -28,7 +34,9 @@ export const Detail = ({ images, title, longDescription, price }) => {
         <p>
           <div dangerouslySetInnerHTML={{ __html: longDescription }} />
         </p>
-        <span className={styles.price}>Price: {price} CZK</span>
+        <span className={styles.price}>
+          Price: {price} CZK{additionalPrice}
+        </span>
         <div>
           For orders and other questions, do not hesitate to contact us on our{' '}
           <a

@@ -26,7 +26,7 @@ const scabbardDescription = (
   decoration
 ) => `<p>Now you can order scabbards with a belt for our one-handed swords. The scabbard consists of an extremely durable PP plastic core, which is covered in cow leather with a metal chape. The scabbard includes a sword belt with a brass buckle.<br>When ordering, you can choose the type and color of the scabbard and belt with straps, then the metal chape, the shape of the brass buckle and possibly your own decorative motif under the leather.</p>
 <ul>
-    <li>This scabbard can be combined with belts ${belts}.</li>
+    <li>This scabbard can be combined with <b><u>belts ${belts}</u></b>.</li>
     <li>The type of brass buckles (1-4), chapes (steel, brass) and leather color of scabbard and sword belt (brown, black, red, yellow, green) can be combined completely freely.</li>
     ${
       decoration
@@ -463,6 +463,7 @@ export const categories = [
           true
         ),
         price: 1700,
+        additionalPrice: ' + belt price',
         images: [
           { src: 'pochva6', width: 1920, height: 1280 },
           { src: 'scabbard-1-B', width: 1600, height: 1067 },
@@ -482,6 +483,7 @@ export const categories = [
           false
         ),
         price: 1700,
+        additionalPrice: ' + belt price',
         images: [
           { src: 'ryba3', width: 1920, height: 1280 },
           { src: 'scabbard-2-C', width: 1600, height: 1067 },
@@ -502,6 +504,7 @@ export const categories = [
           true
         ),
         price: 1900,
+        additionalPrice: ' + belt price',
         images: [
           { src: 'pochva5', width: 1920, height: 1280 },
           { src: 'scabbard-3-C', width: 1920, height: 1280 },
@@ -522,6 +525,7 @@ export const categories = [
           true
         ),
         price: 1900,
+        additionalPrice: ' + belt price',
         images: [
           { src: 'pochva7', width: 1920, height: 1280 },
           { src: 'scabbard-4-C', width: 1920, height: 1280 },
@@ -541,6 +545,7 @@ export const categories = [
           false
         ),
         price: 2100,
+        additionalPrice: ' + belt price',
         images: [
           { src: 'pochva2', width: 1920, height: 1280 },
           { src: 'scabbard-5-C', width: 1920, height: 1280 },
@@ -560,6 +565,7 @@ export const categories = [
           false
         ),
         price: 2100,
+        additionalPrice: ' + belt price',
         images: [
           { src: 'pochva3', width: 1920, height: 1280, fill: true },
           { src: 'scabbard-6-A', width: 1920, height: 1280 },
