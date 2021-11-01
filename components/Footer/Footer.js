@@ -17,6 +17,8 @@ export const Footer = () => {
         <br />
         IČ: 03386007
         <br />
+        DIČ: CZ03386007
+        <br />
         <br />
         <a href="mailto:info@fakesteel.cz">info@fakesteel.cz</a>
         <br />
