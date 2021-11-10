@@ -50,7 +50,7 @@ export const categories = [
       {
         id: 'one-handed-sword-coin',
         title: 'One-handed sword - Coin',
-        description: 'One-handed sword - Coin, 2300 CZK',
+        description: 'One-handed sword - Coin, 2500 CZK',
         longDescription: `The simple design of this hilt is based on the popular one-handed swords of the 14th century. The curved ends of the crossguard and the coin-shaped pommel are typical features of this knight's weapon. Oakeshott in his typology refers to this type of pommel with the letter J and we call this hilt simply – Coin.
           <br><br><b>
           Specifications<br>
