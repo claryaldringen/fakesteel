@@ -764,6 +764,7 @@ export const orderOptions = [
             'viking E',
             'viking H',
             'coin',
+            'falchion',
           ],
         },
         options: [
