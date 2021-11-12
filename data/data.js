@@ -274,14 +274,14 @@ export const categories = [
       {
         id: 'mace-bulava',
         title: 'Mace - Bulava',
-        description: 'Mace - Bulava, 2000 CZK',
+        description: 'Mace - Bulava, 1900 CZK',
         longDescription: `${maceDescription('Bulava')}
           <br><br><b>
           Specifications<br>
           Total lenght: 70 cm<br>
           Head lenght: 6.5 cm<br>
           Weight: 400 g<br>`,
-        price: 2000,
+        price: 1900,
         images: [
           { src: 'palcat_A', width: 1920, height: 1280 },
           { src: 'palcat_A_combo', width: 1920, height: 1280 },
@@ -291,14 +291,14 @@ export const categories = [
       {
         id: 'mace-zizka',
         title: 'Mace - Zizka',
-        description: 'Mace - Zizka, 2000 CZK',
+        description: 'Mace - Zizka, 1900 CZK',
         longDescription: `${maceDescription('Zizka')}
           <br><br><b>
           Specifications<br>
           Total lenght: 70 cm<br>
           Head lenght: 16 cm<br>
           Weight: 400 g<br>`,
-        price: 2000,
+        price: 1900,
         images: [
           { src: 'palcat_B', width: 1920, height: 1280 },
           { src: 'palcat_B_combo', width: 1920, height: 1280 },
@@ -308,14 +308,14 @@ export const categories = [
       {
         id: 'mace-sprinkler',
         title: 'Mace - Sprinkler',
-        description: 'Mace - Sprinkler, 2000 CZK',
+        description: 'Mace - Sprinkler, 1900 CZK',
         longDescription: `${maceDescription('Sprinkler')}
           <br><br><b>
           Specifications<br>
           Total lenght: 70 cm<br>
           Head lenght: 12 cm<br>
           Weight: 400 g<br>`,
-        price: 2000,
+        price: 1900,
         images: [
           { src: 'palcat_C', width: 1920, height: 1280 },
           { src: 'palcat_C_combo', width: 1920, height: 1280 },
@@ -325,7 +325,7 @@ export const categories = [
       {
         id: 'war-hammer',
         title: 'War Hammer',
-        description: 'War Hammer, 2000 CZK',
+        description: 'War Hammer, 2100 CZK',
         longDescription: `<p>The War Hammer was a weapon popularized in the late middle ages and mainly used for close combat. War Hammers were a knight’s nightmare because the flat side’s filed edges could make deadly dents in armor, and the spiked side could pierce it. ​</p>
           <p>The all-foam shaft has a 25 cm steel tube cast on a round core in handle for better controllability and balance of the weapon. There is also an attached rubber hose in the hammer head, which in combination with the foam significantly increases the resistance of the weapon.</p>
           <br><br><b>
@@ -333,7 +333,7 @@ export const categories = [
           Total length: 72 cm<br>
           Head length: 15 cm<br>
           Weight: 570 g<br>`,
-        price: 2000,
+        price: 2100,
         images: [
           { src: 'kladivo_2', width: 1920, height: 1280 },
           { src: 'kladivo_combo', width: 1920, height: 1280 },
@@ -1088,7 +1088,7 @@ export const orderOptions = [
   {
     id: 'mace',
     title: 'Maces & hammers',
-    price: 2000,
+    price: 1900,
     weight: 0.45,
     components: [
       {
@@ -1113,7 +1113,7 @@ export const orderOptions = [
           {
             title: 'war hammer',
             value: 'war hammer',
-            price: 0,
+            price: 200,
             weight: 0.1,
           },
         ],
