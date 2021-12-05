@@ -452,7 +452,7 @@ export const categories = [
   },
   {
     id: 'scabbards',
-    label: 'Scabbards',
+    label: 'Scabbards & Sheaths',
     items: [
       {
         id: 'scabbard-i',
@@ -567,14 +567,30 @@ export const categories = [
         price: 2200,
         additionalPrice: ' + belt price',
         images: [
-          { src: 'pochva3', width: 1920, height: 1280, fill: true },
-          { src: 'scabbard-6-A', width: 1920, height: 1280 },
+          { src: 'zelena_pochva_2', width: 1920, height: 1280, fill: true },
+          { src: 'zelena_pochva_1', width: 1920, height: 1280 },
           { src: 'scabbard-6-B', width: 1920, height: 1280 },
           { src: 'belt_a', width: 2653, height: 445 },
           { src: 'belt_b', width: 2653, height: 445 },
           { src: 'belt_c', width: 2653, height: 445 },
           { src: 'belt_d', width: 2653, height: 417 },
           { src: 'buckles', width: 2612, height: 1361 },
+        ],
+      },
+      {
+        id: 'sheath',
+        title: 'Sheath',
+        description: 'Sheath, 1000 CZK',
+        longDescription: `<p>You can also order a leather sheath for our daggers. You can choose from five colours (brown, black, red, yellow, green). The tip of the sheath can have only a leather tip or a metal chape <b>(+200 CZK)</b>.</p><p>The leather covers are 4mm thick and are hand sewn and dyed in our workshop in the Czech Republic. They are tied to the belt with a string on the back of the sheath.  The length of the sheath is made according to the length of the dagger blade you choose.</p><p><b>Sheaths can only be ordered with daggers. We do not sell them alone!</b></p>`,
+        price: 1000,
+        images: [
+          { src: '6', width: 1920, height: 1280, fill: true },
+          { src: '5', width: 1920, height: 1280 },
+          { src: '6', width: 1920, height: 1280 },
+          { src: '3', width: 1920, height: 1280 },
+          { src: '4', width: 1920, height: 1280 },
+          { src: '1', width: 1920, height: 1280 },
+          { src: '2', width: 1920, height: 1280 },
         ],
       },
     ],
@@ -1361,6 +1377,62 @@ export const orderOptions = [
             title: 'brass',
             value: 'brass',
             price: 300,
+          },
+        ],
+      },
+      {
+        type: 'select',
+        label: 'Sheath',
+        options: [
+          {
+            title: 'no sheath',
+            value: 'no sheath',
+            price: 0,
+          },
+          {
+            title: 'sheath without chape',
+            value: 'sheath without chape',
+            price: 1000,
+          },
+          {
+            title: 'sheath with chape (+200 CZK)',
+            value: 'sheath with chape',
+            price: 1200,
+          },
+        ],
+      },
+      {
+        type: 'select',
+        label: 'Sheath color',
+        condition: {
+          label: 'Sheath',
+          values: ['sheath without chape', 'sheath with chape'],
+        },
+        options: [
+          {
+            title: 'black',
+            value: 'black',
+            price: 0,
+          },
+          {
+            title: 'brown',
+            value: 'brown',
+            price: 0,
+          },
+          {
+            title: 'red',
+            value: 'red',
+            price: 0,
+          },
+          {
+            title: 'green',
+            value: 'green',
+            price: 0,
+          },
+          {
+            title: 'yellow',
+            value: 'yellow',
+            price: 0,
           },
         ],
       },
