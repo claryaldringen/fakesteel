@@ -1393,11 +1393,13 @@ export const orderOptions = [
             title: 'sheath without chape',
             value: 'sheath without chape',
             price: 1000,
+            weight: 0.12,
           },
           {
             title: 'sheath with chape (+200 CZK)',
             value: 'sheath with chape',
             price: 1200,
+            weight: 0.12,
           },
         ],
       },
