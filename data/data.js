@@ -1357,7 +1357,7 @@ export const orderOptions = [
       },
       {
         type: 'select',
-        label: 'Sheathing',
+        label: 'Metal sheathing',
         condition: {
           label: 'Dagger type',
           values: ['baselard'],
@@ -1369,12 +1369,12 @@ export const orderOptions = [
             price: 0,
           },
           {
-            title: 'steel',
+            title: 'steel (+300 CZK)',
             value: 'steel',
             price: 300,
           },
           {
-            title: 'brass',
+            title: 'brass (+300 CZK)',
             value: 'brass',
             price: 300,
           },
