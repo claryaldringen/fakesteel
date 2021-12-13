@@ -1,4 +1,9 @@
-import { calculatePayment, calculateShipping, idToLabel } from '../../utils'
+import {
+  calculatePayment,
+  calculateShipping,
+  getSpearsShipping,
+  idToLabel,
+} from '../../utils'
 
 export default (req, res) => {
   let nodemailer = require('nodemailer')
@@ -21,7 +26,8 @@ export default (req, res) => {
     req.body.shipping === 'send'
       ? calculateShipping(
           req.body.country,
-          req.body.basket.reduce((total, { weight }) => total + weight, 0)
+          req.body.basket.reduce((total, { weight }) => total + weight, 0),
+          getSpearsShipping(req.body.basket)
         )
       : 0
 

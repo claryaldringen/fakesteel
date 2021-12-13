@@ -24,7 +24,7 @@ export const isConditionTrue = (component, weaponParams) => {
   )
 }
 
-export const calculateShipping = (countryName, weight) => {
+export const calculateShipping = (countryName, weight, additionalPrice) => {
   const country = countries.find(({ name }) => name === countryName)
   const pricesPerKilograms =
     country && shipping[country.code] ? shipping[country.code] : shipping.WORLD
@@ -40,7 +40,7 @@ export const calculateShipping = (countryName, weight) => {
   if (weight > max) {
     return shippingPrice + Math.floor(weight / max) * pricesPerKilograms[max]
   }
-  return shippingPrice
+  return shippingPrice + additionalPrice
 }
 
 export const calculatePrice = (params, weaponId, count = 1) => {
@@ -68,6 +68,7 @@ export const calculateWeight = (params, weaponId, count = 1) => {
         isConditionTrue(component, params) && component.label == idToLabel(id)
     )
     const option = component?.options.find(({ value }) => value == params[id])
+    console.log(option)
     total += option?.weight ?? 0
   })
   return total * count
@@ -91,4 +92,15 @@ export const calculatePayment = (total, payment, country) => {
     return country === 'Czech Republic' ? 0 : 100
   }
   return Math.ceil(total * 0.05)
+}
+
+export const getSpearsShipping = (basket) => {
+  const spear = basket.find(
+    (item) => item.length && item.length === 'with 2m shaft'
+  )
+  let additionalPrice = 0
+  if (spear?.count) {
+    additionalPrice = 60 + (spear.count - 1) * 20
+  }
+  return additionalPrice
 }

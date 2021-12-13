@@ -5,7 +5,11 @@ import { countries } from '../../data/countries'
 
 import styles from './OrderForm.module.scss'
 import classNames from 'classnames'
-import { calculatePayment, calculateShipping } from '../../utils'
+import {
+  calculatePayment,
+  calculateShipping,
+  getSpearsShipping,
+} from '../../utils'
 
 export const RecapitulationForm = ({ basket, setBasket }) => {
   const [name, setName] = useState('')
@@ -93,7 +97,10 @@ export const RecapitulationForm = ({ basket, setBasket }) => {
   )
 
   const shippingPrice = useMemo(
-    () => (shipping === 'send' ? calculateShipping(country, weight) : 0),
+    () =>
+      shipping === 'send'
+        ? calculateShipping(country, weight, getSpearsShipping(basket))
+        : 0,
     [country, shipping, basket]
   )
 
