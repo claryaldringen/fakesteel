@@ -581,7 +581,7 @@ export const categories = [
         id: 'sheath',
         title: 'Sheath',
         description: 'Sheath, 1000 CZK',
-        longDescription: `<p>You can also order a leather sheath for our daggers. You can choose from five colours (brown, black, red, yellow, green). The tip of the sheath can have only a leather tip or a metal chape <b>(+200 CZK)</b>.</p><p>The leather sheaths are 4mm thick and are hand sewn and dyed in our workshop in the Czech Republic. They are tied to the belt with a string on the back of the sheath.  The length of the sheath is made according to the length of the dagger blade you choose.</p><p><b>Sheaths can only be ordered with daggers. We do not sell them alone!</b></p>`,
+        longDescription: `<p>You can also order a leather sheath for our daggers. You can choose from five colours (brown, black, red, yellow, green). The tip of the sheath can have only a leather tip or a steel or brass chape <b>(+200 CZK)</b>.</p><p>The leather sheaths are 4mm thick and are hand sewn and dyed in our workshop in the Czech Republic. They are tied to the belt with a string on the back of the sheath.  The length of the sheath is made according to the length of the dagger blade you choose.</p><p><b>Sheaths can only be ordered with daggers. We do not sell them alone!</b></p>`,
         price: 1000,
         images: [
           { src: '6', width: 1920, height: 1280, fill: true },
@@ -1072,12 +1072,11 @@ export const orderOptions = [
             value: 'steel',
             price: 0,
           },
-          /*
           {
             title: 'brass',
             value: 'brass',
             price: 0,
-          },*/
+          },
         ],
       },
       {
@@ -1396,8 +1395,14 @@ export const orderOptions = [
             weight: 0.12,
           },
           {
-            title: 'sheath with chape (+200 CZK)',
-            value: 'sheath with chape',
+            title: 'sheath with steel chape (+200 CZK)',
+            value: 'sheath with steel chape',
+            price: 1200,
+            weight: 0.12,
+          },
+          {
+            title: 'sheath with brass chape (+200 CZK)',
+            value: 'sheath with brass chape',
             price: 1200,
             weight: 0.12,
           },
