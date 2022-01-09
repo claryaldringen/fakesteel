@@ -1413,7 +1413,11 @@ export const orderOptions = [
         label: 'Sheath color',
         condition: {
           label: 'Sheath',
-          values: ['sheath without chape', 'sheath with chape'],
+          values: [
+            'sheath without chape',
+            'sheath with steel chape',
+            'sheath with brass chape',
+          ],
         },
         options: [
           {
