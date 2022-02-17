@@ -1,17 +1,14 @@
 import { useEffect } from 'react'
-import { useActive } from './useActive'
 
-export const useScrollListener = (id) => {
-  const { active, setActive } = useActive()
-
+export const useScrollListener = (id, active, setActive) => {
   useEffect(() => {
     const element = document.getElementById(id)
     const top = element.offsetTop
     const height = element.offsetHeight
     const onScrollListener = () => {
       if (
-        document.documentElement.scrollTop > top &&
-        document.documentElement.scrollTop < top + height
+        document.documentElement.scrollTop > top - 100 &&
+        document.documentElement.scrollTop < top - 100 + height
       ) {
         if (active != id) {
           setActive(id)

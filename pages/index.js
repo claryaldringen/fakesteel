@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 import styles from '../styles/Home.module.css'
 import { Header } from '../components/Header/Header'
@@ -12,30 +12,36 @@ import { WebHead } from '../components/Head'
 import { Chat } from '../components/Chat/Chat'
 import { Order } from '../components/Order/Order'
 
-const Index = () => (
-  <div className={styles.container}>
-    <WebHead />
-    <Header />
-    <main>
-      <Main />
-      {categories.map(({ id, items, description }) => (
-        <Category
-          key={`cat_${id}`}
-          id={id}
-          items={items}
-          description={description}
-        />
-      ))}
-      <Order />
-      <About />
-    </main>
+const Index = () => {
+  const [active, setActive] = useState()
 
-    <footer>
-      <Footer />
-    </footer>
-    <Chat />
-    <StyledCookieConsent />
-  </div>
-)
+  return (
+    <div className={styles.container}>
+      <WebHead />
+      <Header active={active} setActive={setActive} />
+      <main>
+        <Main active={active} setActive={setActive} />
+        {categories.map(({ id, items, description }) => (
+          <Category
+            key={`cat_${id}`}
+            id={id}
+            items={items}
+            description={description}
+            active={active}
+            setActive={setActive}
+          />
+        ))}
+        <Order active={active} setActive={setActive} />
+        <About active={active} setActive={setActive} />
+      </main>
+
+      <footer>
+        <Footer />
+      </footer>
+      <Chat />
+      <StyledCookieConsent />
+    </div>
+  )
+}
 
 export default Index

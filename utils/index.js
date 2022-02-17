@@ -16,12 +16,25 @@ export const idToLabel = (id) => {
 export const isConditionTrue = (component, weaponParams) => {
   if (component && !component.condition) return true
 
-  const condId = labelToId(component.condition.label)
+  let conditions
+  if (Array.isArray(component.condition)) {
+    conditions = component.condition
+  } else {
+    conditions = [component.condition]
+  }
 
-  return (
-    weaponParams[condId] &&
-    component.condition.values.includes(weaponParams[condId])
-  )
+  for (let i = 0; i < conditions.length; i++) {
+    const condition = conditions[i]
+    const condId = labelToId(condition.label)
+    if (
+      !weaponParams[condId] ||
+      !condition.values.includes(weaponParams[condId])
+    ) {
+      return false
+    }
+  }
+
+  return true
 }
 
 export const calculateShipping = (countryName, weight, additionalPrice) => {

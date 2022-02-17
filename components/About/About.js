@@ -4,8 +4,8 @@ import Image from 'next/image'
 import styles from './About.module.scss'
 import { useScrollListener } from '../../hooks/useScrollListener'
 
-export const About = () => {
-  useScrollListener('about')
+export const About = ({ active, setActive }) => {
+  useScrollListener('about', active, setActive)
 
   return (
     <div id="about" className={styles.about}>
