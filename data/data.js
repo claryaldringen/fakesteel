@@ -1,11 +1,16 @@
 const LABEL1 = `For more information on blade and hilts materials, balancing and more, see our <a href="/#about">FAQ</a>.`
 
 const swordLabel2 = (
-  leather = true
+  leather = true,
+  different = true
 ) => `What can you choose or modify when ordering this weapon?
     <ol>
       <li>Blade type and length. The standard and maximum length of the blades is 70 cm. They can be shortened by request.</li>
-      <li>The colour of the metallic shade of the hilt and blade. The hilt can be steel, graphite or brass. The blade can be steel or graphite. The pommel may have a different colour than the crossguard.</li>
+      <li>The colour of the metallic shade of the hilt and blade. The hilt can be steel, graphite or brass. The blade can be steel or graphite. ${
+        different
+          ? 'The pommel may have a different colour than the crossguard.'
+          : ''
+      }</li>
       ${
         leather
           ? `<li>Leather grip type and colour. Either classic leather grip or deluxe version. The colour can be either brown, black or red.</li>`
@@ -211,11 +216,11 @@ export const categories = [
           Blade width: 4.5 cm<br>
           Weight: 730 g<br>
           Point of Balance: 6 cm<br>
-          </b><br>${swordLabel2()}<br>${LABEL1}
+          </b><br>${swordLabel2(true, false)}<br>${LABEL1}
           `,
         price: 2700,
         images: [
-          { src: '2_f', width: 1920, height: 1280 },
+          { src: '2_f2', width: 1920, height: 1280 },
           { src: '3_f', width: 1920, height: 1280 },
           { src: '4_f', width: 1920, height: 1280 },
           { src: 'jilec_fin', width: 1920, height: 1282, fill: true },
@@ -280,7 +285,7 @@ export const categories = [
           Blade width: 4 cm<br>
           Weight: 620 g<br>
           Point of Balance: 16 cm<br>
-          </b><br>${swordLabel2(false)}<br>${LABEL1}`,
+          </b><br>${swordLabel2(false, false)}<br>${LABEL1}`,
         price: 2400,
         images: [
           { src: 'savle_1', width: 1920, height: 1280 },
@@ -689,7 +694,7 @@ export const orderOptions = [
         label: 'Hilt color',
         condition: {
           label: 'Hilt',
-          values: ['langmesser', 'sabre', 'viking E', 'viking H'],
+          values: ['langmesser', 'sabre', 'viking E', 'viking H', 'sidesword'],
         },
         options: [
           {
@@ -807,6 +812,7 @@ export const orderOptions = [
             'viking H',
             'coin',
             'falchion',
+            'sidesword',
           ],
         },
         options: [
