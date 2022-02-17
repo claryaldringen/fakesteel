@@ -6,7 +6,7 @@ import { OrderForm } from './OrderForm'
 import { Basket } from './Basket'
 import { RecapitulationForm } from './RecapitulationForm'
 
-export const Order = () => {
+export const Order = ({ active, setActive }) => {
   const [basket, setBasket] = useState([])
 
   const total = useMemo(
@@ -45,7 +45,7 @@ export const Order = () => {
       })
   }, [basket])
 
-  useScrollListener('order')
+  useScrollListener('order', active, setActive)
 
   return (
     <div className={styles.order} id="order">

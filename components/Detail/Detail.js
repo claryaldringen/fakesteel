@@ -34,9 +34,24 @@ export const Detail = ({
         <p>
           <div dangerouslySetInnerHTML={{ __html: longDescription }} />
         </p>
-        <span className={styles.price}>
-          Price: {price} CZK{additionalPrice}
-        </span>
+        <table className={styles.price}>
+          <tbody>
+            {(Array.isArray(price) ? price : [price]).map((p, index) => (
+              <tr key={`price_${index}`}>
+                <td>{!index && 'Price: '}</td>
+                <td>
+                  {p} CZK
+                  {additionalPrice
+                    ? Array.isArray(additionalPrice)
+                      ? additionalPrice[index]
+                      : additionalPrice
+                    : ''}
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+
         <div>
           For orders and other questions, do not hesitate to contact us on our{' '}
           <a

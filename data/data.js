@@ -151,6 +151,7 @@ export const categories = [
         images: [
           { src: 'doge_ocel_nova_uvodka', width: 1920, height: 731 },
           { src: 'doge_combo_zlata_tmava', width: 1920, height: 1280 },
+          { src: 'dogecoin', width: 1920, height: 1280 },
           { src: 'doge_pochva', width: 1920, height: 1280 },
           { src: 'doge_detail', width: 1920, height: 1280, fill: true },
         ],
@@ -198,6 +199,28 @@ export const categories = [
           { src: 'viking_detail', width: 1920, height: 1280, fill: true },
         ],
       },
+      {
+        id: 'sidesword',
+        title: 'One-handed sword - Sidesword',
+        description: 'One-handed sword - Sidesword, 2700 CZK',
+        longDescription: `The sidesword is a transitional weapon between the arming sword of the Middle Ages and the rapier of the Renaissance. It was, in essence, a cut-and-thrust arming sword with the addition of a complex hilt that protected the user’s hand. Our sword has a crossguard, finger rings and knuckle bow.<br> Our arming sword and doge sword blades are ideally suited for this model. Due to the two finger rings this sword is not available with a scabbard, but with a sword belt.
+          <br><br><b>
+          Specifications<br>
+          Total lenght: 88 cm<br>
+          Blade lenght: 70 cm<br>
+          Blade width: 4.5 cm<br>
+          Weight: 730 g<br>
+          Point of Balance: 6 cm<br>
+          </b><br>${swordLabel2()}<br>${LABEL1}
+          `,
+        price: 2700,
+        images: [
+          { src: '2_f', width: 1920, height: 1280 },
+          { src: '3_f', width: 1920, height: 1280 },
+          { src: '4_f', width: 1920, height: 1280 },
+          { src: 'jilec_fin', width: 1920, height: 1282, fill: true },
+        ],
+      },
     ],
   },
   {
@@ -215,7 +238,7 @@ export const categories = [
           Blade lenght: 64 cm<br>
           Blade width: 4 cm<br>
           Weight: 600 g<br>
-          Point of Balance: 9 cm<br>
+          Point of Balance: 9 cm<br>r
           </b><br>${swordLabel2()}<br>${LABEL1}`,
         price: 2500,
         images: [
@@ -359,10 +382,11 @@ export const categories = [
           Specifications<br>
           Spearhead length: 37 cm<br>
           Spearhead weight: 260 g<br>`,
-        price: 1200,
+        price: [1200, 2000],
+        additionalPrice: [' (head only)', ' (complete spear with wooden pole)'],
         images: [
           { src: 'kopi', width: 1920, height: 1280 },
-          { src: 'kopi_nakres', width: 1622, height: 1083 },
+          { src: 'kopi_nakres2', width: 1622, height: 1083 },
           { src: 'kopi_detail', width: 1920, height: 1280, fill: true },
         ],
       },
@@ -378,10 +402,11 @@ export const categories = [
           Specifications<br>
           Spearhead length: 26 cm<br>
           Spearhead weight: 160 g<br>`,
-        price: 1000,
+        price: [1000, 1800],
+        additionalPrice: [' (head only)', ' (complete pike with wooden pole)'],
         images: [
           { src: 'pika', width: 1920, height: 1280 },
-          { src: 'pika_nakres', width: 1933, height: 1289 },
+          { src: 'pika_nakres2', width: 1920, height: 1280 },
           { src: 'pika_3', width: 1920, height: 1280, fill: true },
         ],
       },
@@ -618,6 +643,7 @@ export const orderOptions = [
           { title: 'langmesser', value: 'langmesser', price: 100 },
           { title: 'falchion', value: 'falchion', price: 100 },
           { title: 'sabre', value: 'sabre', price: 0 },
+          { title: 'sidesword', value: 'sidesword', price: 300 },
         ],
       },
       {
@@ -819,7 +845,24 @@ export const orderOptions = [
       {
         type: 'select',
         label: 'Scabbard',
-        condition: { label: 'Blade', values: ['arming sword', 'doge sword'] },
+        condition: [
+          { label: 'Blade', values: ['arming sword', 'doge sword'] },
+          {
+            label: 'Hilt',
+            values: [
+              'octagon',
+              'fishtail',
+              'doge',
+              'viking E',
+              'viking H',
+              'coin',
+              'falchion',
+              'pear',
+              'langmesser',
+              'sabre',
+            ],
+          },
+        ],
         options: [
           {
             title: 'no scabbard',
