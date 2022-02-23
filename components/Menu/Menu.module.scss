@@ -64,7 +64,7 @@ $height: $width * 1.8738;
 
   @media (min-width: 640px) {
     &:hover {
-      width: $width * 12;
+      width: $width * 15;
       transition: width 1s;
 
       .ribbon {
