@@ -196,7 +196,8 @@ export const About = ({ active, setActive }) => {
       </p>
       <Image src="/images/ryba_combo.jpg" width={1921} height={1280} />
       <h3>
-        What weapons can the scabbard be ordered for, and how are they designed?
+        What weapons can the scabbard and sword belts be ordered for, and how
+        are they designed?
       </h3>
       <p>
         We currently offer scabbards for two types of one-handed blades (arming
@@ -204,6 +205,10 @@ export const About = ({ active, setActive }) => {
         durable PP plastic core and are covered with leather and a steel or
         brass chape; they also have a leather belt with a brass buckle. The
         sheaths for the daggers are only leather with a steel or brass chape.
+      </p>
+      <p>
+        An alternative to scabbards are leather Sword belts, which can be
+        ordered with all weapons and also separately.
       </p>
       <p>
         We believe that you will like our weapons and that you will be maximally
