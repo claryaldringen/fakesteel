@@ -611,34 +611,34 @@ export const categories = [
         id: 'sword-belt-i',
         title: 'Sword Belt type I',
         description: 'Sword Belt type I, 1700 CZK',
-        longDescription: `<p>The sword sling can be ordered separately or with the weapon.  It can be used on all our swords and sabres. It is also possible to put a hammer or mace in it.</p>
-<p>Our sword belts are hand sewn in Prague, Czech Republic.They are made of quality 3 mm thick cowhide leather, the width of the belt is 4 cm and they have a quality brass buckle. They are made of quality 3 mm thick cowhide leather, the width of the belt is 4 cm and they have a quality brass buckle.</p>
+        longDescription: `<p>The sword belt can be ordered separately or with the weapon.  It can be used on all our swords and sabres. It is also possible to put a hammer or mace in it.</p>
+<p>Our sword belts are hand sewn in Prague, Czech Republic.They are made of quality 3 mm thick cowhide leather, the width of the belt is 4 cm and they have a brass buckle. They are made of quality 3 mm thick cowhide leather, the width of the belt is 4 cm and they have a quality brass buckle.</p>
 <p>In the order form choose the type, color (black or brown), length of the belt and whether you want it for your right or left hand.</p>
 <p>Do not hesitate to contact us with any questions or ideas.</p>`,
         price: 1700,
-        images: [
-          { src: 'zaves_hnedy_bez', width: 1920, height: 1280, fill: true },
-          { src: 'zaves_hnedy', width: 1920, height: 1280 },
-          { src: '1_zaves', width: 1920, height: 1043, fill: true },
-          { src: '2_zaves', width: 1920, height: 1043, fill: true },
-          { src: '3_zaves', width: 1920, height: 1043, fill: true },
-        ],
-      },
-      {
-        id: 'sword-belt-ii',
-        title: 'Sword Belt type II',
-        description: 'Sword Belt type II, 1800 CZK',
-        longDescription: `<p>The sword sling can be ordered separately or with the weapon.  It can be used on all our swords and sabres. It is also possible to put a hammer or mace in it.</p>
-<p>Our sword belts are hand sewn in Prague, Czech Republic.They are made of quality 3 mm thick cowhide leather, the width of the belt is 4 cm and they have a quality brass buckle. They are made of quality 3 mm thick cowhide leather, the width of the belt is 4 cm and they have a quality brass buckle.</p>
-<p>In the order form choose the type, color (black or brown), length of the belt and whether you want it for your right or left hand.</p>
-<p>Do not hesitate to contact us with any questions or ideas.</p>`,
-        price: 1800,
         images: [
           { src: 'zaves_cerny_bez', width: 1920, height: 1280, fill: true },
           { src: 'zaves_cerny', width: 1920, height: 1280 },
           { src: '4_zaves', width: 1920, height: 1043, fill: true },
           { src: '5_zaves', width: 1920, height: 1043, fill: true },
           { src: '6_zaves', width: 1920, height: 1043, fill: true },
+        ],
+      },
+      {
+        id: 'sword-belt-ii',
+        title: 'Sword Belt type II',
+        description: 'Sword Belt type II, 1800 CZK',
+        longDescription: `<p>The sword belt can be ordered separately or with the weapon.  It can be used on all our swords and sabres. It is also possible to put a hammer or mace in it.</p>
+<p>Our sword belts are hand sewn in Prague, Czech Republic.They are made of quality 3 mm thick cowhide leather, the width of the belt is 4 cm and they have a brass buckle. They are made of quality 3 mm thick cowhide leather, the width of the belt is 4 cm and they have a quality brass buckle.</p>
+<p>In the order form choose the type, color (black or brown), length of the belt and whether you want it for your right or left hand.</p>
+<p>Do not hesitate to contact us with any questions or ideas.</p>`,
+        price: 1800,
+        images: [
+          { src: 'zaves_hnedy_bez', width: 1920, height: 1280, fill: true },
+          { src: 'zaves_hnedy', width: 1920, height: 1280 },
+          { src: '1_zaves', width: 1920, height: 1043, fill: true },
+          { src: '2_zaves', width: 1920, height: 1043, fill: true },
+          { src: '3_zaves', width: 1920, height: 1043, fill: true },
         ],
       },
       {

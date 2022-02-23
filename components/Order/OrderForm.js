@@ -106,13 +106,13 @@ export const OrderForm = ({ basket, setBasket }) => {
 
   return (
     <div className={styles.orderForm}>
-      <h2>Weapon selection</h2>
+      <h2>Order form</h2>
       <form className={styles.form}>
         <table>
           <tbody>
             <tr>
               <td>
-                <label htmlFor="wt">Weapon type:</label>
+                <label htmlFor="wt">Product type:</label>
               </td>
               <td>
                 <select id="wt" onChange={onWeaponChange} value={weapon}>
