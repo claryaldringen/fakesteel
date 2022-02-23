@@ -207,7 +207,7 @@ export const About = ({ active, setActive }) => {
         sheaths for the daggers are only leather with a steel or brass chape.
       </p>
       <p>
-        An alternative to scabbards are leather Sword belts, which can be
+        An alternative to scabbards are leather sword belts, which can be
         ordered with all weapons and also separately.
       </p>
       <p>
