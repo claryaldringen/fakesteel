@@ -613,7 +613,7 @@ export const categories = [
         description: 'Sword Belt type I, 1700 CZK',
         longDescription: `<p>The sword belt can be ordered separately or with the weapon.  It can be used on all our swords and sabres. It is also possible to put a hammer or mace in it.</p>
 <p>Our sword belts are hand sewn in Prague, Czech Republic.They are made of quality 3 mm thick cowhide leather, the width of the belt is 4 cm and they have a brass buckle. They are made of quality 3 mm thick cowhide leather, the width of the belt is 4 cm and they have a quality brass buckle.</p>
-<p>In the order form choose the type, color (black or brown), length of the belt and whether you want it for your right or left hand.</p>
+<p>In the order form choose the type, color (black or brown) and length of the belt</p>
 <p>Do not hesitate to contact us with any questions or ideas.</p>`,
         price: 1700,
         images: [
@@ -630,7 +630,7 @@ export const categories = [
         description: 'Sword Belt type II, 1800 CZK',
         longDescription: `<p>The sword belt can be ordered separately or with the weapon.  It can be used on all our swords and sabres. It is also possible to put a hammer or mace in it.</p>
 <p>Our sword belts are hand sewn in Prague, Czech Republic.They are made of quality 3 mm thick cowhide leather, the width of the belt is 4 cm and they have a brass buckle. They are made of quality 3 mm thick cowhide leather, the width of the belt is 4 cm and they have a quality brass buckle.</p>
-<p>In the order form choose the type, color (black or brown), length of the belt and whether you want it for your right or left hand.</p>
+<p>In the order form choose the type, color (black or brown) and length of the belt.</p>
 <p>Do not hesitate to contact us with any questions or ideas.</p>`,
         price: 1800,
         images: [
