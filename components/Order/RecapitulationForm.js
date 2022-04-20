@@ -27,7 +27,7 @@ export const RecapitulationForm = ({ basket, setBasket }) => {
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
   const [phone, setPhone] = useState('')
-  const [isPhoneRequired, setisPhoneRequired] = useState(DEFAULT_SHIPPING_OPTION === SHIPPING_OPTION_PICK_VALUE)
+  const [isPhoneRequired, setIsPhoneRequired] = useState(DEFAULT_SHIPPING_OPTION === SHIPPING_OPTION_PICK_VALUE)
   const [street, setStreet] = useState('')
   const [city, setCity] = useState('')
   const [code, setCode] = useState('')
@@ -96,9 +96,9 @@ export const RecapitulationForm = ({ basket, setBasket }) => {
   const onShippingChange = useCallback(
     (event) => {
       setShipping(event.target.value)
-      setisPhoneRequired(event.target.value === SHIPPING_OPTION_PICK_VALUE)
+      setIsPhoneRequired(event.target.value === SHIPPING_OPTION_PICK_VALUE)
     },
-    [setShipping, setisPhoneRequired, setPhone]
+    [setShipping, setIsPhoneRequired, setPhone]
   )
   const onPaymentChange = useCallback(
     (event) => setPayment(event.target.value),
@@ -199,8 +199,8 @@ export const RecapitulationForm = ({ basket, setBasket }) => {
     setShowModal(false)
   }, [])
 
-  // there musn't be an error, and then either phone is provided or not required
-  const isPhoneOk = !phoneError && (phone || !isPhoneRequired)
+  // either a valid phone is provided or not phone isn't required
+  const isPhoneOk = isPhoneRequired ? !phoneError && phone : true
   const enabled =
     name &&
     email &&
