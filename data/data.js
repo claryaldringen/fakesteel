@@ -297,7 +297,7 @@ export const categories = [
   },
   {
     id: 'maces',
-    label: 'Maces & War hammers',
+    label: 'Maces, War hammers & Battle axes',
     items: [
       {
         id: 'mace-bulava',
@@ -1208,7 +1208,7 @@ export const orderOptions = [
   },
   {
     id: 'mace',
-    title: 'Maces & hammers',
+    title: 'Maces, hammers & axes',
     price: 1900,
     weight: 0.45,
     components: [
