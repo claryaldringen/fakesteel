@@ -387,7 +387,7 @@ export const categories = [
         images: [
           { src: 'battle_axe_3', width: 1920, height: 1280 },
           { src: 'battle_axe_2', width: 1920, height: 1280 },
-          { src: 'battle_axe_1', width: 1920, height: 1280 },
+          { src: 'battle_axe_1', width: 1920, height: 641 },
         ],
       },
     ],
