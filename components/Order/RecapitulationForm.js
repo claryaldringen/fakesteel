@@ -11,16 +11,29 @@ import {
   getSpearsShipping,
 } from '../../utils'
 
+/**
+ * Value of select box when a user opts to pick up their order.
+ */
+const SHIPPING_OPTION_PICK_VALUE = "pick"
+
+/**
+ * Value of select box when a user opts to get their order shipped to them.
+ */
+const SHIPPING_OPTION_SEND_VALUE = "send"
+
+const DEFAULT_SHIPPING_OPTION = SHIPPING_OPTION_SEND_VALUE
+
 export const RecapitulationForm = ({ basket, setBasket }) => {
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
   const [phone, setPhone] = useState('')
+  const [isPhoneRequired, setIsPhoneRequired] = useState(DEFAULT_SHIPPING_OPTION === SHIPPING_OPTION_PICK_VALUE)
   const [street, setStreet] = useState('')
   const [city, setCity] = useState('')
   const [code, setCode] = useState('')
   const [country, setCountry] = useState('Czech Republic')
   const [state, setState] = useState('')
-  const [shipping, setShipping] = useState('send')
+  const [shipping, setShipping] = useState(DEFAULT_SHIPPING_OPTION)
   const [payment, setPayment] = useState('transfer')
   const [notice, setNotice] = useState('')
   const [additional, setAdditional] = useState('')
@@ -81,8 +94,11 @@ export const RecapitulationForm = ({ basket, setBasket }) => {
     setState,
   ])
   const onShippingChange = useCallback(
-    (event) => setShipping(event.target.value),
-    [setShipping]
+    (event) => {
+      setShipping(event.target.value)
+      setIsPhoneRequired(event.target.value === SHIPPING_OPTION_PICK_VALUE)
+    },
+    [setShipping, setIsPhoneRequired, setPhone]
   )
   const onPaymentChange = useCallback(
     (event) => setPayment(event.target.value),
@@ -98,7 +114,7 @@ export const RecapitulationForm = ({ basket, setBasket }) => {
 
   const shippingPrice = useMemo(
     () =>
-      shipping === 'send'
+      shipping === SHIPPING_OPTION_SEND_VALUE
         ? calculateShipping(country, weight, getSpearsShipping(basket))
         : 0,
     [country, shipping, basket]
@@ -177,18 +193,21 @@ export const RecapitulationForm = ({ basket, setBasket }) => {
     setCountry('Czech Republic')
     setState('')
     setAdditional('')
-    setShipping('send')
+    setShipping(DEFAULT_SHIPPING_OPTION)
     setPayment('transfer')
     setNotice('')
     setShowModal(false)
   }, [])
 
+  // either a valid phone is provided or not phone isn't required
+  const isPhoneOk = isPhoneRequired ? !phoneError && phone : true
   const enabled =
     name &&
     email &&
     street &&
     city &&
     code &&
+    isPhoneOk &&
     basket.length &&
     !emailError &&
     !sending
@@ -226,7 +245,7 @@ export const RecapitulationForm = ({ basket, setBasket }) => {
         </div>
         <div className={styles.group}>
           <label htmlFor="phone">
-            Phone number:<span className={styles.required}>*</span>
+            Phone number:{isPhoneRequired && <span className={styles.required}>*</span>}
           </label>
           <br />
           <input
@@ -234,7 +253,7 @@ export const RecapitulationForm = ({ basket, setBasket }) => {
             type="text"
             value={phone}
             onChange={onPhoneChange}
-            required
+            required={isPhoneRequired}
           />
           {phoneError && (
             <>
@@ -293,8 +312,8 @@ export const RecapitulationForm = ({ basket, setBasket }) => {
           <label htmlFor="shipping">Shipping:</label>
           <br />
           <select value={shipping} id="shipping" onChange={onShippingChange}>
-            <option value="send">Send it to me, please</option>
-            <option value="pick">I&apos;ll pick it up in Prague</option>
+            <option value={SHIPPING_OPTION_SEND_VALUE}>Send it to me, please</option>
+            <option value={SHIPPING_OPTION_PICK_VALUE}>I&apos;ll pick it up in Prague</option>
           </select>
         </div>
         <div className={styles.group}>

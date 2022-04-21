@@ -297,7 +297,7 @@ export const categories = [
   },
   {
     id: 'maces',
-    label: 'Maces & War hammers',
+    label: 'Maces, War hammers & Battle axes',
     items: [
       {
         id: 'mace-bulava',
@@ -355,7 +355,7 @@ export const categories = [
         title: 'War Hammer',
         description: 'War Hammer, 2100 CZK',
         longDescription: `<p>The War Hammer was a weapon popularized in the late middle ages and mainly used for close combat. War Hammers were a knight’s nightmare because the flat side’s filed edges could make deadly dents in armor, and the spiked side could pierce it. ​</p>
-          <p>The all-foam shaft has a 25 cm steel tube cast on a round core in handle for better controllability and balance of the weapon. There is also an attached rubber hose in the hammer head, which in combination with the foam significantly increases the resistance of the weapon.</p>
+          <p>The all-foam shaft has a 15 cm steel tube cast on a round core in handle for better controllability and balance of the weapon. There is also an attached rubber hose in the hammer head, which in combination with the foam significantly increases the resistance of the weapon.</p>
           <br><br><b>
           Specifications<br>
           Total length: 72 cm<br>
@@ -366,6 +366,28 @@ export const categories = [
           { src: 'kladivo_2', width: 1920, height: 1280 },
           { src: 'kladivo_combo', width: 1920, height: 1280 },
           { src: 'kladivo_detail', width: 1920, height: 1280, fill: true },
+        ],
+      },
+      {
+        id: 'battle-axe',
+        title: 'Battle Axe',
+        description: 'Battle Axe, 2100 CZK',
+        longDescription: `
+          <p>Battle axes are axes that are specifically made for combat.
+          Unlike traditional work axes, battle axes are often lighter because they are designed to chop limbs rather than wood.
+          As with most other weapons, a single-handed battle axe must be light and agile to stand up as a usable weapon in warfare.
+          The shape of our battle axe is based on weapons used in the late Middle Ages. The all-foam shaft has a 25 cm steel tube
+          cast on a round core in handle for better controllability and balance of the weapon.</p>
+          <br><br><b>
+          Specifications <br>
+          Overall lenght: 70 cm <br>
+          Blade lenght: 15,5 cm <br>
+          Weight: 480 g <br>`,
+        price: 2100,
+        images: [
+          { src: 'battle_axe_3', width: 1920, height: 1280 },
+          { src: 'battle_axe_2', width: 1920, height: 1280 },
+          { src: 'battle_axe_1', width: 1920, height: 641 },
         ],
       },
     ],
@@ -1186,7 +1208,7 @@ export const orderOptions = [
   },
   {
     id: 'mace',
-    title: 'Maces & hammers',
+    title: 'Maces, hammers & axes',
     price: 1900,
     weight: 0.45,
     components: [
@@ -1212,6 +1234,12 @@ export const orderOptions = [
           {
             title: 'war hammer',
             value: 'war hammer',
+            price: 200,
+            weight: 0.1,
+          },
+          {
+            title: 'battle axe',
+            value: 'battle axe',
             price: 200,
             weight: 0.1,
           },
