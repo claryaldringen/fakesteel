@@ -14,12 +14,12 @@ import {
 /**
  * Value of select box when a user opts to pick up their order.
  */
-const SHIPPING_OPTION_PICK_VALUE = "pick"
+const SHIPPING_OPTION_PICK_VALUE = 'pick'
 
 /**
  * Value of select box when a user opts to get their order shipped to them.
  */
-const SHIPPING_OPTION_SEND_VALUE = "send"
+const SHIPPING_OPTION_SEND_VALUE = 'send'
 
 const DEFAULT_SHIPPING_OPTION = SHIPPING_OPTION_SEND_VALUE
 
@@ -27,7 +27,9 @@ export const RecapitulationForm = ({ basket, setBasket }) => {
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
   const [phone, setPhone] = useState('')
-  const [isPhoneRequired, setIsPhoneRequired] = useState(DEFAULT_SHIPPING_OPTION === SHIPPING_OPTION_PICK_VALUE)
+  const [isPhoneRequired, setIsPhoneRequired] = useState(
+    DEFAULT_SHIPPING_OPTION === SHIPPING_OPTION_PICK_VALUE
+  )
   const [street, setStreet] = useState('')
   const [city, setCity] = useState('')
   const [code, setCode] = useState('')
@@ -245,7 +247,8 @@ export const RecapitulationForm = ({ basket, setBasket }) => {
         </div>
         <div className={styles.group}>
           <label htmlFor="phone">
-            Phone number:{isPhoneRequired && <span className={styles.required}>*</span>}
+            Phone number:
+            {isPhoneRequired && <span className={styles.required}>*</span>}
           </label>
           <br />
           <input
@@ -312,8 +315,12 @@ export const RecapitulationForm = ({ basket, setBasket }) => {
           <label htmlFor="shipping">Shipping:</label>
           <br />
           <select value={shipping} id="shipping" onChange={onShippingChange}>
-            <option value={SHIPPING_OPTION_SEND_VALUE}>Send it to me, please</option>
-            <option value={SHIPPING_OPTION_PICK_VALUE}>I&apos;ll pick it up in Prague</option>
+            <option value={SHIPPING_OPTION_SEND_VALUE}>
+              Send it to me, please
+            </option>
+            <option value={SHIPPING_OPTION_PICK_VALUE}>
+              I&apos;ll pick it up in Prague
+            </option>
           </select>
         </div>
         <div className={styles.group}>
