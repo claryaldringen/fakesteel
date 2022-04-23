@@ -360,7 +360,7 @@ export const categories = [
           Specifications<br>
           Total length: 72 cm<br>
           Head length: 15 cm<br>
-          Weight: 570 g<br>`,
+          Weight: 500 g<br>`,
         price: 2100,
         images: [
           { src: 'kladivo_2', width: 1920, height: 1280 },
@@ -421,10 +421,10 @@ export const categories = [
         id: 'pike',
         title: 'Pike',
         description: 'Pike, 1000 CZK',
-        longDescription: `         
+        longDescription: `
           <p>Due to the lower weight (Pikehead 160g vs Spearhead 260g) it is more suitable for long 3m poles. The head is mounted on a wooden pole with an ideal size of 30-32 mm. Before mounting the head, it is necessary to machine the wood and narrow it so that the rubber hose, which reinforces the tip of the spear, fits well on the wooden mandrel at the end of the pole (see picture).</p>
           <p>The pikehead can be ordered separately in steel, graphite, and brass color. We also produce the complete weapon in the length of 2 meters with a stained octagonal wooden pole. But only for the Czech customers. We only send spear/pike-heads abroad.<br>The blunt tip of the pike has a diameter of 3 cm and the head is partially flexible for greater safety. Flexibility can be ordered in two variants SOFT and HARD.</p>
-          <p>For logistical reasons, we do not sell poles longer than 2m. However, we make a deal with <a href="https://www.facebook.com/vyrobadobovehonabytku" target="_blank">@medievalfurniture</a> production that you can order a high-quality composite glued ash poles made on our spear/pike heads. When ordering, just say that you want a pole on a FakeSteel pike or spear and length of the weapon. The price will be 700 CZK for a 3m painted pole with an already modified end for our heads.</p> 
+          <p>For logistical reasons, we do not sell poles longer than 2m. However, we make a deal with <a href="https://www.facebook.com/vyrobadobovehonabytku" target="_blank">@medievalfurniture</a> production that you can order a high-quality composite glued ash poles made on our spear/pike heads. When ordering, just say that you want a pole on a FakeSteel pike or spear and length of the weapon. The price will be 700 CZK for a 3m painted pole with an already modified end for our heads.</p>
           <br><br><b>
           Specifications<br>
           Spearhead length: 26 cm<br>
@@ -448,7 +448,7 @@ export const categories = [
         title: 'Baselard dagger',
         description: 'Baselard dagger, 1000 CZK',
         longDescription: `<p>The baselard or "Swiss dagger" is a historical Swiss blade weapon with a crescent-shaped pommel and crossguard. Their curved shapes appeared as early as the 13th century and remained peculiar to Switzerland, and do not appear to have been imitated elsewhere.</p>
-          <p>The basic model of the dagger has only a steel rivet on the bottom of the handle. <b>You can also order a version with steel or brass cladding (+300 CZK).</b><br>The blade can be ordered in a length of 24 or 29 cm. It has a 6 mm round fiberglass core, which ends 6 cm in front of the tip, and for safer stabbing and strengthening of the foam, the end of the core is finished with Kevlar fabric.</p>          
+          <p>The basic model of the dagger has only a steel rivet on the bottom of the handle. <b>You can also order a version with steel or brass cladding (+300 CZK).</b><br>The blade can be ordered in a length of 24 or 29 cm. It has a 6 mm round fiberglass core, which ends 6 cm in front of the tip, and for safer stabbing and strengthening of the foam, the end of the core is finished with Kevlar fabric.</p>
           <br><br><b>
           Specifications<br>
           Total length: 38-43 cm<br>
@@ -467,7 +467,7 @@ export const categories = [
         title: 'Bollock dagger',
         description: 'Bollock dagger, 1200 CZK',
         longDescription: `<p>The name ballock dagger is derived from the phallic shape of the hilt and the 14th century warrior's propensity for wearing the dagger directly in front of the girdle. First appearing on continental effigies around 1300-1350, the ballock dagger has one of the longest usage life spans of the five main types of Medieval daggers.</p>
-          <p>We produce the dagger only in this wooden-brass version, which you can see in the photos. The blade can be ordered in a length of 24 or 29 cm. It has a 6 mm round fiberglass core, which ends 6 cm in front of the tip, and for safer stabbing and strengthening of the foam, the end of the core is finished with Kevlar fabric.</p>          
+          <p>We produce the dagger only in this wooden-brass version, which you can see in the photos. The blade can be ordered in a length of 24 or 29 cm. It has a 6 mm round fiberglass core, which ends 6 cm in front of the tip, and for safer stabbing and strengthening of the foam, the end of the core is finished with Kevlar fabric.</p>
           <br><br><b>
           Specifications<br>
           Total length: 38-43 cm<br>
@@ -486,7 +486,7 @@ export const categories = [
         description: 'Quillon dagger, 1200 CZK',
         longDescription: `<p>The Quillon dagger is probably the longest lived style of dagger, current from the 12th centruy right through to the 17th or even 18th century. Suitable for military men from Late Norman knights to Cromwell’s Roundheads.</p>
           <p>The color of the hilt can be chosen from our classic colors steel, brass, graphite. Leather grips are available in red, black and brown.</p>
-          <p>The blade can be ordered in a length of 24 or 29 cm. It has a 6 mm round fiberglass core, which ends 6 cm in front of the tip, and for safer stabbing and strengthening of the foam, the end of the core is finished with Kevlar fabric.</p>          
+          <p>The blade can be ordered in a length of 24 or 29 cm. It has a 6 mm round fiberglass core, which ends 6 cm in front of the tip, and for safer stabbing and strengthening of the foam, the end of the core is finished with Kevlar fabric.</p>
           <br><br><b>
           Specifications<br>
           Total length: 38-43 cm<br>

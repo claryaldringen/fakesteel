@@ -8,7 +8,9 @@ export const Basket = ({ basket, total, removeFromBasket }) => (
     <h2>Your basket {total > 0 && `(total: ${total} CZK)`}</h2>
     {basket.map(({ count, weapon, price, weight, ...props }, i) => (
       <div className={styles.item} key={`table_${i}`}>
-        <div className={styles.closeIcon} onClick={() => removeFromBasket(i)}>X</div>
+        <div className={styles.closeIcon} onClick={() => removeFromBasket(i)}>
+          X
+        </div>
         <table>
           <thead>
             <tr>
@@ -20,15 +22,14 @@ export const Basket = ({ basket, total, removeFromBasket }) => (
             </tr>
           </thead>
           <tbody>
-            {Object.keys(props)
-              .map((key, j) => (
-                <tr key={`row_${i}_${j}`} className={styles.small}>
-                  <td>
-                    <b>{idToLabel(key)}:</b>
-                  </td>
-                  <td>{props[key]}</td>
-                </tr>
-              ))}
+            {Object.keys(props).map((key, j) => (
+              <tr key={`row_${i}_${j}`} className={styles.small}>
+                <td>
+                  <b>{idToLabel(key)}:</b>
+                </td>
+                <td>{props[key]}</td>
+              </tr>
+            ))}
           </tbody>
           <tfoot>
             <tr className={styles.small}>

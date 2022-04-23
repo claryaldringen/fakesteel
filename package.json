@@ -6,7 +6,8 @@
     "dev": "next dev -p 3006",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "fmt": "prettier --write data components pages"
   },
   "eslintConfig": {
     "root": true,
