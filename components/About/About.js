@@ -41,16 +41,16 @@ export const About = ({ active, setActive }) => {
       </p>
 
       <p>
-        The swords are further balanced in the hilt or shaft by lead and a
-        steel tube into which the core with the blade is glued. The handle is
-        wrapped in cow leather. All parts and materials of swords and other
-        weapons come from the EU; we only outsource dagger blades from PG, as
-        they are not subject to high resistance requirements. The weapons are
-        hand-cast, painted and manufactured in Prague. Due to the fact that it
-        is a manual production, not the work of machines, not every manufactured
-        piece has the exact weight per gram or millimetre of the same length.
-        However, we emphasize that each piece produced meets our strict criteria
-        for appearance and quality.
+        The swords are further balanced in the hilt or shaft by lead and a steel
+        tube into which the core with the blade is glued. The handle is wrapped
+        in cow leather. All parts and materials of swords and other weapons come
+        from the EU; we only outsource dagger blades from PG, as they are not
+        subject to high resistance requirements. The weapons are hand-cast,
+        painted and manufactured in Prague. Due to the fact that it is a manual
+        production, not the work of machines, not every manufactured piece has
+        the exact weight per gram or millimetre of the same length. However, we
+        emphasize that each piece produced meets our strict criteria for
+        appearance and quality.
       </p>
       <Image src="/images/deluxe.jpg" width={1920} height={890} />
       <h3>
