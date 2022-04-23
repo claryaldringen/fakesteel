@@ -32,7 +32,16 @@ export const About = ({ active, setActive }) => {
         made focusing on LARP fantasy battles. They consist of a foam blade/head
         (very durable and flexible PU foam), a hard rubber hilt (partially
         bendable PU resin) or foam handle and fibreglass round or rectangular
-        core. The swords are further balanced in the hilt or shaft by lead and a
+        core.
+      </p>
+
+      <p>
+        We do not use any latex for production. The products do not need any
+        special treatment, which is normal for latex weapons.
+      </p>
+
+      <p>
+        The swords are further balanced in the hilt or shaft by lead and a
         steel tube into which the core with the blade is glued. The handle is
         wrapped in cow leather. All parts and materials of swords and other
         weapons come from the EU; we only outsource dagger blades from PG, as
