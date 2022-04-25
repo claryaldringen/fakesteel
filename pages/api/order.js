@@ -116,7 +116,15 @@ export default (req, res) => {
     <b>Shipping price: ${shippingPrice} CZK</b>
     </div>`
   if (req.body.shipping == 'pick') {
-    shipping = `<div style="float: right;"><b>Shipment to be picked up at</b><br>Na Hřebenech II 1718/10<br>14000 Praha 4</div>`
+    shipping = `
+      <div style="float: right;">
+        <b>Shipment to be picked up at</b>
+        <br>
+        Na Hřebenech II 1718/10 <br>
+        14000 Praha 4 <br>
+        Phone no.: ${req.body.phone}<br>
+        Notice: <br> ${req.body.notice}<br>
+      </div>`
   }
 
   const mailData2 = {
@@ -124,7 +132,22 @@ export default (req, res) => {
     to: 'info@fakesteel.cz',
     subject: `Order no. ${vs}`,
     text: req.body.message + ' | Sent from: ' + req.body.email,
-    html: `${req.body.name} (<a href="mailto:${req.body.email}">${req.body.email}</a>) just sent his/her order.<div style="text-align: center;"><h2>Billing and shipping</h2></div>${billing}${shipping}<div style="clear: both; text-align: center;"><h2>Order summary</h2></div>${summary}<b>Total items price: ${itemsPrice} CZK</b>`,
+    html: `
+      ${req.body.name}(<a href="mailto:${req.body.email}">${req.body.email}</a>)
+      just sent his/her order.
+
+      <div style="text-align: center;">
+        <h2>Billing and shipping</h2>
+      </div>
+
+      ${billing}${shipping}
+
+      <div style="clear: both; text-align: center;">
+        <h2>Order summary</h2>
+      </div>
+      ${summary}
+      <b>Total items price: ${itemsPrice} CZK</b>
+    `,
   }
 
   const mailData1 = {
