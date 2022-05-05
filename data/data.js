@@ -437,6 +437,59 @@ export const categories = [
           { src: 'pika_3', width: 1920, height: 1280, fill: true },
         ],
       },
+      {
+        id: 'halberd',
+        title: 'Halberd',
+        description: 'Halberd, 1500 CZK',
+        longDescription: `
+          <p>
+            The head of this halberd incorporates three basic elements:
+            an axe-like blade, an apical spike, and a beak. The axe blade,
+            which gives the weapon its name (derived from the <i>German Halm</i>,
+            long shaft, and <i>Barte</i>, axe) was used for hacking, the spike
+            for thrusting, and the beak either for piercing a plate of armor,
+            or for pulling a knight from his saddle.
+          </p>
+          <p>
+            The halberd was a foot-soldier's weapon particularly popular in
+            Germany and Switzerland. It was the most versatile of shafted
+            weapons a man on foot could use; though the pike was the main weapon
+             for the massed squares of foot soldiers so important in fifteenth-
+             and sixteenth- century battles, the halberd was preferred both by
+             Swiss <i>Reisläufer</i> and German <i>Landsknecht</i>.
+          </p>
+          <p>
+            Our halberd head is mounted on a wooden pole with an ideal size of
+            30-32 mm or 16 mm fiberglass core. Before mounting the head, it is
+            necessary to machine the wood and narrow it so that the rubber hose,
+            which reinforces the tip of the halberd, fits well on the wooden
+            mandrel at the end of the pole (see picture).
+          </p>
+          <p>
+            The halberd head can be ordered separately in steel, graphite, and
+            brass color. We also produce the complete weapon in the length of 2
+            meters with a stained octagonal wooden pole. But only for the Czech
+            customers. We only send halberd heads abroad.
+          </p>
+          <p>
+            The spike is very flexible for greater safety. Halberd is available
+            only in one version of flexibility - SOFT.
+          </p>
+          <br><br>
+          <b>
+            Specifications<br>
+            Halberdhead length: 34 cm<br>
+            Halberdhead weight: 260 g<br>
+            Blade lenght: 20 cm<br>
+          </b>`,
+        price: [1500, 2300],
+        additionalPrice: [' (head only)', ' (complete halberd with wooden pole)'],
+        images: [
+          { src: 'halberd_menu', width: 1920, height: 1280 },
+          { src: 'halberd_1', width: 1920, height: 1280 },
+          { src: 'halberd_2', width: 1920, height: 641, fill: true },
+        ],
+      },
     ],
   },
   {
@@ -1333,6 +1386,52 @@ export const orderOptions = [
             title: 'hard',
             value: 'hard',
             price: 0,
+          },
+        ],
+      },
+      {
+        type: 'select',
+        label: 'Color',
+        options: [
+          {
+            title: 'steel',
+            value: 'steel',
+            price: 0,
+          },
+          {
+            title: 'graphite',
+            value: 'graphite',
+            price: 0,
+          },
+          {
+            title: 'brass',
+            value: 'brass',
+            price: 0,
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: 'halberd',
+    title: 'Halberd',
+    price: 1500,
+    weight: 0.36,
+    components: [
+      {
+        type: 'select',
+        label: 'Length',
+        options: [
+          {
+            title: 'only head',
+            value: 'only head',
+            price: 0,
+          },
+          {
+            title: 'with 2m shaft (+800 CZK, CZ only)',
+            value: 'with 2m shaft',
+            price: 800,
+            weight: 0,
           },
         ],
       },
