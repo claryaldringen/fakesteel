@@ -684,7 +684,7 @@ export const categories = [
           'A (1000 CZK), B (1300 CZK)',
           false
         ),
-        price: 3200,
+        price: 2300,
         additionalPrice: ' + belt price',
         images: [
           { src: 'zelena_pochva_2', width: 1920, height: 1280, fill: true },

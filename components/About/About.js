@@ -164,7 +164,7 @@ export const About = ({ active, setActive }) => {
       </div>
       <h3>How to take care of weapons and repair them?</h3>
       <p>
-        All blades of double-edged and single-edged swords are made wit
+        All blades of double-edged and single-edged swords are made with
         reinforced Kevlar tips. The Kevlar sleeve is bonded to a fiberglass core
         and molded into foam during blade manufacture. This creates a strong and
         flexible skeleton in the blade tip, greatly increasing the durability of
