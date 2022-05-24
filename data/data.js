@@ -429,7 +429,7 @@ export const categories = [
           Specifications<br>
           Spearhead length: 26 cm<br>
           Spearhead weight: 160 g<br>`,
-        price: [1000, 1800],
+        price: [1100, 1800],
         additionalPrice: [' (head only)', ' (complete pike with wooden pole)'],
         images: [
           { src: 'pika', width: 1920, height: 1280 },
@@ -482,7 +482,7 @@ export const categories = [
             Halberdhead weight: 260 g<br>
             Blade lenght: 20 cm<br>
           </b>`,
-        price: [1500, 2300],
+        price: [1600, 2300],
         additionalPrice: [
           ' (head only)',
           ' (complete halberd with wooden pole)',
@@ -537,7 +537,7 @@ export const categories = [
           Total length: 38-43 cm<br>
           Blade length: 24-29 cm<br>
           Weight: 150 g<br>`,
-        price: 1200,
+        price: 1300,
         images: [
           { src: 'bollock', width: 1672, height: 1115 },
           { src: 'bollock', width: 1672, height: 1115 },
@@ -560,7 +560,7 @@ export const categories = [
           Total length: 38-43 cm<br>
           Blade length: 24-29 cm<br>
           Weight: 100 g<br>`,
-        price: 1200,
+        price: 1300,
         images: [
           { src: 'quillon', width: 1744, height: 1162 },
           { src: 'mince_stribr_detail', width: 1920, height: 1280, fill: true },
@@ -577,7 +577,7 @@ export const categories = [
       {
         id: 'scabbard-i',
         title: 'Scabbard Type I',
-        description: 'Scabbard Type I, 1800 CZK + belt price',
+        description: 'Scabbard Type I, {{price}} CZK + belt price',
         longDescription: scabbardDescription(
           'A (1000 CZK), B (1300 CZK), C (1300 CZK), D (1300 CZK)',
           true
@@ -597,7 +597,7 @@ export const categories = [
       {
         id: 'scabbard-ii',
         title: 'Scabbard Type II',
-        description: 'Scabbard Type II, 1800 CZK + belt price',
+        description: 'Scabbard Type II, {{price}} CZK + belt price',
         longDescription: scabbardDescription(
           'A (1000 CZK), B (1300 CZK), C (1300 CZK), D (1300 CZK)',
           false
@@ -618,7 +618,7 @@ export const categories = [
       {
         id: 'scabbard-i',
         title: 'Scabbard Type III',
-        description: 'Scabbard Type III, 2000 CZK + belt price',
+        description: 'Scabbard Type III, {{price}} CZK + belt price',
         longDescription: scabbardDescription(
           'A (1000 CZK), B (1300 CZK), C (1300 CZK), D (1300 CZK)',
           true
@@ -639,7 +639,7 @@ export const categories = [
       {
         id: 'scabbard-iv',
         title: 'Scabbard Type IV',
-        description: 'Scabbard Type IV, 2000 CZK + belt price',
+        description: 'Scabbard Type IV, {{price}} CZK + belt price',
         longDescription: scabbardDescription(
           'A (1000 CZK), B (1300 CZK), C (1300 CZK), D (1300 CZK)',
           true
@@ -659,7 +659,7 @@ export const categories = [
       {
         id: 'scabbard-v',
         title: 'Scabbard Type V',
-        description: 'Scabbard Type V, 2200 CZK + belt price',
+        description: 'Scabbard Type V, {{price}} CZK + belt price',
         longDescription: scabbardDescription(
           'A (1000 CZK), B (1300 CZK), C (1300 CZK), D (1300 CZK)',
           false
@@ -679,7 +679,7 @@ export const categories = [
       {
         id: 'scabbard-vi',
         title: 'Scabbard Type VI',
-        description: 'Scabbard Type VI, 2200 CZK + belt price',
+        description: 'Scabbard Type VI, {{price}} CZK + belt price',
         longDescription: scabbardDescription(
           'A (1000 CZK), B (1300 CZK)',
           false
@@ -705,7 +705,7 @@ export const categories = [
 <p>Our sword belts are hand sewn in Prague, Czech Republic.They are made of quality 3 mm thick cowhide leather, the width of the belt is 4 cm and they have a brass buckle. They are made of quality 3 mm thick cowhide leather, the width of the belt is 4 cm and they have a quality brass buckle.</p>
 <p>In the order form choose the type, color (black or brown) and length of the belt</p>
 <p>Do not hesitate to contact us with any questions or ideas.</p>`,
-        price: 1600,
+        price: 1500,
         images: [
           { src: 'zaves_cerny_bez', width: 1920, height: 1280, fill: true },
           { src: 'zaves_cerny', width: 1920, height: 1280 },
@@ -722,7 +722,7 @@ export const categories = [
 <p>Our sword belts are hand sewn in Prague, Czech Republic.They are made of quality 3 mm thick cowhide leather, the width of the belt is 4 cm and they have a brass buckle. They are made of quality 3 mm thick cowhide leather, the width of the belt is 4 cm and they have a quality brass buckle.</p>
 <p>In the order form choose the type, color (black or brown) and length of the belt.</p>
 <p>Do not hesitate to contact us with any questions or ideas.</p>`,
-        price: 1700,
+        price: 1600,
         images: [
           { src: 'zaves_hnedy_bez', width: 1920, height: 1280, fill: true },
           { src: 'zaves_hnedy', width: 1920, height: 1280 },
