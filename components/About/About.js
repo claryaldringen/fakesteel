@@ -164,12 +164,12 @@ export const About = ({ active, setActive }) => {
       </div>
       <h3>How to take care of weapons and repair them?</h3>
       <p>
-        All double-edged and single-edged sword blades are made with reinforced
-        tips. A rubber tube is poured into the tip of the blade together with
-        the core. Thanks to this, a robust and flexible skeleton is created in
-        the tip of the blade, thus significantly increasing the resistance of
-        the weakest link of the blade - the tip. We also make similar type of
-        rubber skeleton in our Warhammers.
+        All blades of double-edged and single-edged swords are made with
+        reinforced Kevlar tips. The Kevlar sleeve is bonded to a fiberglass core
+        and molded into foam during blade manufacture. This creates a strong and
+        flexible skeleton in the blade tip, greatly increasing the durability of
+        the weakest link in the blade - the tip. We also produce a similar type
+        of rubber reinforcement in our war hammers and polearms.
       </p>
       <p>
         If the weapon is torn, it is good to repair it with a high-quality

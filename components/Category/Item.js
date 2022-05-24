@@ -5,7 +5,7 @@ import slugify from 'slugify'
 import classNames from 'classnames'
 import styles from './Category.module.scss'
 
-export const Item = ({ images, title, description, categoryId }) => {
+export const Item = ({ images, title, price, description, categoryId }) => {
   const image = useMemo(() => images[0], [images])
   const href = useMemo(() => slugify(title), [title])
 
@@ -30,7 +30,12 @@ export const Item = ({ images, title, description, categoryId }) => {
               height={90}
             />
           </div>
-          <div>{description}</div>
+          <div>
+            {description.replace(
+              '{{price}}',
+              Array.isArray(price) ? price[0] : price
+            )}
+          </div>
         </div>
       </div>
     </Link>
