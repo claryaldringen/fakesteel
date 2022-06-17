@@ -568,6 +568,71 @@ export const categories = [
           { src: 'mince_cerv_detail', width: 1920, height: 1280, fill: true },
         ],
       },
+      {
+        id: 'parrying_dagger',
+        title: 'Parrying dagger',
+        description: 'Parrying dagger, {{price}} CZK',
+        longDescription: `
+        <p>
+          Parrying daggers are typically used as an off-hand weapon when fencing
+          rapier or sidesword. As the name implies they were designed to parry,
+          or defend, more effectively than a simple dagger form, typically
+          incorporating a wider guard. They may also be used for attack if an
+          opportunity arises.
+        </p>
+
+        <p>
+          Our dagger was designed to be fully usable in fencing. It is therefore
+          completely identical in design to our swords and has the same
+          durability of hilt, core and 35cm doge sword blade and good balance.
+        </p>
+
+        <p>
+          This hilt can also be fitted with one of our standard 70cm long blades
+          to create a full length sword. The choice is yours.
+        </p>
+
+        <br><br><b>
+        Specifications<br>
+        Total lenght: 52 cm<br>
+        Blade lenght: 35 cm<br>
+        Blade width: 4.0 cm<br>
+        Weight: 480 g<br>
+        Point of Balance: 1.5 cm<br>
+        </b>
+
+        <p>What can you choose or modify when ordering this weapon?</p>
+        <ol>
+            <li>
+              Blade type and length. The standard length of the dagger blade is
+              35 cm. But it can be up to 70cm long.
+            </li>
+            <li>
+              The colour of the metallic shade of the hilt and blade. The hilt
+              can be steel, graphite or brass. The blade can be steel or
+              graphite. The pommel may have a different colour than the crossguard.
+            </li>
+            <li>
+              Leather grip type and colour. Either classic leather grip or
+              deluxe version. The colour can be either brown, black or red.
+            </li>
+            <li>
+              Fiberglass core for dagger version is round 10 cm. If you choose a
+              longer sword blade, rectangular cores are also available.
+            </li>
+        </ol>`,
+        price: 2500,
+        images: [
+          { src: 'parrying-dagger-preview', width: 1744, height: 1163 },
+          {
+            src: 'parrying-dagger-detail',
+            width: 1920,
+            height: 1280,
+            fill: true,
+          },
+          { src: 'parrying-daggers', width: 1920, height: 1280, fill: true },
+        ],
+      },
     ],
   },
   {
@@ -1477,6 +1542,11 @@ export const orderOptions = [
             price: 200,
           },
           {
+            title: 'parrying dagger',
+            value: 'parrying dagger',
+            price: 1400,
+          },
+          {
             title: 'bollock dagger',
             value: 'bollock dagger',
             price: 200,
@@ -1491,6 +1561,30 @@ export const orderOptions = [
       {
         type: 'select',
         label: 'Blade length',
+        condition: {
+          label: 'Dagger type',
+          values: ['parrying dagger'],
+        },
+        options: [
+          {
+            title: '35 cm',
+            value: '35 cm',
+            price: 0,
+          },
+          {
+            title: '70 cm',
+            value: '70 cm',
+            price: 200,
+          },
+        ],
+      },
+      {
+        type: 'select',
+        label: 'Blade length',
+        condition: {
+          label: 'Dagger type',
+          values: ['quillon dagger', 'bollock dagger', 'baselard'],
+        },
         options: [
           {
             title: '24 cm',
@@ -1509,7 +1603,7 @@ export const orderOptions = [
         label: 'Pommel color',
         condition: {
           label: 'Dagger type',
-          values: ['quillon dagger'],
+          values: ['quillon dagger', 'parrying dagger'],
         },
         options: [
           {
@@ -1534,7 +1628,7 @@ export const orderOptions = [
         label: 'Crossguard color',
         condition: {
           label: 'Dagger type',
-          values: ['quillon dagger'],
+          values: ['quillon dagger', 'parrying dagger'],
         },
         options: [
           {
@@ -1559,7 +1653,7 @@ export const orderOptions = [
         label: 'Grip color',
         condition: {
           label: 'Dagger type',
-          values: ['quillon dagger'],
+          values: ['quillon dagger', 'parrying dagger'],
         },
         options: [
           {
@@ -1607,6 +1701,10 @@ export const orderOptions = [
       {
         type: 'select',
         label: 'Sheath',
+        condition: {
+          label: 'Dagger type',
+          values: ['quillon dagger', 'bollock dagger', 'baselard'],
+        },
         options: [
           {
             title: 'no sheath',
