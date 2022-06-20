@@ -197,14 +197,13 @@ export const RecapitulationForm = ({ basket, setBasket }) => {
     setShowModal(false)
   }, [])
 
-  const isPhoneOk = !phoneError && phone
   const enabled =
     name &&
     email &&
     street &&
     city &&
     code &&
-    isPhoneOk &&
+    phone &&
     basket.length &&
     !emailError &&
     !sending
@@ -242,8 +241,7 @@ export const RecapitulationForm = ({ basket, setBasket }) => {
         </div>
         <div className={styles.group}>
           <label htmlFor="phone">
-            Phone number:
-            <span className={styles.required}>*</span>
+            Phone number:<span className={styles.required}>*</span>
           </label>
           <br />
           <input
