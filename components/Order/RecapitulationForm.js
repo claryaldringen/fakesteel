@@ -27,9 +27,6 @@ export const RecapitulationForm = ({ basket, setBasket }) => {
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
   const [phone, setPhone] = useState('')
-  const [isPhoneRequired, setIsPhoneRequired] = useState(
-    DEFAULT_SHIPPING_OPTION === SHIPPING_OPTION_PICK_VALUE
-  )
   const [street, setStreet] = useState('')
   const [city, setCity] = useState('')
   const [code, setCode] = useState('')
@@ -98,9 +95,8 @@ export const RecapitulationForm = ({ basket, setBasket }) => {
   const onShippingChange = useCallback(
     (event) => {
       setShipping(event.target.value)
-      setIsPhoneRequired(event.target.value === SHIPPING_OPTION_PICK_VALUE)
     },
-    [setShipping, setIsPhoneRequired, setPhone]
+    [setShipping, setPhone]
   )
   const onPaymentChange = useCallback(
     (event) => setPayment(event.target.value),
@@ -201,8 +197,7 @@ export const RecapitulationForm = ({ basket, setBasket }) => {
     setShowModal(false)
   }, [])
 
-  // either a valid phone is provided or not phone isn't required
-  const isPhoneOk = isPhoneRequired ? !phoneError && phone : true
+  const isPhoneOk = !phoneError && phone
   const enabled =
     name &&
     email &&
@@ -248,7 +243,7 @@ export const RecapitulationForm = ({ basket, setBasket }) => {
         <div className={styles.group}>
           <label htmlFor="phone">
             Phone number:
-            {isPhoneRequired && <span className={styles.required}>*</span>}
+            <span className={styles.required}>*</span>
           </label>
           <br />
           <input
@@ -256,7 +251,7 @@ export const RecapitulationForm = ({ basket, setBasket }) => {
             type="text"
             value={phone}
             onChange={onPhoneChange}
-            required={isPhoneRequired}
+            required
           />
           {phoneError && (
             <>
