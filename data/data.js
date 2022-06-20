@@ -594,10 +594,10 @@ export const categories = [
 
         <br><br><b>
         Specifications<br>
-        Total lenght: 52 cm<br>
+        Total lenght: 53 cm<br>
         Blade lenght: 35 cm<br>
         Blade width: 4.0 cm<br>
-        Weight: 480 g<br>
+        Weight: 360 g<br>
         Point of Balance: 1.5 cm<br>
         </b>
 
@@ -630,6 +630,7 @@ export const categories = [
             height: 1280,
             fill: true,
           },
+          { src: 'pd6', width: 1920, height: 978, fill: true },
           { src: 'parrying-daggers', width: 1920, height: 1280, fill: true },
         ],
       },
@@ -1653,7 +1654,7 @@ export const orderOptions = [
         label: 'Grip color',
         condition: {
           label: 'Dagger type',
-          values: ['quillon dagger', 'parrying dagger'],
+          values: ['quillon dagger'],
         },
         options: [
           {
@@ -1670,6 +1671,46 @@ export const orderOptions = [
             title: 'red',
             value: 'red',
             price: 0,
+          },
+        ],
+      },
+      {
+        type: 'select',
+        label: 'Grip color',
+        condition: {
+          label: 'Dagger type',
+          values: ['parrying dagger'],
+        },
+        options: [
+          {
+            title: 'black',
+            value: 'black',
+            price: 0,
+          },
+          {
+            title: 'brown',
+            value: 'brown',
+            price: 0,
+          },
+          {
+            title: 'red',
+            value: 'red',
+            price: 0,
+          },
+          {
+            title: 'deluxe black (+200 CZK)',
+            value: 'deluxe black',
+            price: 200,
+          },
+          {
+            title: 'deluxe brown (+200 CZK)',
+            value: 'deluxe brown',
+            price: 200,
+          },
+          {
+            title: 'deluxe red (+200 CZK)',
+            value: 'deluxe red',
+            price: 200,
           },
         ],
       },
